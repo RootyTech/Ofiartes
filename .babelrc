@@ -1,0 +1,12 @@
+{
+    "presets": [
+        // Entender JS moderno
+        "@babel/preset-env",
+        // Entender JSX
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        // Async Await
+        "@babel/plugin-transform-runtime"
+    ]
+}
