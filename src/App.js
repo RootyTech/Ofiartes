@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
-/** Componentes que no van a cambiar */
+/** Componentes */
 import { Testimonios } from './components/Testimonios';
 
 /** Contentful */

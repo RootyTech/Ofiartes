@@ -4,7 +4,15 @@ import { context } from '../../context';
 import './estilos.sass';
 
 export const Testimonios = () => {
+    return (
+        <>
+        
+        </>
+    )
+}
 
+/** EJEMPLO USANDO EL CONTEXTO */
+const EjemploContexto = () => {
     const { talleres } = useContext(context);
 
     return (
@@ -34,5 +42,4 @@ export const Testimonios = () => {
             </main>
         </>
     )
-    
 }
