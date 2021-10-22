@@ -7,7 +7,12 @@
     "dev": "webpack serve --mode=development",
     "build": "webpack --mode=production"
   },
-  "keywords": ["React.js", "Webpack", "Contentful", "Sass"],
+  "keywords": [
+    "React.js",
+    "Webpack",
+    "Contentful",
+    "Sass"
+  ],
   "author": "Santiago Restrepo, Juan Galvis, Miguel Angel, Daniela Jurado e Isabela Ceballos",
   "license": "ISC",
   "devDependencies": {
