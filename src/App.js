@@ -14,6 +14,8 @@ import { Talleres } from './components/Talleres';
 import { Testimonios } from './components/Testimonios';
 import { Unirse } from './components/Unirse';
 
+import { NotFound } from './pages/NotFound';
+
 /** Contentful */
 import { client } from './client';
 
@@ -56,7 +58,8 @@ export const App = () => {
                     <Route exact path="/novedades" component={Novedades} />
                     <Route exact path="/que_como" component={QueComo} />
                     <Route exact path="/talleres" component={Talleres} />         
-                    <Route exact path="/unirse" component={Unirse} />         
+                    <Route exact path="/unirse" component={Unirse} />                  
+                    <Route path="*" component={NotFound} />              
                 </Switch>
             </HashRouter>
         </context.Provider>

@@ -1,0 +1,36 @@
+.footer
+    width: 100vw
+    background-color: $gris_negro
+    color: $blanco
+    font-family: $secundaria
+    padding: 10px 0px
+
+    h2
+        @extend %mobile_contenido_titulo
+        text-align: center
+
+    &__info
+        width: 70%
+        margin: 0 auto
+        p
+            @extend %mobile_contenido_light
+            span
+                @extend %mobile_contenido_parrafo
+
+    &__redes
+        display: flex
+        justify-content: space-around
+        align-items: center
+        width: 43%
+        margin: 0 auto
+
+        svg
+            width: 36px
+            height: 36px
+
+        &--facebook
+            background-color: $azul
+        &--whatsapp
+            background-color: $verde
+        &--instagram
+            background-color: $amarillo
