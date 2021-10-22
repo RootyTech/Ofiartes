@@ -59,13 +59,12 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             // dist
-            filename: 'assets/[name].css'
+            filename: 'assets/estilos-[name].css'
         }),
         new Dotenv({
             // ruta del archivo .env
             path: './.env',
             // configuración
-            safe: true,
             systemvars: true
         })        
     ]
