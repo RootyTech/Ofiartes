@@ -13,6 +13,8 @@ import { QueComo } from './components/QueComo';
 import { Talleres } from './components/Talleres';
 import { Testimonios } from './components/Testimonios';
 
+import { NotFound } from './pages/NotFound';
+
 /** Contentful */
 import { client } from './client';
 
@@ -54,7 +56,8 @@ export const App = () => {
                     <Route exact path="/mision_vision" component={MisionVision} />
                     <Route exact path="/novedades" component={Novedades} />
                     <Route exact path="/que_como" component={QueComo} />
-                    <Route exact path="/talleres" component={Talleres} />               
+                    <Route exact path="/talleres" component={Talleres} />              
+                    <Route path="*" component={NotFound} />              
                 </Switch>
             </HashRouter>
         </context.Provider>
