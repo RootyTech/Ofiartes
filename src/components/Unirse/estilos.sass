@@ -1,0 +1,39 @@
+.join
+    h2
+        text-align: center
+        font-family: $principal
+        @extend %mobile_contenido_titulo_secciones
+    .join__wrap
+        display: flex
+        //background-color: antiquewhite
+        flex-wrap: wrap
+        justify-content: space-around
+        .join__wrap--item
+            width: 350px
+            height: auto
+            //background-color: #efced4
+            margin: 25px
+            text-align: center
+            img
+                width: 200px
+            p
+                text-align: justify
+                font-family: $secundaria
+                padding: 25px 0
+                box-sizing: border-box
+                @extend %desktop_contenido_parrafo
+            button
+                width: 95%
+                padding: 10px
+                border-radius: 10px
+                border: solid 2px $gris_negro
+                background-color: transparent
+                a
+                    text-decoration: none
+                    color: $gris_negro
+                    font-family: $secundaria
+                    @extend %mobile_contenido_titulo
+            button:hover
+                background-color: $gris_negro
+                a
+                    color: $blanco
