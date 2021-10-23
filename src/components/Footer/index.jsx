@@ -22,8 +22,9 @@ export const Footer = () => {
                     <div className="footer__icons--social">
                         <FaFacebookF className="footer__icons--social--facebook"/>
                         <FaWhatsappSquare className="footer__icons--social--whatsapp"/>
-                        <FaInstagramSquare
-                        className="footer__icons--social--instagram"/>
+                        <a href="https://www.instagram.com/ofiartes/?hl=es" target="_blank" rel="nofollow noopener noreferrer">
+                            <FaInstagramSquare className="footer__icons--social--instagram"/>
+                        </a>
                     </div>
                 </div>
             </div>

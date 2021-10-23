@@ -33,11 +33,13 @@ export const App = () => {
             const Talleres = await res.items.filter((item) => item.sys.contentType.sys.id === "talleres" )
             const Galeria = await res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
             const Novedades = await res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
+            const Testimonios = await res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
 
             setContenido({
                 galeria: Galeria,
                 novedades: Novedades,
                 talleres: Talleres,
+                testimonios: Testimonios
             })
 
         })();
