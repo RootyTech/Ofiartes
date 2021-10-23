@@ -1,14 +1,12 @@
 .testimonios
-    display: grid
-    grid-template-columns: 1fr 1fr
-    justify-content: center
-    align-items: center
-    margin: 0 auto
-
-    &__item--info
+    h2
         text-align: center
-        font-weight: bold
+        @extend %mobile_contenido_titulo_secciones
+        color: $gris-negro
+        font-family: $principal
+        padding: 1.375rem 0rem
 
-        // a
-        //      @extend %mobile_contenido_light
-        //      color: $rojo
+    .circles
+        padding: 1rem 0rem
+        display: flex
+        place-content: center

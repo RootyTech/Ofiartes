@@ -1,0 +1,43 @@
+.testimonio
+    width: 90%
+    margin: 0 auto
+    box-shadow: 0px 0px 4px 0px #00000040
+    border-radius: 10px
+    font-family: $secundaria
+    position: relative
+
+    .Horn
+        position: absolute
+        top: 5%
+        right: 5%
+        cursor: pointer
+        width: 1.625rem
+        height: 1.625rem
+
+    &__contenido
+        text-align: center
+        @extend %mobile_contenido_parrafo
+        padding: 2.375rem 1.5rem 0rem 1.5rem
+
+    &__info
+        width: 90%
+        margin: 0rem auto
+        padding: 0.938rem 0rem
+        display: flex
+        justify-content: center
+        align-items: center
+
+        div
+            margin-left: 0.625rem
+
+        img
+            display: block
+            width: 3.563rem
+            height: 3.563rem
+            border-radius: 50%
+        
+        h4
+            @extend %mobile_contenido_titulo
+        p
+            @extend %mobile_contenido_light
+            color: $gris-oscuro
