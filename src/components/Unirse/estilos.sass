@@ -10,9 +10,9 @@
         flex-direction: column
         box-sizing: border-box
         .join__wrap--item
-            padding: 25px 0
+            padding: 30px 0
             img
-                width: 150px
+                width: 200px
             p
                 font-family: $secundaria
                 @extend %mobile_contenido_parrafo
@@ -20,7 +20,7 @@
                 padding: 15px 0
             button
                 width: 100%
-                padding: 10px 15px
+                padding: 10px
                 border-radius: 10px
                 border: solid 2px $gris_negro
                 background-color: transparent
@@ -29,4 +29,21 @@
                     color: $gris_negro
                     font-family: $secundaria
                     @extend %mobile_contenido_titulo
+            button:hover
+                background-color: $gris_negro
+                a
+                    color: $blanco                
 
+@media (min-width: 860px)
+    .join
+        padding: 0 5%
+        h2
+            font-size: 32px
+            font-weight: 400
+        .join__wrap
+            flex-direction: row
+            .join__wrap--item
+                padding: 30px 15px
+                flex: 1 1 0px
+                button
+                    width: 90%
