@@ -50,7 +50,6 @@ export const Unirse = () => {
                     </button>
                 </div>
             </section>
-            
         </section>
     )
 }

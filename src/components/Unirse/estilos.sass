@@ -1,25 +1,29 @@
 .join
-    text-align: center
-    padding: 0 12%
     h2
+        text-align: center
         font-family: $principal
         @extend %mobile_contenido_titulo_secciones
     .join__wrap
-        width: 100%
         display: flex
-        flex-direction: column
-        box-sizing: border-box
+        //background-color: antiquewhite
+        flex-wrap: wrap
+        justify-content: space-around
         .join__wrap--item
-            padding: 30px 0
+            width: 350px
+            height: auto
+            //background-color: #efced4
+            margin: 25px
+            text-align: center
             img
                 width: 200px
             p
-                font-family: $secundaria
-                @extend %mobile_contenido_parrafo
                 text-align: justify
-                padding: 15px 0
+                font-family: $secundaria
+                padding: 25px 0
+                box-sizing: border-box
+                @extend %desktop_contenido_parrafo
             button
-                width: 100%
+                width: 95%
                 padding: 10px
                 border-radius: 10px
                 border: solid 2px $gris_negro
@@ -32,18 +36,4 @@
             button:hover
                 background-color: $gris_negro
                 a
-                    color: $blanco                
-
-@media (min-width: 860px)
-    .join
-        padding: 0 5%
-        h2
-            font-size: 32px
-            font-weight: 400
-        .join__wrap
-            flex-direction: row
-            .join__wrap--item
-                padding: 30px 15px
-                flex: 1 1 0px
-                button
-                    width: 90%
+                    color: $blanco
