@@ -12,6 +12,7 @@ import { Novedades } from './components/Novedades';
 import { QueComo } from './components/QueComo';
 import { Talleres } from './components/Talleres';
 import { Testimonios } from './components/Testimonios';
+import { Unirse } from './components/Unirse';
 
 import { NotFound } from './pages/NotFound';
 
@@ -32,12 +33,14 @@ export const App = () => {
             const Galeria = await res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
             const Novedades = await res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
             const Integrantes = await res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
+            const Testimonios = await res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
 
             setContenido({
                 galeria: Galeria,
                 novedades: Novedades,
                 talleres: Talleres,
-                members: Integrantes
+                members: Integrantes,
+                testimonios: Testimonios
             })
 
         })();
@@ -57,7 +60,8 @@ export const App = () => {
                     <Route exact path="/mision_vision" component={MisionVision} />
                     <Route exact path="/novedades" component={Novedades} />
                     <Route exact path="/que_como" component={QueComo} />
-                    <Route exact path="/talleres" component={Talleres} />              
+                    <Route exact path="/talleres" component={Talleres} />         
+                    <Route exact path="/unirse" component={Unirse} />                  
                     <Route path="*" component={NotFound} />              
                 </Switch>
             </HashRouter>

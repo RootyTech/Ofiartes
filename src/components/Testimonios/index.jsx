@@ -1,51 +1,70 @@
-import React, { useContext } from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useContext, useEffect, useState } from 'react';
 import { context } from '../../context';
+
+import { Testimonio } from './Testimonio';
+import { Circle } from './Circle';
 
 export const Testimonios = () => {
 
     import('./estilos.sass');
-    if (window.outerWidth >= 1024) {
-        import('./desktop.sass');
+
+    const { testimonios } = useContext(context);
+    const [ counter, setCounter ] = useState(0);
+    const [ Testimonios, setTestimonios ] = useState([]);
+
+    useEffect(() => {
+        
+        if ( testimonios ) {
+            const components = testimonios.map((testimonio, index) => (
+                <Testimonio 
+                contenido={testimonio.fields.description}
+                nombre={testimonio.fields.name}
+                cargo={testimonio.fields.role}
+                foto={`https:${testimonio.fields.image.fields.file.url}`}
+                key={`testimonio-${index}`}
+                />
+                ))
+                
+            setTestimonios(components);
+        }
+
+    }, [testimonios])
+
+    function Avanzar() {
+        if (counter+1 === items.length) {
+            setCounter(0);
+        } else {
+            setCounter(counter + 1)
+        }
+    }
+
+    function Retroceder() {
+        if (counter-1 < 0) {
+            setCounter(items.length-1);
+        } else {
+            setCounter(counter - 1)
+        }
     }
 
     return (
-        <div className="testimonios">
-            <div className="testimonios__item">
-                <div className="testimonios__item--info">
-                    <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Imagen de ejemplo de una persona" width="150px" height="150px" />
-                    <h2>Nombre</h2>
-                    <p>Cargo</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique atque eos rerum quis temporibus.</p>
+        <section className="testimonios">
+            <h2>Testimonios</h2>
+            {
+                testimonios ?
+                Testimonios[counter]
+                : <h2>Loading...</h2>
+            }
+            <div className="circles">
+                {
+                    testimonios && 
+                    testimonios.map((item, index) => (
+                        <Circle index={index} state={setCounter} active={ index === counter && "active" } key={"ciruclo-"+index} />
+                    ))
+                }
             </div>
-            <div className="testimonios__item">
-                <div className="testimonios__item--info">
-                    <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Imagen de ejemplo de una persona" width="150px" height="150px" />
-                    <h2>Nombre</h2>
-                    <p>Cargo</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique atque eos rerum quis temporibus.</p>
-            </div>
-            <div className="testimonios__item">
-                <div className="testimonios__item--info">
-                    <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Imagen de ejemplo de una persona" width="150px" height="150px" />
-                    <h2>Nombre</h2>
-                    <p>Cargo</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique atque eos rerum quis temporibus.</p>
-            </div>
-            <div className="testimonios__item">
-                <div className="testimonios__item--info">
-                    <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Imagen de ejemplo de una persona" width="150px" height="150px" />
-                    <h2>Nombre</h2>
-                    <p>Cargo</p>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique atque eos rerum quis temporibus.</p>
-            </div>
-        </div>
-    )
-}
+        </section>
+    );
+};
 
 /** EJEMPLO USANDO EL CONTEXTO */
 const EjemploContexto = () => {
