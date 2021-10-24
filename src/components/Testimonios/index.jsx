@@ -1,11 +1,18 @@
+/** React y React Hooks */
 import React, { useContext, useEffect, useState } from 'react';
+/** CONTEXTO */
 import { context } from '../../context';
 
+/** COMPONENTES */
 import { Testimonio } from './Testimonio';
 import { Circle } from './Circle';
 
+/** LOADER */
+import Loader from 'react-loader-spinner';
+
 export const Testimonios = () => {
 
+    /** Estilos importamos de manera dinamica */
     import('./estilos.sass');
 
     const { testimonios } = useContext(context);
@@ -24,8 +31,6 @@ export const Testimonios = () => {
                 key={`testimonio-${index}`}
                 />
                 ))
-                
-            setTestimonios(components);
         }
 
     }, [testimonios])
@@ -50,13 +55,21 @@ export const Testimonios = () => {
         <section className="testimonios">
             <h2>Testimonios</h2>
             {
-                testimonios ?
+                Testimonios.length !== 0 ?
                 Testimonios[counter]
-                : <h2>Loading...</h2>
+                : 
+                <div className="loader" >
+                    <Loader
+                        type="ThreeDots"
+                        color="#37BCFF"
+                        height={100}
+                        width={100}
+                    />
+                </div>
             }
             <div className="circles">
                 {
-                    testimonios && 
+                    Testimonios.length !== 0 &&
                     testimonios.map((item, index) => (
                         <Circle index={index} state={setCounter} active={ index === counter && "active" } key={"ciruclo-"+index} />
                     ))
