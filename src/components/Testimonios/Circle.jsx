@@ -1,10 +1,10 @@
 import React from 'react';
 
-export const Circle = ({active, index, state}) => {
+export const Circle = ({active}) => {
 
     import('./circle.sass');
 
     return (
-        <div onClick={() => state(index)} className={["circulo", active && "activo"].join(" ")}></div>
+        <div className={["circulo", active && "activo"].join(" ")}></div>
     );
 };
