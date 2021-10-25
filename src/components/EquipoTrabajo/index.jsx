@@ -4,6 +4,7 @@ import './estilos.sass';
 export const EquipoTrabajo = () => {
     return (
         <section className="workTeam">
+            <h2 className="workTeam__title">Nuestro equipo de trabajo</h2>
             <Carousel/>
         </section>
     )
