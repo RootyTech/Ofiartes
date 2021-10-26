@@ -3,23 +3,25 @@
 ## Documentación 📚
 
 ### 📂 Estructura de carpetas
+
+```
 | 📁public
-|	- 📙 index.html
+|- 📙 index.html
 | 📁src
-|	- 📁assets
-|	-	- 🖼 Imágenes (.png | .svg | .webp | .jpg)
-|	- 📁components
-|	-	- 🧩 Componentes (.js | .jsx)
-|	- 📁lib
-|	-	- 🟨 Funciones reutilizables (.js)
-|	- 📁pages
-|	-	- 🖥 Páginas (.js | .jsx)
-|	- 🟨 App.js
-|	- 🟨 client.js
-|	- 🟨 context.js
-|	- 🟨 client.js
-|	- 🟪 global.sass
-|	- 🟨 index.js
+|- 📁assets
+|- - 🖼 Imágenes (.png | .svg | .webp | .jpg)
+|- 📁components
+|- - 🧩 Componentes (.js | .jsx)
+|- 📁lib
+|- - 🟨 Funciones reutilizables (.js)
+|- 📁pages
+|- - 🖥 Páginas (.js | .jsx)
+| 🟨 App.js
+| 🟨 client.js
+| 🟨 context.js
+| 🟨 client.js
+| 🟪 global.sass
+| 🟨 index.js
 | ⚙ .babelrc
 | ⚙ .env
 | ⚙ .gitignore
@@ -27,6 +29,7 @@
 | 📦 package.json
 | 📄 README.md
 | 📦 webpack.config.js
+```
 
 ### $ Variables
 > Todas las variables están en el archivo [global.sass](https://github.com/JuanesGalvis/Ofiartes/blob/master/src/global.sass "global.sass")
