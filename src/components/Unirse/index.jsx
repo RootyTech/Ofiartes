@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import img_beneficiario from '../../assets/img_beneficiario.png';
 import img_empresa from '../../assets/img_empresa.png';
 import img_voluntario from '../../assets/img_voluntario.png';
-import './estilos.sass';
 
 
 export const Unirse = () => {
+    import ('./estilos.sass');
     return (
         <section className="join">
             <h2>Haz parte de la corporación</h2>
