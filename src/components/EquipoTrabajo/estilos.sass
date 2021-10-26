@@ -44,7 +44,11 @@
             border: transparent
             outline: transparent solid 3px
             color: $gris-claro
+            transition: color,transform .5s
             cursor: pointer
+        &__button:hover
+            color: $gris-oscuro
+            transform: scale(1.2)
         &__button:first-of-type
             left: 0
         &__button:last-of-type
@@ -62,8 +66,12 @@
                 border-radius: 100%
                 background-color: $gris_claro
                 cursor: pointer
+                transition: background-color .5s
+            .dot:hover
+                background-color: $azul
             .active
                 background-color: $azul
+                transition: background-color .5s
 
 @media screen and ( min-width: 400px)
     .workTeam
