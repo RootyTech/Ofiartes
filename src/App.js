@@ -29,15 +29,14 @@ export const App = () => {
     useEffect(() => { 
         (async () => {
             const res = await client.getEntries();
-            const Talleres = await res.items.filter((item) => item.sys.contentType.sys.id === "talleres" )
-            const Galeria = await res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
-            const Novedades = await res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
-            const Integrantes = await res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
-            const Testimonios = await res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
-
+            const Talleres = res.items.filter((item) => item.sys.contentType.sys.id === "talleres" )
+            const Galeria = res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
+            const Novedades = res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
+            const Integrantes = res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
+            const Testimonios = res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
             setContenido({
                 galeria: Galeria,
-                novedades: Novedades,
+                news: Novedades,
                 talleres: Talleres,
                 members: Integrantes,
                 testimonios: Testimonios
