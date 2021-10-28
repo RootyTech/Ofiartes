@@ -34,8 +34,8 @@ const reducerCounter = ( state, action ) => {
 export const Testimonios = () => {
 
     /** Estilos importamos de manera dinamica */
-    import('./estilos.sass');
-    MediaQueryDesktop() && import('./desktop.sass');
+    import(/* webpackChunkName: 'testimonios-mobile' */'./estilos.sass');
+    MediaQueryDesktop() && import(/* webpackChunkName: 'testimonios-desktop' */'./desktop.sass');
 
     const { testimonios } = useContext(context);
     const [ Testimonios, setTestimonios ] = useState([]);

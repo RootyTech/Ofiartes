@@ -4,8 +4,8 @@ import { MediaQueryTablet } from '../../lib/mediaQuery';
 
 export const Footer = () => {
 
-    import('./estilos.sass');
-    MediaQueryTablet() && import('./desktop.sass');
+    import(/* webpackChunkName: 'footer-mobile' */'./estilos.sass');
+    MediaQueryTablet() && import(/* webpackChunkName: 'footer-desktop' */'./desktop.sass');
     
     return (
         <footer className="footer">
