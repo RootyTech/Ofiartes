@@ -1,0 +1,75 @@
+.aboutUs
+    width: 100vw
+    &__container
+        padding: 32px
+        h3
+            display: inline
+            padding-left: 5%
+            vertical-align: middle
+            @extend %mobile_contenido_subtitulos
+            font-family: $secundaria
+            font-style: normal
+            line-height: 24px
+        p
+            margin-top: 10px
+            padding-left: calc(22px + 5%)
+            text-align: justify
+            @extend %mobile_contenido_parrafo
+            font-family: $secundaria
+            font-style: normal
+            line-height: 22px
+        svg
+            position: relative
+            vertical-align: middle
+            z-index: 2
+        &--white
+            background: $blanco
+            h3
+                color: $gris-negro
+            svg
+                path
+                    fill: $azul
+            p
+                color: $gris-oscuro
+        &--black
+            background: $gris_negro
+            h3
+                color: $blanco
+            svg
+                path
+                    fill: $amarillo
+            p
+                color: $gris-blanco
+    &__verticalLine 
+        // PRIMERA VERSIÓN DE LA LÍNEA PARA MOBILE
+        // FALTA MIRAR COMO HACERLA RESPONSIVE
+        position: absolute
+        top: 2.688rem
+        left: 2.688rem
+        height: calc(100vw - 20vw)
+        border: 1px solid $gris-claro
+        z-index: 1
+    &__containerSecundary
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 20px
+    &__btn
+        width: 150px
+        box-sizing: border-box
+        border-radius: 10px
+        @extend %mobile_contenido_subtitulos
+        text-align: center // Lo utilicé para centrar el ancla horizontalmente
+        text-decoration: none
+        font-family: $secundaria
+        font-style: normal
+        line-height: 45px // Lo utilicé para centrar el ancla verticalmente
+        &--gris
+            background: #fff
+            color: $gris-negro
+            border: 3px solid $gris-negro
+            &:hover
+                background: $gris-negro
+                color: $blanco
+                box-shadow: 0 4px 16px rgba(65, 65, 65, 1)
+                transition: all 0.3s ease
