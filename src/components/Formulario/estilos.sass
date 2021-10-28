@@ -1,9 +1,16 @@
+h2
+    font-family: $principal
+    color: #000
+    letter-spacing: 1px
+    text-align: center
+    @extend %mobile_contenido_titulo_hero
+    padding: 2rem 0
 .form
     display: flex
     flex-direction: column
+    font-family: $secundaria
     padding: 0 2rem
     label
-        font-family: $secundaria
         @extend %mobile_contenido_titulo
         margin:10px 0
     input
@@ -16,7 +23,7 @@
         color: $gris_oscuro
     input[type="submit"]
         width: 50%
-        margin: 2rem auto
+        margin: 1rem auto
         cursor: pointer
         background-color: $verde
         color: $negro_oscuro
@@ -28,11 +35,13 @@
         background-color: $negro_oscuro
     textarea 
         resize: none
-    div input
-        margin-bottom: 0
-        margin-left: 1rem 
-        width:20px
-        height:20px  
+    div 
+        padding-bottom: 1rem
+        input
+            margin-bottom: 0
+            margin-right: 0.5rem 
+            width:20px
+            height:20px  
 .form [required]:valid 
     border-bottom: thin solid $verde
 
