@@ -1,0 +1,43 @@
+.btn
+
+    width: 15rem
+    height: 2.813rem
+    text-align: center
+    font-family: $secundaria
+    @extend %mobile_contenido_subtitulos
+    border-radius: 0.625rem
+
+    &-text-white
+        color: $blanco
+    &-text-black
+        color: $negro
+
+    &-fill
+        border: 0
+        &-green
+            background-color: $verde
+        &-yellow
+            background-color: $amarillo
+        &-blue
+            background-color: $azul
+        &-red
+            background-color: $rojo
+        &-black
+            background-color: $negro
+        &-white
+            background-color: $blanco
+
+    &-border
+        background-color: rgba(255,255, 255, 0)
+        &-green
+            border: 0.188rem solid $verde
+        &-yellow
+            border: 0.188rem solid $amarillo
+        &-blue
+            border: 0.188rem solid $azul
+        &-red
+            border: 0.188rem solid $rojo
+        &-white
+            border: 0.188rem solid $blanco
+        &-black
+            border: 0.188rem solid $negro

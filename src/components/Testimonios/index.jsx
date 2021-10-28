@@ -7,6 +7,7 @@ import { context } from '../../context';
 import { Testimonio } from './Testimonio';
 import { Circle } from './Circle';
 import { MyLoader } from './Skeleton';
+import { ButtonBorder } from '../commons/Buttons';
 
 import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
 
@@ -133,6 +134,9 @@ export const Testimonios = () => {
                         <Circle index={index} active={ index === counter.first && "active" } key={"ciruclo-"+index} />
                     ))
                 }
+            </div>
+            <div className="testimonios__button">
+                <ButtonBorder border="black" color="black" content="¿Quieres ser voluntario?" />
             </div>
         </section>
     );
