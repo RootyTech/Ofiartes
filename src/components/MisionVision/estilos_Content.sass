@@ -1,0 +1,31 @@
+.bloque
+    display: flex
+    padding: 0px 20px
+    .ficha
+        display: flex
+        flex-direction: column
+        align-items: center
+        .short
+            height: 20px
+            width: 0.5px
+            background-color: $gris_claro
+        .larger
+            height: 85%
+            width: 0.5px
+            background-color: $gris_claro
+        .none
+            background-color: transparent
+    .texto
+        padding: 20px
+        font-family: $secundaria
+        p
+            @extend %mobile_contenido_parrafo_light
+            span
+                color: red
+        h4
+            @extend %mobile_contenido_subtitulos
+.white
+    background-color: $blanco
+.black
+    background-color: $gris_negro
+    color: $blanco

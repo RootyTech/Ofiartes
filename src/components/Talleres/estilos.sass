@@ -1,0 +1,91 @@
+.search
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 70%
+    height: 15px
+    background-color: transparent 
+    border-radius: 10px
+    padding: 10px
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 5px
+    margin-top: 20px
+    border: 0.5px solid $gris_claro
+.search input
+    width: 90%
+    height: 90%
+    border: none
+    outline: none
+    background-color: transparent
+    font-family: $secundaria
+    padding: 3px 10px
+.search button
+    outline: none
+    border: none
+    background-color: transparent
+    padding-bottom: 20px
+    padding-top: 20px
+    padding-right: 10px
+    color: $gris_claro
+.search:hover
+    color: $verde
+.labels
+    display: flex
+    align-items: center
+    justify-content: center
+    .labels__etiquetas
+        margin-left: auto
+        margin-right: auto
+        text-align: center
+        padding: 25px
+        font-family: $secundaria
+        @extend %mobile_contenido_light
+.cards__taller
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px
+    margin: 10px 0px 10px
+    .card summary
+        font-family: $secundaria
+        font-size: 16px
+        font-weight: 600
+        /*summary::-webkit-details-marker
+            color: $verde
+            background-color: #000*/
+    .card p
+        margin: 10px 
+        font-family: $secundaria
+        font-size: 16px
+        font-weight: normal
+    .icon__clock 
+        display: flex
+        align-items: center
+    .icon__clock p
+        font-family: $secundaria
+        font-size: 12px
+        font-weight: 300
+        margin: 5px
+    .button__more
+        display: block
+        font-family: $secundaria
+        @extend %mobile_contenido_subtitulos
+        width: 50%
+        margin-left: auto
+        margin-right: auto
+        margin-top: 8%
+        padding: 6px
+        border-radius: 10px
+        background-color: transparent
+        border: 2px solid $gris_negro
+.verde
+    border-left: $verde solid 8px  
+.azul
+    border-left: $azul solid 8px 
+.rojo
+    border-left: $rojo solid 8px
+.amarillo
+    border-left: $amarillo solid 8px
+
+
