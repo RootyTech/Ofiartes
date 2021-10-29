@@ -3,6 +3,7 @@ import { FaSearch } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa'
 import { context } from '../../context';
 import './estilos.sass';
+import {ButtonBorder} from '../commons/Buttons'
 
 //importación de imágenes
 import img_Etiqueta_E from '../../assets/Etiqueta_E.svg';
@@ -79,7 +80,7 @@ export const Talleres = () => {
                                 <i><FaRegClock/></i>
                                 <p>{talleres.fields.duration}</p>
                             </div>
-                                <button className="button__more">Saber más</button>
+                                <ButtonBorder border="black" color="black"content="Saber más"/>
                         </details>
                         <img src={`${imagen(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagen(`${talleres.fields.type}`).alt}`} />
                     </div>
