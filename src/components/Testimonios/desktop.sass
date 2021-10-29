@@ -1,3 +1,14 @@
-@media (min-width: 860px)
+@media (min-width: 1024px)
     .testimonios
-        grid-template-columns: repeat(4 , 1fr )
+        &__content
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            justify-content: center
+            align-items: center
+            width: auto
+            column-gap: 2%
+            margin: 0 1.5%
+            
+            .testimonio
+                width: 30rem
+                height: 11.5rem

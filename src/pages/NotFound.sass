@@ -1,0 +1,73 @@
+.NotFound
+    &__Header
+        padding-top: 1.625rem
+        display: flex
+        align-items: center
+        justify-content: center
+
+    &__Content
+        display: grid
+        place-content: center
+        justify-items: center
+        position: relative
+        height: 70vh
+        text-align: center
+        h1
+            font-family: $principal
+            margin-bottom: 3.125rem
+            @extend %mobile_contenido_titulo_hero
+            width: 22ch
+            white-space: nowrap
+            overflow: hidden
+            border-right: 3px solid $negro
+            animation: effect 1s steps(20), blink 0.3s step-end infinite alternate
+        
+        svg
+            position: absolute
+            &:nth-of-type(1)
+                top: 15%
+                left: 10%
+                right: 0
+                bottom: 0
+            &:nth-of-type(2)
+                top: 15%
+                left: 80%
+                right: 0
+                bottom: 0
+                transform: rotateZ(90deg)
+            &:nth-of-type(3)
+                top: 80%
+                left: 80%
+                right: 0
+                bottom: 0
+            &:nth-of-type(4)
+                transform: rotateZ(-90deg)
+                top: 80%
+                left: 10%
+                right: 0
+                bottom: 0
+                
+
+@keyframes effect
+    from
+        width: 0
+
+@keyframes blink
+    50%
+        border-color: transparent
+
+@media screen and ( min-width: $tablet )
+    .NotFound
+
+        &__Header
+            img
+                width: 5.625rem
+                height: 5.625rem
+
+        &__Content
+            width: 50vw
+            margin: 0 auto
+
+            h1
+                font-size: 40px
+                font-weight: 700

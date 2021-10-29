@@ -1,0 +1,122 @@
+.news
+    button
+        position: absolute
+        top: 1rem
+        right: 1rem
+        background-color: $gris-negro
+        padding: .5rem 1rem
+        border: transparent
+        border-right: .5rem solid $verde
+        font-size: 1rem
+        font-weight: 600
+        color: $blanco
+        transform: scale(1)
+        transition: .5s
+        transition-property: transform, background-color
+        cursor: pointer
+    button:hover
+        background-color: $negro
+        transform: scale(.95)
+
+#modal
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    background-color: #000000bd
+    visibility: visible
+    transition: opacity 1s
+    animation-name: fadeIn
+    animation-duration: 2s
+    .closeButton
+        z-index: 1
+        position: absolute
+        top: 2rem
+        left: 2rem
+        width: 2.5rem
+        height: 2.5rem
+        font-size: 1.4rem
+        border-radius: 1rem
+        font-weight: 500
+        border: transparent
+        background-color: $rojo
+        color: $blanco
+        cursor: pointer
+        transition: transform .5s
+        transform: scale(1)
+    .closeButton:hover
+        transform: scale(.9)
+        
+
+    .carousel
+        margin: 0 auto
+        position: relative
+        max-width: 45rem
+        height: 100%
+        &__container
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 100%
+            padding: 0 1rem
+            img
+                width: 80%
+                opacity: 0
+                animation-name: fadeIn
+                animation-duration: 1s
+                animation-fill-mode: forwards
+                animation-delay: 1s
+        &__button
+            position: absolute
+            top: 50%
+            margin: 0 1rem
+            font-size: 1.5rem
+            background: none
+            border: transparent
+            outline: transparent solid 3px
+            color: $blanco
+            transition: color,transform .5s
+            cursor: pointer
+        &__button:hover
+            color: $gris-claro
+            transform: scale(1.2)
+        &__button:first-of-type
+            left: 0
+        &__button:last-of-type
+            right: 0
+        
+        .dots
+            position: absolute
+            bottom: 3rem
+            margin: 0 auto
+            width: 100%
+            display: flex
+            justify-content: center
+            
+            .dot
+                margin: .2rem
+                width: .6rem
+                height: .6rem
+                border-radius: 100%
+                background-color: $gris_claro
+                cursor: pointer
+                transition: background-color .5s
+            .dot:hover
+                background-color: $azul
+            .active
+                background-color: $azul
+                transition: background-color .5s
+.modalHide
+    visibility: hidden
+    z-index: -1
+    opacity: 0
+    transition: opacity 1s
+    transform: translateY(100%)
+
+
+@keyframes fadeIn 
+  from 
+    opacity: 0
+  to 
+    opacity: 1

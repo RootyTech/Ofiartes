@@ -1,17 +1,58 @@
-import React, { useContext, useEffect, useState } from 'react';
+/** React y React Hooks */
+import React, { useContext, useEffect, useState, useReducer } from 'react';
+/** CONTEXTO */
 import { context } from '../../context';
 
+/** COMPONENTES */
 import { Testimonio } from './Testimonio';
 import { Circle } from './Circle';
+import { MyLoader } from './Skeleton';
+import { ButtonBorder } from '../commons/Buttons';
+
+import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
+
+import { MediaQueryDesktop } from '../../lib/mediaQuery';
+
+/** REDUCER */
+
+const reducerCounter = ( state, action ) => {
+    switch (action.type) {
+        case 'Increment':
+            return {
+                first: state.first + 1 === action.Arraylength ? 0 : state.first + 1,
+                second: state.second + 1 === action.Arraylength ? 0 : state.second + 1,
+            }
+        case 'Decrement':
+            return {
+                first: state.first - 1 < 0 ? action.Arraylength - 1 : state.first - 1,
+                second: state.second - 1 < 0 ? action.Arraylength - 1 : state.second - 1,
+            }
+    
+        default: return state;
+    }
+}
 
 export const Testimonios = () => {
 
-    import('./estilos.sass');
-
+    /** Estilos importamos de manera dinamica */
+    import(/* webpackChunkName: 'testimonios-mobile' */'./estilos.sass');
+    MediaQueryDesktop() && import(/* webpackChunkName: 'testimonios-desktop' */'./desktop.sass');
+    
     const { testimonios } = useContext(context);
-    const [ counter, setCounter ] = useState(0);
+    
+    const [ counter, dispatch ] = useReducer(reducerCounter, {first: 0, second: 1});
+    
     const [ Testimonios, setTestimonios ] = useState([]);
+    const [widthSize, setWidthSize] = useState("Mobile");
 
+    window.addEventListener('resize', () => {
+        if (MediaQueryDesktop()) {
+            setWidthSize("Desktop")
+        } else {
+            setWidthSize("MobileD")
+        }
+    });
+    
     useEffect(() => {
         
         if ( testimonios ) {
@@ -25,76 +66,78 @@ export const Testimonios = () => {
                 />
                 ))
                 
-            setTestimonios(components);
+                setTestimonios(components);
         }
 
     }, [testimonios])
-
-    function Avanzar() {
-        if (counter+1 === items.length) {
-            setCounter(0);
-        } else {
-            setCounter(counter + 1)
-        }
-    }
-
-    function Retroceder() {
-        if (counter-1 < 0) {
-            setCounter(items.length-1);
-        } else {
-            setCounter(counter - 1)
-        }
-    }
 
     return (
         <section className="testimonios">
             <h2>Testimonios</h2>
             {
-                testimonios ?
-                Testimonios[counter]
-                : <h2>Loading...</h2>
+                Testimonios.length !== 0 ?
+                <div className="testimonios__principal">
+                    <div>
+                        <a className="testimonios__principal--arrow" onClick={() => dispatch({type: 'Decrement', Arraylength: testimonios.length})}>
+                            <MdOutlineArrowBackIos />
+                        </a>
+                    </div>
+                    <div className="testimonios__content">
+                        {
+                            MediaQueryDesktop() ?
+                            <>
+                                { Testimonios[counter.first] }
+                                { Testimonios[counter.second] }
+                            </>
+                            : Testimonios[counter.first]
+                        }
+                    </div>
+                    <div>
+                        <a className="testimonios__principal--arrow" onClick={() => dispatch({type: 'Increment', Arraylength: testimonios.length})}>
+                            <MdOutlineArrowForwardIos />
+                        </a>
+                    </div>
+                </div>
+                : 
+                <div className="testimonios__principal">
+                    <div className="testimonios__content">
+                        {
+                            MediaQueryDesktop() ?
+                            <>  
+                                <MyLoader {...{
+                                    width: 480,
+                                    height: 210,
+                                    contentwidth: 360,
+                                    xpositions: [60, 87, 114, 240],
+                                }} />
+                                <MyLoader {...{
+                                    width: 480,
+                                    height: 210,
+                                    contentwidth: 360,
+                                    xpositions: [60, 87, 114, 240],
+                                }} />
+                            </>
+                            : <MyLoader {...{
+                                width: 270,
+                                height: 235,
+                                contentwidth: 270,
+                                xpositions: [10, 30, 57, 135],
+                            }} />
+                        }
+                    </div>
+                </div>
             }
             <div className="circles">
                 {
-                    testimonios && 
+                    Testimonios.length !== 0 &&
                     testimonios.map((item, index) => (
-                        <Circle index={index} state={setCounter} active={ index === counter && "active" } key={"ciruclo-"+index} />
+                        <Circle index={index} active={ index === counter.first && "active" } key={"ciruclo-"+index} />
                     ))
                 }
+            </div>
+            <div className="testimonios__button">
+                <ButtonBorder border="black" color="black" content="¿Quieres ser voluntario?" />
             </div>
         </section>
     );
 };
-
-/** EJEMPLO USANDO EL CONTEXTO */
-const EjemploContexto = () => {
-    const { talleres } = useContext(context);
-
-    return (
-        <>
-            <Helmet>
-                <title> Testimonios - Ofiartes </title>
-                <meta name="description" content="Testimonios de Ofiartes" />
-            </Helmet>
-            <main className="container">
-                <ul>
-                    {
-                        talleres ?
-                        talleres.map((taller, indice) => (
-                            <li key={`taller-${indice}`}>
-                                <div>
-                                    <h3>{ taller.fields.title }</h3>
-                                    <p>{ taller.fields.description }</p>
-                                    <img
-                                    src={"https:"+taller.fields.imagenTaller.fields.file.url} 
-                                    alt={taller.fields.imagenTaller.fields.description}
-                                    />
-                                </div>
-                            </li>
-                        )) : <h2>Loading...</h2>
-                    }
-                </ul>
-            </main>
-        </>
-    )
-}

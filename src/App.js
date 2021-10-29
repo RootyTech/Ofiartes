@@ -13,8 +13,11 @@ import { QueComo } from './components/QueComo';
 import { Talleres } from './components/Talleres';
 import { Testimonios } from './components/Testimonios';
 import { Unirse } from './components/Unirse';
-
+import { Beneficiario } from './pages/Beneficiario';
+import { Voluntario } from './pages/Voluntario';
+import { Empresa } from './pages/Empresas';
 import { NotFound } from './pages/NotFound';
+
 
 /** Contentful */
 import { client } from './client';
@@ -29,15 +32,14 @@ export const App = () => {
     useEffect(() => { 
         (async () => {
             const res = await client.getEntries();
-            const Talleres = await res.items.filter((item) => item.sys.contentType.sys.id === "talleres" )
-            const Galeria = await res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
-            const Novedades = await res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
-            const Integrantes = await res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
-            const Testimonios = await res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
-
+            const Talleres = res.items.filter((item) => item.sys.contentType.sys.id === "talleres" )
+            const Galeria = res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
+            const Novedades = res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
+            const Integrantes = res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
+            const Testimonios = res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
             setContenido({
                 galeria: Galeria,
-                novedades: Novedades,
+                news: Novedades,
                 talleres: Talleres,
                 members: Integrantes,
                 testimonios: Testimonios
@@ -62,7 +64,11 @@ export const App = () => {
                     <Route exact path="/que_como" component={QueComo} />
                     <Route exact path="/talleres" component={Talleres} />         
                     <Route exact path="/unirse" component={Unirse} />                  
-                    <Route path="*" component={NotFound} />              
+                    <Route exact path="/beneficiarios" component={Beneficiario} />                  
+                    <Route exact path="/voluntarios" component={Voluntario} />                  
+                    <Route exact path="/empresas" component={Empresa} />                  
+                    <Route path="*" component={NotFound} />               
+
                 </Switch>
             </HashRouter>
         </context.Provider>

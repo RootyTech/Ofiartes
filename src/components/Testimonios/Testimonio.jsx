@@ -1,25 +1,16 @@
 import React from 'react';
 import { MediaQueryTablet } from '../../lib/mediaQuery';
 import { FaBullhorn } from 'react-icons/fa';
+import { Read } from '../../lib/Read';
 
 export const Testimonio = ({contenido, nombre, cargo, foto}) => {
 
-    import('./testimonio.sass');
-    MediaQueryTablet() && import('./desktop.sass');
-
-    function Read() {
-
-        const text = `Testimonio de ${nombre} ${cargo} : ${contenido}`;
-        const synth = window.speechSynthesis;
-        const utterThis = new SpeechSynthesisUtterance(text);
-        utterThis.lang = 'es-ES';
-        synth.speak(utterThis)
-
-    }
+    import(/* webpackChunkName: 'testimonio-mobile' */'./testimonio.sass');
+    MediaQueryTablet() && import(/* webpackChunkName: 'testimonio-desktop' */'./desktop.sass');
 
     return (
         <div className="testimonio">
-            <FaBullhorn onClick={() => Read()} className="Horn" />
+            <FaBullhorn onClick={() => Read(nombre, cargo, contenido)} className="Horn" />
             <p className="testimonio__contenido">"{contenido}"</p>
             <div className="testimonio__info">
                 <img src={foto} alt={`Fotografía del beneficiario ${nombre}`} />
