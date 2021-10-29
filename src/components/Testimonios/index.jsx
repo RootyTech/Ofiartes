@@ -1,5 +1,5 @@
 /** React y React Hooks */
-import React, { useContext, useEffect, useState, useReducer } from 'react';
+import React, { useContext, useEffect, useState, useReducer, useLayoutEffect } from 'react';
 /** CONTEXTO */
 import { context } from '../../context';
 
@@ -8,9 +8,10 @@ import { Testimonio } from './Testimonio';
 import { Circle } from './Circle';
 import { MyLoader } from './Skeleton';
 import { ButtonBorder } from '../commons/Buttons';
+/** ICONS */
+import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md';
 
-import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
-
+/** MEDIA QUERIES JS */
 import { MediaQueryDesktop } from '../../lib/mediaQuery';
 
 /** REDUCER */
@@ -45,14 +46,25 @@ export const Testimonios = () => {
     const [ Testimonios, setTestimonios ] = useState([]);
     const [widthSize, setWidthSize] = useState("Mobile");
 
-    window.addEventListener('resize', () => {
+    const ResizeTestimonios = () => {
+       
+        // MediaQueryDesktop() -> True si se pasa de 1024
         if (MediaQueryDesktop()) {
-            setWidthSize("Desktop")
+            setWidthSize("Desktop");
         } else {
-            setWidthSize("MobileD")
+            setWidthSize("Mobile");
         }
-    });
+    }
     
+    useEffect(() => {
+        window.addEventListener('resize', ResizeTestimonios);
+
+        return () => {
+            window.removeEventListener('resize', ResizeTestimonios);
+        }
+
+    }, [])
+
     useEffect(() => {
         
         if ( testimonios ) {
@@ -66,13 +78,22 @@ export const Testimonios = () => {
                 />
                 ))
                 
-                setTestimonios(components);
+                    setTestimonios(components);
         }
 
     }, [testimonios])
 
+    useEffect(() => {
+        console.log("useEffect");
+    }, [])
+
+    useLayoutEffect(() => {
+        console.log("useLayoutEffect");
+    }, [])
+
     return (
         <section className="testimonios">
+            { console.log("Render") }
             <h2>Testimonios</h2>
             {
                 Testimonios.length !== 0 ?

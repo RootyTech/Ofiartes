@@ -90,3 +90,11 @@ export const Talleres = () => {
         </>
     )
 }
+
+/**
+ * <summary style={{ backgroundImage: "url('https://img.freepik.com/vector-gratis/fondo-invierno-hojas-pinceles-color-pastel_220290-42.jpg?size=626&ext=jpg')" }} >
+ *  ....
+ * </summary>
+ * 
+ * La propiedad "open" se le agrega al <details>
+ */

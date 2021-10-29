@@ -3,8 +3,8 @@ import React from "react";
 export const PuzzleSVG = (props) => {
   return (
     <svg
-      width={33}
-      height={32}
+      width={50}
+      height={50}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
