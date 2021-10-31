@@ -76,20 +76,20 @@ export const Carousel = () => {
                         MediaQueryTablet() ?
                         <>  
                             <MemberLoader {...{
-                            widthViewBox: 200,
-                            heightViewBox: 150,
+                            widthviewbox: 200,
+                            heightviewbox: 150,
                             contentwidth: 360,
                             xpositions: [50, 75, 100],
                             }} />
                             <MemberLoader {...{
-                            widthViewBox: 200,
-                            heightViewBox: 150,
+                            widthviewbox: 200,
+                            heightviewbox: 150,
                             contentwidth: 360,
                             xpositions: [50, 75, 100],
                             }} />
                             <MemberLoader {...{
-                            widthViewBox: 200,
-                            heightViewBox: 150,
+                            widthviewbox: 200,
+                            heightviewbox: 150,
                             contentwidth: 360,
                             xpositions: [50, 75, 100],
                             }} />
@@ -97,22 +97,22 @@ export const Carousel = () => {
                         : MediaQueryMobile400() ?
                         <>
                             <MemberLoader {...{
-                            widthViewBox: 200,
-                            heightViewBox: 150,
+                            widthviewbox: 200,
+                            heightviewbox: 150,
                             contentwidth: 360,
                             xpositions: [50, 75, 100],
                             }} />
                             <MemberLoader {...{
-                            widthViewBox: 200,
-                            heightViewBox: 150,
+                            widthviewbox: 200,
+                            heightviewbox: 150,
                             contentwidth: 360,
                             xpositions: [50, 75, 100],
                             }} />
                         </>    
                         :
                         <MemberLoader {...{
-                            widthViewBox: 200,
-                            heightViewBox: 150,
+                            widthviewbox: 200,
+                            heightviewbox: 150,
                             contentwidth: 360,
                             xpositions: [50, 75, 100],
                         }} />
@@ -131,22 +131,22 @@ export const Carousel = () => {
                 /*En caso de no encotrar ningún elemento aún renderizará lo siguiente*/
                 : MediaQueryTablet() ?
                 <DotLoader {...{
-                    widthViewBox: 200,
-                    heightViewBox: 8,
+                    widthviewbox: 200,
+                    heightviewbox: 8,
                     radius: 1.7,
                     xpositions: [90, 100, 110]
                 }} /> 
                 : MediaQueryMobile400() ?
                 <DotLoader {...{
-                    widthViewBox: 200,
-                    heightViewBox: 8,
+                    widthviewbox: 200,
+                    heightviewbox: 8,
                     radius: 2.5,
                     xpositions: [85, 100, 115]
                 }} /> 
                 :
                 <DotLoader {...{
-                    widthViewBox: 200,
-                    heightViewBox: 8,
+                    widthviewbox: 200,
+                    heightviewbox: 8,
                     radius: 4,
                     xpositions: [85, 100, 115]
                 }} /> 

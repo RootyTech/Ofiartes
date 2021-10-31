@@ -4,7 +4,7 @@ import ContentLoader from 'react-content-loader';
 export const MemberLoader = (props) => (
 <ContentLoader 
     speed={2}
-    viewBox={`0 0 ${props.widthViewBox} ${props.heightViewBox}`}
+    viewBox={`0 0 ${props.widthviewbox} ${props.heightviewbox}`}
     backgroundColor="#d4d4d4"
     foregroundColor="#bbbbbb"
     {...props}
@@ -18,7 +18,7 @@ export const MemberLoader = (props) => (
 export const DotLoader = (props) => (
     <ContentLoader 
         speed={2}
-        viewBox={`0 0 ${props.widthViewBox} ${props.heightViewBox}`}
+        viewBox={`0 0 ${props.widthviewbox} ${props.heightviewbox}`}
         backgroundColor="#d4d4d4"
         foregroundColor="#bbbbbb"
         {...props}
