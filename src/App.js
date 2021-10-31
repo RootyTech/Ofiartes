@@ -37,7 +37,7 @@ export const App = () => {
             const Novedades = res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
             const Integrantes = res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
             const Testimonios = res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
-            
+
             setContenido({
                 galeria: Galeria,
                 news: Novedades,
