@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { context } from '../../context';
 import { Member } from './Member';
 import { Dot } from './Dot';
+import { MemberLoader, DotLoader } from './Skeleton';
+import { MediaQueryMobile400, MediaQueryTablet } from '../../lib/mediaQuery';
 
 export const Carousel = () => {
     {/*Creamos el estado para la variable counter la cual llevará la cuenta del item/miembro del carousel en el que estemos*/}
@@ -25,42 +27,98 @@ export const Carousel = () => {
         } else {
             setCounter(counter - 1);
         }
-    }   
+    }
+    
 
     return (
         <div className="carousel">
-            {/*Botón que dispara la función de goBack()*/}
-            <button className="carousel__button" type="button" onClick={() => goBack()}> {"<"} </button>
+            
 
             {/*Renderizado del componente en el índice que se encuentre el contador*/}
             {/*Renderizado del contenedor de que contiene los miembros*/}
             {/*Contenedor de que contiene los miembros. Aquí preguntamos si memberComponents ya tiene elementos, si es así entonces podremos renderizar los elementos dependiendo del tamaño de pantalla en el que nos encontremos*/}
 
-            { memberComponents.length != 0 ?
-            
-            <div className="carousel__container">
-                {window.matchMedia("(min-width: 768px)").matches ?
+            {
+                memberComponents.length != 0 ?
                 <>
-                    {memberComponents[counter]}
-                    {/*Volvemos a preguntar si el siguiente elemento del contador (counter +1) es igual a la longitud de la lista, si es así entonces renderzamos en ese punto el primer item de la lista (posición 0), sino entonces el siguiente*/
-                    memberComponents[counter+1 === memberComponents.length ? 0 : counter+1]}
-                    {/*En este punto la lógica cambia debido a que preguntamos por el segundo siguiente (counter +2), si ese segundo siguiente + 2 tiene exactamente la longitud de la lista entonces renderizaremos en este punto el primero de la lista (posición 0), en caso de que ese segundo siguiente + 2 se pase de la longitud de la lista entonces renderizamos el segundo de la lista (posición 1), si no se cumple ninguna de estas condiciones entonces renderizamos ese segundo siguiente (counter + 2)  */
-                    memberComponents[counter+2 > memberComponents.length ? 1 : counter+2 === memberComponents.length ? 0 : counter+2]}
-                </> :
-                window.matchMedia("(min-width: 400px)").matches ?
-                <> 
-                    {memberComponents[counter]}
-                    {/*En la siguiente línea preguntamos si el siguiente item tendrá la longitud de memberComponents, en caso de ser el último item de la lista, entonces habrá que renderizar el primer elemento de la lista (posición 0), si no es así entonces renderizamos el siguiente (counter + 1)*/}
-                    {memberComponents[counter+1 === memberComponents.length ? 0 : counter+1]}
-                </>:
-                window.matchMedia("(min-width: 0px)").matches ?
-                <>
-                    {memberComponents[counter]}
-                </>:
-                null
-                }
-            </div>
-            : <h1>Loading...</h1>}
+                    {/*Botón que dispara la función de goBack()*/}
+                    <button className="carousel__button" type="button" onClick={() => goBack()}> {"<"} </button>
+                    <div className="carousel__container">
+                        
+                        {     
+                        MediaQueryTablet() ?
+                        <>
+                            {memberComponents[counter]}
+                            {/*Volvemos a preguntar si el siguiente elemento del contador (counter +1) es igual a la longitud de la lista, si es así entonces renderzamos en ese punto el primer item de la lista (posición 0), sino entonces el siguiente*/
+                            memberComponents[counter+1 === memberComponents.length ? 0 : counter+1]}
+                            {/*En este punto la lógica cambia debido a que preguntamos por el segundo siguiente (counter +2), si ese segundo siguiente + 2 tiene exactamente la longitud de la lista entonces renderizaremos en este punto el primero de la lista (posición 0), en caso de que ese segundo siguiente + 2 se pase de la longitud de la lista entonces renderizamos el segundo de la lista (posición 1), si no se cumple ninguna de estas condiciones entonces renderizamos ese segundo siguiente (counter + 2)  */
+                            memberComponents[counter+2 > memberComponents.length ? 1 : counter+2 === memberComponents.length ? 0 : counter+2]}
+                        </> :
+                        MediaQueryMobile400() ?
+                        <> 
+                            {memberComponents[counter]}
+                            {/*En la siguiente línea preguntamos si el siguiente item tendrá la longitud de memberComponents, en caso de ser el último item de la lista, entonces habrá que renderizar el primer elemento de la lista (posición 0), si no es así entonces renderizamos el siguiente (counter + 1)*/}
+                            {memberComponents[counter+1 === memberComponents.length ? 0 : counter+1]}
+                        </>:
+                        window.matchMedia("(min-width: 0px)").matches ?
+                        <>
+                            {memberComponents[counter]}
+                        </>:
+                        null
+                        }
+                    </div>
+                    {/*Botón que dispara la función de goNext()*/}
+                    <button className="carousel__button" type="button" onClick={() => goNext()}> {">"} </button>
+                </>
+                :
+                <div className="carousel__container">
+                    {
+                        MediaQueryTablet() ?
+                        <>  
+                            <MemberLoader {...{
+                            widthViewBox: 200,
+                            heightViewBox: 150,
+                            contentwidth: 360,
+                            xpositions: [50, 75, 100],
+                            }} />
+                            <MemberLoader {...{
+                            widthViewBox: 200,
+                            heightViewBox: 150,
+                            contentwidth: 360,
+                            xpositions: [50, 75, 100],
+                            }} />
+                            <MemberLoader {...{
+                            widthViewBox: 200,
+                            heightViewBox: 150,
+                            contentwidth: 360,
+                            xpositions: [50, 75, 100],
+                            }} />
+                        </>
+                        : MediaQueryMobile400() ?
+                        <>
+                            <MemberLoader {...{
+                            widthViewBox: 200,
+                            heightViewBox: 150,
+                            contentwidth: 360,
+                            xpositions: [50, 75, 100],
+                            }} />
+                            <MemberLoader {...{
+                            widthViewBox: 200,
+                            heightViewBox: 150,
+                            contentwidth: 360,
+                            xpositions: [50, 75, 100],
+                            }} />
+                        </>    
+                        :
+                        <MemberLoader {...{
+                            widthViewBox: 200,
+                            heightViewBox: 150,
+                            contentwidth: 360,
+                            xpositions: [50, 75, 100],
+                        }} />
+                    }
+                </div>
+            }
             {/*En este punto recorremos de nuevo el array que viene del contexto para poner exactamente esa cantidad de componentes Dots, estos componentes reciben el parámatro active en el cual si coincide el index con el valor del contador actual entonces enviaremos el string "Active" o true*/}
             <div className="dots">
                 { members ? members.map((member, index) => 
@@ -71,10 +129,29 @@ export const Carousel = () => {
                 active={ index === counter && "active" } 
                 key={"Dot-"+index} /> ) 
                 /*En caso de no encotrar ningún elemento aún renderizará lo siguiente*/
-                : <span>...</span>}
+                : MediaQueryTablet() ?
+                <DotLoader {...{
+                    widthViewBox: 200,
+                    heightViewBox: 8,
+                    radius: 1.7,
+                    xpositions: [90, 100, 110]
+                }} /> 
+                : MediaQueryMobile400() ?
+                <DotLoader {...{
+                    widthViewBox: 200,
+                    heightViewBox: 8,
+                    radius: 2.5,
+                    xpositions: [85, 100, 115]
+                }} /> 
+                :
+                <DotLoader {...{
+                    widthViewBox: 200,
+                    heightViewBox: 8,
+                    radius: 4,
+                    xpositions: [85, 100, 115]
+                }} /> 
+            }
             </div>
-            {/*Botón que dispara la función de goNext()*/}
-            <button className="carousel__button" type="button" onClick={() => goNext()}> {">"} </button>
         </div>
         
 
