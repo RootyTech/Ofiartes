@@ -5,8 +5,8 @@ export const MemberLoader = (props) => (
 <ContentLoader 
     speed={2}
     viewBox={`0 0 ${props.widthViewBox} ${props.heightViewBox}`}
-    backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
+    backgroundColor="#d4d4d4"
+    foregroundColor="#bbbbbb"
     {...props}
   >
     <rect x={props.xpositions[0]} y="110" rx="3" ry="3" width="100" height="6" /> 
@@ -19,8 +19,8 @@ export const DotLoader = (props) => (
     <ContentLoader 
         speed={2}
         viewBox={`0 0 ${props.widthViewBox} ${props.heightViewBox}`}
-        backgroundColor="#f3f3f3"
-        foregroundColor="#ecebeb"
+        backgroundColor="#d4d4d4"
+        foregroundColor="#bbbbbb"
         {...props}
     >
         <circle cx={props.xpositions[0]} cy="4" r={props.radius} /> 

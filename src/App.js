@@ -36,16 +36,14 @@ export const App = () => {
             const Galeria = res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
             const Novedades = res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
             const Integrantes = res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
-            const Testimonios = res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
-            setTimeout(()=>{
-                setContenido({
-                    galeria: Galeria,
-                    news: Novedades,
-                    talleres: Talleres,
-                    members: Integrantes,
-                    testimonios: Testimonios
-                })
-            },3000);
+            const Testimonios = res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" ) en 
+            setContenido({
+                galeria: Galeria,
+                news: Novedades,
+                talleres: Talleres,
+                members: Integrantes,
+                testimonios: Testimonios
+            })
 
         })();
     }, []);
