@@ -4,7 +4,7 @@ import { Formulario } from '../components/Formulario';
 export const Voluntario = () => {
     return (
         <>
-            <Formulario>   
+            <Formulario currentForm="voluntario">   
                 <label htmlFor="name">Nombre completo</label>
                 <input type="text" name="name" id="name" 
                 placeholder="Ingrese su nombre completo" title="El nombre solo acepta letras y espacio en blanco"
