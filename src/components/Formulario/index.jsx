@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 
 export const Formulario = (props) => {
     import ('./estilos.sass');//importo estilos
@@ -45,12 +45,74 @@ export const Formulario = (props) => {
             })
         })
         
-    },[])    
+    },[])
+
+    const Form = useRef(null);
+
+    const Submit = async (event) => {
+        event.preventDefault();
+
+        // console.log(Form.current.children);
+        let content = {};
+        let subject = '';
+        
+        if ( props.currentForm === 'voluntario' ) {
+            content = {
+                title: "NUEVO VOLUNTARIO",
+                name: Form.current.children[1].value,
+                id: Form.current.children[4].value,
+                email_user: Form.current.children[7].value,
+                phone: Form.current.children[10].value,
+            };
+            subject = "NUEVO VOLUNTARIO";
+        } else if ( props.currentForm === 'empresas' ) {
+            content = {
+                title: "NUEVA EMPRESA",
+                name: Form.current.children[1].value,
+                id: Form.current.children[4].value,
+                email_user: Form.current.children[7].value,
+                phone: Form.current.children[10].value,
+            };
+            subject = "NUEVA EMPRESA";
+        } else if ( props.currentForm === 'beneficiario' ) {
+
+            let disability_check = Form.current.children[12].children[1].children[1].checked ? "SI" : "NO";
+
+            content = {
+                title: "NUEVO BENEFICIARIO",
+                name: Form.current.children[1].value,
+                id: Form.current.children[4].value,
+                email_user: Form.current.children[7].value,
+                phone: Form.current.children[10].value,
+                disability: disability_check
+            };
+            subject = "NUEVO BENEFICIARIO";
+        }
+
+        const Body = {
+            email: process.env.EMAIL,
+            password: process.env.PASSW,
+            addressee: process.env.EMAIL,
+            subjectContent: subject,
+            content
+        }
+
+        const response = await fetch('https://send-email-brown.vercel.app/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(Body)
+        })
+
+        const data = await response.json();
+        console.log(data);
+    }
 
     return (
         <>
             <h2>Envianos tus datos</h2>
-            <form className="form" action="https://formsubmit.co/daniijuradob@gmail.com" method="POST" target="_blank">
+            <form onSubmit={(e) => Submit(e)} className="form" ref={Form}>
                 {props.children}
                 <input type="submit" value="Envíar" />
             </form>
