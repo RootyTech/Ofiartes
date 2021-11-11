@@ -17,7 +17,7 @@ export const Voluntario = () => {
                 <label htmlFor="email">Correo electronico</label>
                 <input type="email" name="email" id="email" 
                 placeholder="Ingrese su correo" title="El correo es incorrecto"
-                required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"/>  
+                required pattern="^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"/>  
                     
                 <label htmlFor="tel">Teléfono de contacto</label>
                 <input type="number" name="tel" id="tel" 

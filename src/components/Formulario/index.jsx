@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useRef } from 'react';
+import spinning_circles from '../../assets/spinning_circles.svg';
 
 export const Formulario = (props) => {
-    import ('./estilos.sass');//importo estilos
+    import ('./estilos.sass');//importo estilos spinning_circles.svg
 //////////variables que inican con '$' se refieren a elementos del dom/////////
     console.log("desde formulario");
     
@@ -10,7 +11,6 @@ export const Formulario = (props) => {
         const d = document;
         const $form = d.querySelector('.form'),
         $inputs = d.querySelectorAll('.form [required]');//solo se traen los campos requeidos del form
-        console.log($inputs);
         $inputs.forEach(input =>{//a cada input se le inserta un <spam> para mostrar el error de la validación
             const $span = d.createElement("span");
             $span.id = input.name+"_s";
@@ -20,23 +20,16 @@ export const Formulario = (props) => {
         });
         $inputs.forEach((input) =>{
             input.addEventListener("keyup", e => {
-                console.log("entra al evento");
-                console.log(input);
                 let $input = e.target,
                 pattern = $input.pattern || $input.dataset.pattern; //los data atribute se almacenan en dataset
-                //console.log($input, pattern);
                 if(pattern && $input.value !== "") {//cumple la exp regular y no este vacio el campo
-                    //console.log("tiene patron");
                     let regex = new RegExp(pattern), 
                     spamId = $input.name+"_s";//los spam tiene el mismo id de su imput pero con un '_s'
-                    console.log(spamId);
-                    //console.log(!regex.exec($input.value));
                     return !regex.exec($input.value)// exec() busca coincidencias de la exp regular en una cadena
                         ? d.getElementById(spamId).classList.add('is-active')
                         : d.getElementById(spamId).classList.remove('is-active')
                 }
                 if(!pattern) {//si el campo no tiene patron se valida que no este vacio
-                    console.log("no tiene patron");
                     let spamId = $input.name+"_s";
                     return $input.value === ""
                         ? d.getElementById(spamId).classList.add('is-active')
@@ -44,7 +37,6 @@ export const Formulario = (props) => {
                 }
             })
         })
-        
     },[])
 
     const Form = useRef(null);
@@ -52,7 +44,7 @@ export const Formulario = (props) => {
     const Submit = async (event) => {
         event.preventDefault();
 
-        // console.log(Form.current.children);
+        //console.log(Form.current.children);
         let content = {};
         let subject = '';
         
@@ -107,6 +99,7 @@ export const Formulario = (props) => {
 
         const data = await response.json();
         console.log(data);
+        
     }
 
     return (
@@ -115,6 +108,12 @@ export const Formulario = (props) => {
             <form onSubmit={(e) => Submit(e)} className="form" ref={Form}>
                 {props.children}
                 <input type="submit" value="Envíar" />
+                <div className="form-loader none">
+                    <img src={spinning_circles} alt="loader"/>
+                </div>
+                <div className="form-response none">
+                    <p>Los datos han sido enviados</p>
+                </div>
             </form>
         </>
     )
