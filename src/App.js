@@ -12,6 +12,7 @@ import { Novedades } from './components/Novedades';
 import { QueComo } from './components/QueComo';
 import { Talleres } from './components/Talleres';
 import { Testimonios } from './components/Testimonios';
+import { TarjetaCursos } from './components/TarjetaCursos';
 import { Unirse } from './components/Unirse';
 import { Beneficiario } from './pages/Beneficiario';
 import { Voluntario } from './pages/Voluntario';
@@ -63,7 +64,8 @@ export const App = () => {
                     <Route exact path="/mision_vision" component={MisionVision} />
                     <Route exact path="/novedades" component={Novedades} />
                     <Route exact path="/que_como" component={QueComo} />
-                    <Route exact path="/talleres" component={Talleres} />         
+                    <Route exact path="/talleres" component={Talleres} />   
+                    <Route exact path="/tarjeta_cursos" component={ TarjetaCursos} />         
                     <Route exact path="/unirse" component={Unirse} />                  
                     <Route exact path="/beneficiarios" component={Beneficiario} />                  
                     <Route exact path="/voluntarios" component={Voluntario} />                  
