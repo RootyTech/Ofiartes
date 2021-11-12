@@ -1,10 +1,11 @@
 .btn
-    padding: 0px 8px
+    padding: 0px 16px
     height: 2.813rem
     text-align: center
     font-family: $secundaria
     @extend %mobile_contenido_subtitulos
     border-radius: 0.625rem
+    cursor: pointer
 
     &-text-white
         color: $blanco
@@ -40,3 +41,8 @@
             border: 0.188rem solid $blanco
         &-black
             border: 0.188rem solid $gris_negro
+            &:hover
+                background: $gris_negro
+                color: $blanco
+                box-shadow: 0 4px 16px rgba(65, 65, 65, 1)
+                transition: all 0.2s ease

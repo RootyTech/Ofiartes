@@ -1,75 +1,66 @@
+.animate__animated.animate__flipInY
+    --animate-duration: 2s
+    visibility: visible
 .aboutUs
     width: 100vw
     &__container
-        padding: 32px
+        display: flex
+        padding: 0 20px
         h3
-            display: inline
-            padding-left: 5%
-            vertical-align: middle
             @extend %mobile_contenido_subtitulos
             font-family: $secundaria
             font-style: normal
             line-height: 24px
         p
             margin-top: 10px
-            padding-left: calc(22px + 5%)
-            text-align: justify
             @extend %mobile_contenido_parrafo
             font-family: $secundaria
             font-style: normal
             line-height: 22px
-        svg
-            position: relative
-            vertical-align: middle
-            z-index: 2
         &--white
             background: $blanco
             h3
-                color: $gris-negro
-            svg
-                path
-                    fill: $azul
+                color: $gris_negro
             p
-                color: $gris-oscuro
+                color: $gris_oscuro
         &--black
             background: $gris_negro
             h3
                 color: $blanco
-            svg
-                path
-                    fill: $amarillo
             p
-                color: $gris-blanco
-    &__verticalLine 
-        // PRIMERA VERSIÓN DE LA LÍNEA PARA MOBILE
-        // FALTA MIRAR COMO HACERLA RESPONSIVE
-        position: absolute
-        top: 2.688rem
-        left: 2.688rem
-        height: calc(100vw - 20vw)
-        border: 1px solid $gris-claro
-        z-index: 1
+                color: $gris_blanco
+    &__figure
+        width: 1.5rem
+        height: 1.5rem
+    &__img
+        width: 100%
+        height: 100%
+    &__puzzle
+        display: flex
+        flex-direction: column
+        align-items: center
+        visibility: hidden //Lo usamos para la animación de las piezas
+        &--larger
+            width: 0.5px
+            background-color: $gris_claro
+        &--largerOne
+            height: 79.4%
+        &--largerTwo
+            height: 0
+        &--none
+            background-color: transparent
+        &--margin
+            width: 0.5px
+            margin-top: 23px
+            background-color: $gris_claro
+        &--height
+            width: 0.5px
+            height: 23px
+            background-color: $gris_claro
+    &__text
+        padding: 20px
     &__containerSecundary
         display: flex
         justify-content: center
         align-items: center
-        padding: 20px
-    &__btn
-        width: 150px
-        box-sizing: border-box
-        border-radius: 10px
-        @extend %mobile_contenido_subtitulos
-        text-align: center // Lo utilicé para centrar el ancla horizontalmente
-        text-decoration: none
-        font-family: $secundaria
-        font-style: normal
-        line-height: 45px // Lo utilicé para centrar el ancla verticalmente
-        &--gris
-            background: #fff
-            color: $gris-negro
-            border: 3px solid $gris-negro
-            &:hover
-                background: $gris-negro
-                color: $blanco
-                box-shadow: 0 4px 16px rgba(65, 65, 65, 1)
-                transition: all 0.3s ease
+        margin-top: 20px
