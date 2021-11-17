@@ -19,6 +19,8 @@ import { Voluntario } from './pages/Voluntario';
 import { Empresa } from './pages/Empresas';
 import { NotFound } from './pages/NotFound';
 
+/** Estilos globales */
+import './global.sass';
 
 /** Contentful */
 import { client } from './client';
