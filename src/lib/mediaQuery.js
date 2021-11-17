@@ -9,3 +9,11 @@ export const MediaQueryDesktop = () => {
 export const MediaQueryMobile400 = ()=>{
     return window.outerWidth >= 400;
 }
+
+export const MediaQueryDesktopL = ()=> {
+    return window.outerWidth >= 1419;
+}
+
+export const MediaQueryMobile365 = () => {
+    return window.outerWidth >= 365;
+}

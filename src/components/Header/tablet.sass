@@ -1,0 +1,46 @@
+@media screen and ( min-width: 768px ) and ( max-width: 1023px ) // MediaQuery para los dispositivos Tablet
+    .header
+        &__main
+            object-fit: cover
+            background-image: url('../../assets/Img_Header.jpg')
+            background-position: center
+        &__template
+            height: 94px
+            margin-top: 3.75rem
+            background-image: url('../../assets/Template.png')
+            background-repeat: repeat-x
+        &__menu
+            margin: 0.625rem 0 0 0.625rem
+        &__logo
+            margin: 1.25rem 1.25rem 0 0
+            a
+                figure
+                    width: 5rem
+                    height: 5rem
+                    img
+                        width: 80px
+                        height: 80px
+                        &:hover
+                            border-radius: 15px
+                            box-shadow: 0 4px 16px $negro
+                            transition: all 0.2s ease
+        &__bottom
+            margin-top: 3.125rem
+            h1
+                margin: 0 20%
+                font-size: 40px
+                font-weight: 700
+                line-height: 50px
+            &--buttons
+                margin-top: 3.125rem
+                a
+                    button
+                        width: 350px
+                        font-size: 24px
+                        font-weight: 600
+                        line-height: 33px
+            &--paragraph
+                margin-top: 3.125rem
+                font-size: 24px
+                font-weight: 400
+                line-height: 33px
