@@ -36,7 +36,7 @@ module.exports = {
                         // Variables
                         loader: 'sass-resources-loader',
                         options: {
-                            resources: './src/global.sass'
+                            resources: './src/variables.sass'
                         }
                     }
                 ]
