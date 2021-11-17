@@ -1,19 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import { Carousel } from './Carousel';
-import { MediaQueryMobile400, MediaQueryTablet } from '../../lib/mediaQuery';
+import { MediaQueryMobile365, MediaQueryTablet, MediaQueryDesktop } from '../../lib/mediaQuery';
 
 export const EquipoTrabajo = () => {
     import('./estilos.sass');
     {/*Preguntamos si el tamaño supera los 400 px, si es así entonces importamos los estilos que contienen ese media Query*/}
-    MediaQueryMobile400() && import('./mobile400.sass');
+    MediaQueryMobile365() && import('./mobile365.sass');
+    MediaQueryTablet() && import('./tablet.sass');
+    MediaQueryDesktop() && import('./desktop.sass');
+
     {/*Usaremos el useState para que todo se vuelva a renderizar cuando la variable cambie de valor, en el momento en el que se renderize de nuevo se renderizará de acuerdo al tamaño que tenga*/}
     const [widthSize, setWidthSize] = useState("Mobile");
     const ResizeWorkTeam = () => {
         // MediaQueryTablet() -> True si se pasa de 768px
         if (MediaQueryTablet()) {
             setWidthSize("Tablet");
-        } else if(MediaQueryMobile400()) {// MediaQueryMobile400() -> True si se pasa de 400px
-            setWidthSize("Mobile400");
+        } else if(MediaQueryMobile365()) {// MediaQueryMobile400() -> True si se pasa de 400px
+            setWidthSize("Mobile365");
         } else {
             setWidthSize("Mobile")
         }
