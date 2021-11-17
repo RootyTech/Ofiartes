@@ -4,13 +4,13 @@ import { context } from '../../context';
 import { LoaderGalery } from './Skeleton';
 
 export const Galeria = () => {
+    /************Imporación de estilos y media queries**************/
     import ('./estilos.sass');
-    //MediaQueryTablet() && import('./desktop.sass');
-
+    MediaQueryTablet() && import('./desktop.sass');
+    /************Uso del context***********/
     const { galeria } = useContext(context);
-
-    console.log(galeria);
-    /**Estructura objeto galeria []
+    //console.log(galeria);
+    /**Estructura array galeria []
      * 0:
      *  fields:
      *      image:
@@ -41,35 +41,35 @@ export const Galeria = () => {
                             </div>
                         ))
                     : MediaQueryDesktop() ?
-                    <LoaderGalery {...{
-                        width: 1024,
-                        height: 600,
-                        values: {
-                            width:250,
-                            height:192,
-                            xposition:250,
-                        },
-                    }} />
+                        <LoaderGalery {...{
+                            width: 1024,
+                            height: 600,
+                            values: {
+                                width:250,
+                                height:192,
+                                xposition:250,
+                            },
+                        }} />
                     : MediaQueryTablet() ?
-                    <LoaderGalery {...{
-                        width: 758,
-                        height: 600,
-                        values: {
-                            width:168,
-                            height:192,
-                            xposition:50,
-                        },
-                    }} />
+                        <LoaderGalery {...{
+                            width: 758,
+                            height: 600,
+                            values: {
+                                width:168,
+                                height:192,
+                                xposition:50,
+                            },
+                        }} />
                     :
-                    <LoaderGalery {...{
-                        width: 320,
-                        height: 600,
-                        values: {
-                            width:104,
-                            height:192,
-                            xposition:0,
-                        },
-                    }} />
+                        <LoaderGalery {...{
+                            width: 320,
+                            height: 600,
+                            values: {
+                                width:104,
+                                height:192,
+                                xposition:0,
+                            },
+                        }} />
                 }
             </section>
         </section>

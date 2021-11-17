@@ -1,14 +1,18 @@
 .galery
+    margin: 2rem 0
     h1
-        text-align: center
-        font-family: $principal
+        color: $gris_negro
         @extend %mobile_contenido_titulo_secciones
-    .galery__pics
-        margin: 2rem 0
+        font-family: $principal
+        text-align: center
+    &__pics
         display: grid
         grid-template-columns: repeat(3, 1fr)
-        grid-template-rows: repeat(3, minmax(8rem, 10rem))
-        gap: 6px
+        grid-auto-rows: 8rem
+        gap: 5px
+        width: 90%
+        max-width: 75rem
+        margin: 2rem auto
         .galery__pics--item
             position: relative
             img
@@ -16,22 +20,19 @@
                 height: 100%
                 object-fit: cover
             div
-                opacity: 0
-                background-color: #16161679
+                display: flex
+                justify-content: center
+                align-items: center
                 position: absolute
                 top: 0
                 bottom: 0
                 left: 0
                 right: 0
-                display: flex
-                justify-content: center
-                align-items: center
-                font-family: $secundaria
-                @extend %mobile_contenido_light
+                background-color: #3678997c
+                opacity: 0
                 color: #FFFF
+                @extend %mobile_contenido_light
+                font-family: $secundaria
             div:hover
                 opacity: 1
                 cursor: pointer
-@media screen and ( min-width: $tablet )
-    .galery__pics
-        padding: 0 10rem
