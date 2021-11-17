@@ -3,13 +3,16 @@ h2
     color: #000
     letter-spacing: 1px
     text-align: center
-    @extend %mobile_contenido_titulo_hero
+    @extend %mobile_contenido_titulo_secciones
     padding: 2rem 0
 .form
     display: flex
     flex-direction: column
     font-family: $secundaria
-    padding: 0 2rem
+    width: 85%
+    max-width: 50rem
+    margin: auto
+    //padding: 0 2rem
     label
         @extend %mobile_contenido_titulo
         margin:10px 0
@@ -59,6 +62,7 @@ h2
     @extend %mobile_contenido_light
     transition: all 800ms ease
 .form-error.is-active 
+    text-align: center
     display: block
     animation: show-message 1s 1 normal 0s ease-in-out both
 .none

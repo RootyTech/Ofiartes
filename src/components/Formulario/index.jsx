@@ -1,8 +1,10 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import spinning_circles from '../../assets/spinning_circles.svg';
+import { MediaQueryTablet } from '../../lib/mediaQuery';
 
 export const Formulario = (props) => {
     import ('./estilos.sass');//importo estilos spinning_circles.svg
+    MediaQueryTablet() && import('./desktop.sass');
 //////////variables que inican con '$' se refieren a elementos del dom/////////
     console.log("desde formulario");
     
@@ -39,12 +41,14 @@ export const Formulario = (props) => {
         })
     },[])
 
-    const Form = useRef(null);
+    const Form = useRef(null), Form_loader = useRef(null),
+    Msj_confirm = useRef(null), Button = useRef(null);
 
     const Submit = async (event) => {
         event.preventDefault();
-
-        //console.log(Form.current.children);
+        //console.log(Form);
+        Form_loader.current.classList.remove("none");
+        Button.current.classList.add("none");
         let content = {};
         let subject = '';
         
@@ -99,6 +103,12 @@ export const Formulario = (props) => {
 
         const data = await response.json();
         console.log(data);
+        Form_loader.current.classList.add("none");
+        Button.current.classList.remove("none");
+        Msj_confirm.current.classList.remove("none");            
+        setTimeout(() => {
+            Msj_confirm.current.classList.add("none");            
+        }, 3000);
         
     }
 
@@ -107,11 +117,11 @@ export const Formulario = (props) => {
             <h2>Envianos tus datos</h2>
             <form onSubmit={(e) => Submit(e)} className="form" ref={Form}>
                 {props.children}
-                <input type="submit" value="Envíar" />
-                <div className="form-loader none">
+                <input type="submit" value="Envíar" ref={Button} />
+                <div className="form-loader none" ref={Form_loader}>
                     <img src={spinning_circles} alt="loader"/>
                 </div>
-                <div className="form-response none">
+                <div className="form-response none" ref={Msj_confirm}>
                     <p>Los datos han sido enviados</p>
                 </div>
             </form>
