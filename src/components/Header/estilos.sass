@@ -1,6 +1,11 @@
 .header
+    &__main
+        object-fit: cover
+        background-image: url('../../assets/Img_Header.jpg')
+        background-position: center
     &__template
-        height: 470px
+        height: 99px
+        margin-top: 2.5rem
         background-image: url('../../assets/Template.png')
         background-repeat: repeat-x
     &__top
@@ -16,7 +21,6 @@
             display: inline-block
             width: 40px
             height: 30px
-            // z-index: 2
             span
                 position: absolute
                 width: 100%
@@ -44,7 +48,7 @@
     &__bottom
         display: flex
         flex-direction: column
-        margin-top: 2.5rem
+        margin-top: 1.875rem
         h1
             margin: 0 10%
             color: $blanco
@@ -57,14 +61,14 @@
             display: flex
             flex-direction: column
             align-items: center
-            margin-top: 2.5rem
+            margin-top: 1.875rem
             a
                 font-style: normal
                 line-height: 25px
                 button
                     width: 250px
         &--paragraph
-            margin-top: 2.5rem
+            margin-top: 1.875rem
             padding: 0 15%
             color: $blanco
             @extend %mobile_contenido_parrafo
@@ -76,10 +80,3 @@
 @keyframes pulse
     0%
         box-shadow: 0 0 0 0 $blanco
-
-    // AÚN NO SÉ COMO PONER LA IMAGEN DE FONDO EN EL HEADER QUE VAYA CRECIENDO CON
-    // LA FORMA DE LAS PIEZAS DEL ROMPECABEZAS
-    // &__img
-    //     height: 470px
-    //     background-image: url('../../assets/h.png')
-    //     background-repeat: repeat-x
