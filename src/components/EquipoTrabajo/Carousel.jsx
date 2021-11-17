@@ -3,7 +3,7 @@ import { context } from '../../context';
 import { Member } from './Member';
 import { Dot } from './Dot';
 import { MemberLoader, DotLoader } from './Skeleton';
-import { MediaQueryMobile400, MediaQueryTablet } from '../../lib/mediaQuery';
+import { MediaQueryMobile365, MediaQueryTablet } from '../../lib/mediaQuery';
 
 export const Carousel = () => {
     {/*Creamos el estado para la variable counter la cual llevará la cuenta del item/miembro del carousel en el que estemos*/}
@@ -54,7 +54,7 @@ export const Carousel = () => {
                             {/*En este punto la lógica cambia debido a que preguntamos por el segundo siguiente (counter +2), si ese segundo siguiente + 2 tiene exactamente la longitud de la lista entonces renderizaremos en este punto el primero de la lista (posición 0), en caso de que ese segundo siguiente + 2 se pase de la longitud de la lista entonces renderizamos el segundo de la lista (posición 1), si no se cumple ninguna de estas condiciones entonces renderizamos ese segundo siguiente (counter + 2)  */
                             memberComponents[counter+2 > memberComponents.length ? 1 : counter+2 === memberComponents.length ? 0 : counter+2]}
                         </> :
-                        MediaQueryMobile400() ?
+                        MediaQueryMobile365() ?
                         <> 
                             {memberComponents[counter]}
                             {/*En la siguiente línea preguntamos si el siguiente item tendrá la longitud de memberComponents, en caso de ser el último item de la lista, entonces habrá que renderizar el primer elemento de la lista (posición 0), si no es así entonces renderizamos el siguiente (counter + 1)*/}
@@ -94,7 +94,7 @@ export const Carousel = () => {
                             xpositions: [50, 75, 100],
                             }} />
                         </>
-                        : MediaQueryMobile400() ?
+                        : MediaQueryMobile365() ?
                         <>
                             <MemberLoader {...{
                             widthviewbox: 200,
@@ -136,7 +136,7 @@ export const Carousel = () => {
                     radius: 1.7,
                     xpositions: [90, 100, 110]
                 }} /> 
-                : MediaQueryMobile400() ?
+                : MediaQueryMobile365() ?
                 <DotLoader {...{
                     widthviewbox: 200,
                     heightviewbox: 8,

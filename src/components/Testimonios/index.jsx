@@ -1,5 +1,7 @@
 /** React y React Hooks */
 import React, { useContext, useEffect, useState, useReducer, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 /** CONTEXTO */
 import { context } from '../../context';
 
@@ -157,7 +159,9 @@ export const Testimonios = () => {
                 }
             </div>
             <div className="testimonios__button">
+            <Link to="/voluntarios">
                 <ButtonBorder border="black" color="black" content="¿Quieres ser voluntario?" />
+            </Link>
             </div>
         </section>
     );
