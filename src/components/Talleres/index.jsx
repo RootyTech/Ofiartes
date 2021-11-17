@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { FaRegClock } from 'react-icons/fa'
+import { FaRegClock } from 'react-icons/fa';
 import { context } from '../../context';
 import './estilos.sass';
 import {ButtonBorder} from '../commons/Buttons'
@@ -80,7 +80,9 @@ export const Talleres = () => {
                                 <i><FaRegClock/></i>
                                 <p>{talleres.fields.duration}</p>
                             </div>
+                            <div className="content_button">
                                 <ButtonBorder border="black" color="black"content="Saber más"/>
+                            </div>
                         </details>
                         <img src={`${imagen(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagen(`${talleres.fields.type}`).alt}`} />
                     </div>

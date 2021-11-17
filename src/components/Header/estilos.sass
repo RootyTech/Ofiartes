@@ -1,0 +1,85 @@
+.header
+    &__template
+        height: 470px
+        background-image: url('../../assets/Template.png')
+        background-repeat: repeat-x
+    &__top
+        display: flex
+        justify-content: space-between
+    &__menu
+        display: flex
+        align-items: center
+        margin: 0.313rem 0 0 0.313rem
+        padding: 0 22.5px
+        &--on
+            position: relative
+            display: inline-block
+            width: 40px
+            height: 30px
+            // z-index: 2
+            span
+                position: absolute
+                width: 100%
+                height: 4px
+                background: $blanco
+                border-radius: 10px
+                &:nth-child(2)
+                    top: calc(50% - 2px)
+                &:nth-child(3)
+                    bottom: 0
+            &:hover
+                box-shadow: 0 0 0 2em rgba(255, 255, 255, 0)
+                animation: pulse 1s
+    &__logo
+        margin: 0.938rem 0.938rem 0 0
+        a
+            figure
+                width: 4.375rem
+                height: 4.375rem
+                img
+                    &:hover
+                        border-radius: 15px
+                        box-shadow: 0 4px 16px $negro
+                        transition: all 0.2s ease
+    &__bottom
+        display: flex
+        flex-direction: column
+        margin-top: 2.5rem
+        h1
+            margin: 0 10%
+            color: $blanco
+            @extend %mobile_contenido_titulo_hero
+            font-family: $principal
+            font-style: normal
+            line-height: 30px
+            text-align: center
+        &--buttons
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-top: 2.5rem
+            a
+                font-style: normal
+                line-height: 25px
+                button
+                    width: 250px
+        &--paragraph
+            margin-top: 2.5rem
+            padding: 0 15%
+            color: $blanco
+            @extend %mobile_contenido_parrafo
+            font-family: $secundaria
+            font-style: normal
+            line-height: 22px
+            text-align: center
+
+@keyframes pulse
+    0%
+        box-shadow: 0 0 0 0 $blanco
+
+    // AÚN NO SÉ COMO PONER LA IMAGEN DE FONDO EN EL HEADER QUE VAYA CRECIENDO CON
+    // LA FORMA DE LAS PIEZAS DEL ROMPECABEZAS
+    // &__img
+    //     height: 470px
+    //     background-image: url('../../assets/h.png')
+    //     background-repeat: repeat-x
