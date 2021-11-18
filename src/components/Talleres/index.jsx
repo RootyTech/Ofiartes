@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useLayoutEffect} from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa';
 import { context } from '../../context';
@@ -8,6 +8,8 @@ import {ButtonBorder} from '../commons/Buttons'
 //importación de imágenes
 import img_Etiqueta_E from '../../assets/Etiqueta_E.svg';
 import img_Etiqueta_F from '../../assets/Etiqueta_F.svg';
+import img_Etiqueta_Roja from '../../assets/Etiqueta_empresarial_roja.svg';
+import img_Etiqueta_Azul from '../../assets/Etiqueta_formación_azul.svg';
 
 export const Talleres = () => {
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
@@ -49,8 +51,44 @@ export const Talleres = () => {
             etiqueta,
             alt
         };   
-    }
-    
+    };
+    function imagenDos(tipo){
+        let etiqueta = "";
+        let alt = "";
+        if(tipo == 'Empresarial'){
+            etiqueta = img_Etiqueta_Roja
+            alt = "taller empresarial"
+        }
+        else{
+            etiqueta = img_Etiqueta_Azul
+            alt = "taller de formación"
+        }
+        return {
+            etiqueta,
+            alt
+        };   
+    };
+    let $colorClase = "";
+    const handlerClick = (evento, img)=>{
+        const $summary = evento.target.parentElement;
+        const $summary_child = evento.target.parentElement.children[1]; 
+        const $padre_child = evento.target.parentElement.parentElement.parentElement.children
+        const $padre = evento.target.parentElement.parentElement.parentElement
+        if(evento.target.nodeName === "P"){
+            if(!evento.target.parentElement.parentElement.open){
+                $colorClase = $padre.classList[1];
+                $summary.style.setProperty("background-image", `linear-gradient(rgba(54, 120, 153, 0.39),rgba(54, 120, 153, 0.39)), url(${img})`);
+                $padre_child[1].style.setProperty("display","none");
+                $summary_child.style.setProperty("display","block");
+                $padre.classList.remove($colorClase);
+            }else{
+                $summary.style.setProperty("background-image", "none");
+                $padre_child[1].style.setProperty("display","block");
+                $summary_child.style.setProperty("display","none");
+                $padre.classList.add($colorClase);
+            }
+        }
+    };
     return (
         <>
         <div className="search">
@@ -74,7 +112,10 @@ export const Talleres = () => {
                 talleres.map((talleres,index) => (
                     <div className= {`cards__taller ${colores()}`}  key= {`taller-${index}`}>
                         <details className="card">
-                            <summary>{talleres.fields.title}</summary>
+                            <summary>
+                                <p className="evento" onClick={(evento)=> handlerClick(evento,talleres.fields.image.fields.file.url)}>{talleres.fields.title}</p>
+                                <img src={`${imagenDos(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagenDos(`${talleres.fields.type}`).alt}`} style={{display:"none"}}/>
+                            </summary>
                             <p>{talleres.fields.description}</p>
                             <div className="icon__clock">
                                 <i><FaRegClock/></i>

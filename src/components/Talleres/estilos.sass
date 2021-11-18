@@ -48,13 +48,13 @@
     padding: 20px
     margin: 10px 0px 10px
     .card summary
+        list-style: none
+    .card summary .evento
         font-family: $secundaria
         font-size: 16px
         font-weight: 600
-        list-style: none
-        /*summary::-webkit-details-marker
-            color: $verde
-            background-color: #000*/
+    .card summary img
+        margin-top: 20px
     .card p
         margin: 10px 
         font-family: $secundaria
@@ -81,4 +81,10 @@
 .amarillo
     border-left: $amarillo solid 8px
 
-
+.card[open] summary
+    padding:20px 10px
+    height: 75px
+    background-position: center
+    background-size: cover
+    color: $blanco
+    backdrop-filter: blur(2px) 
