@@ -1,4 +1,5 @@
-import React, { useContext, useLayoutEffect} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import ContentLoader from "react-content-loader"
 import { FaSearch } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa';
 import { context } from '../../context';
@@ -13,6 +14,26 @@ import img_Etiqueta_Azul from '../../assets/Etiqueta_formación_azul.svg';
 
 export const Talleres = () => {
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
+
+    /*
+    function searchingTerm(term){
+        return function(x){
+            return x.fields.title
+        }
+    };*/
+    const [data,setData] = useState(); //data contiene todos los datos de talleres
+    const [term, setTerm] = useState("");
+    //const [loading,setloading] = useState(true);
+
+    /*useEffect(()=>{
+        setData(talleres);
+    },[talleres]); //va a mirar talleres cuando haya un cambio que me actualice la tabla
+    */
+    /*useEffect(()=>{
+        setTimeout(()=>{
+        },3000)
+    },[]);*/
+    
     let et = "";
     let puntero = 0;
     function colores(){
@@ -70,29 +91,28 @@ export const Talleres = () => {
     };
     let $colorClase = "";
     const handlerClick = (evento, img)=>{
-        const $summary = evento.target.parentElement;
-        const $summary_child = evento.target.parentElement.children[1]; 
-        const $padre_child = evento.target.parentElement.parentElement.parentElement.children
-        const $padre = evento.target.parentElement.parentElement.parentElement
-        if(evento.target.nodeName === "P"){
-            if(!evento.target.parentElement.parentElement.open){
+        const $summary = evento.target.children[0];
+        const $summary_child = evento.target.children[0].children[0]; //img background
+        const $padre_child = evento.target.parentElement.children[1]; //img redonda
+        const $padre = evento.target.parentElement; //div
+        
+            if(evento.target.open){
                 $colorClase = $padre.classList[1];
                 $summary.style.setProperty("background-image", `linear-gradient(rgba(54, 120, 153, 0.39),rgba(54, 120, 153, 0.39)), url(${img})`);
-                $padre_child[1].style.setProperty("display","none");
+                $padre_child.style.setProperty("display","none");
                 $summary_child.style.setProperty("display","block");
                 $padre.classList.remove($colorClase);
             }else{
                 $summary.style.setProperty("background-image", "none");
-                $padre_child[1].style.setProperty("display","block");
+                $padre_child.style.setProperty("display","block");
                 $summary_child.style.setProperty("display","none");
                 $padre.classList.add($colorClase);
             }
-        }
     };
     return (
         <>
         <div className="search">
-            <input type="text" className="search__input" placeholder="Buscar un curso" />
+            <input type="text" className="search__input" placeholder="Buscar un curso"  onChange={(e)=>setTerm(e.target.value)}/>
             <button><FaSearch/></button>
         </div>
         <div className="labels">
@@ -107,13 +127,13 @@ export const Talleres = () => {
         </div>
         {console.log(talleres)}
         <section className="details__talleres">
-            {
+            { 
                 talleres ?
                 talleres.map((talleres,index) => (
                     <div className= {`cards__taller ${colores()}`}  key= {`taller-${index}`}>
-                        <details className="card">
+                        <details className="card" onToggle={(evento)=> handlerClick(evento,talleres.fields.image.fields.file.url)}>
                             <summary>
-                                <p className="evento" onClick={(evento)=> handlerClick(evento,talleres.fields.image.fields.file.url)}>{talleres.fields.title}</p>
+                                {talleres.fields.title}
                                 <img src={`${imagenDos(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagenDos(`${talleres.fields.type}`).alt}`} style={{display:"none"}}/>
                             </summary>
                             <p>{talleres.fields.description}</p>
@@ -127,8 +147,8 @@ export const Talleres = () => {
                         </details>
                         <img src={`${imagen(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagen(`${talleres.fields.type}`).alt}`} />
                     </div>
-                ))
-                :<h2>Loading...</h2>
+                )) 
+                : <h2>Loaging...</h2>                    
             }
         </section>
         </>
