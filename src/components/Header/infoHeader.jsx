@@ -1,14 +1,31 @@
+/** LIBRERÍAS */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MediaQueryTablet, MediaQueryDesktop } from '../../lib/mediaQuery';
+import { MediaQueryDesktop } from '../../lib/mediaQuery';
 
 /** LOGOTIPO */
 import Logotipo from '../../assets/LogotipoSVG.svg';
 
 /** COMPONENTES */
 import { ButtonFill } from '../commons/Buttons';
+import { openModal } from '../Modal';
 
 export const InfoHeader = (props) => {
+
+    const menuHamburger = document.querySelector('.header__menu--hamburger');
+    const barAnimate = document.querySelector('.bar');
+
+    const animate = () => {
+        console.log("oli");
+        if(barAnimate.classList.contains('bar--animate')){
+            barAnimate.classList.remove('bar--animate')
+            menuHamburger.classList.remove('hamburger--animate')
+        } else {
+            barAnimate.classList.add('bar--animate')
+            menuHamburger.classList.add('hamburger--animate')
+        }
+    }
+
     return (
         <>
             <div className="header__top">
@@ -34,11 +51,9 @@ export const InfoHeader = (props) => {
                         </ul>
                     </nav>
                     :
-                    <Link to="#" className="header__menu--on" replace>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </Link>
+                    <div className="header__menu--hamburger" onClick= {()=> {/*openModal();*/ animate()}}>
+                        <div className="bar"></div>
+                    </div>
                     }
                 </div>
                 <div className="header__logo">

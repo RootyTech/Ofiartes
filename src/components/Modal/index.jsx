@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import('./estilos.sass')
 
-export const openModal = ()=>{
+export const openModal = () => {
     document.getElementById('modal').classList.add('modalShow');
     document.getElementById('modal').classList.remove('modalHide');
     
