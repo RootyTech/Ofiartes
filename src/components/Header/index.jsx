@@ -57,7 +57,7 @@ export const Header = ({nombrePagina, titulo, contenido}) => {
                 </div>
             </header>
 
-            {/* {MediaQueryDesktop() ? <></> : <MenuModal/>} */}
+            {MediaQueryDesktop() ? <></> : <MenuModal/>}
 
             {/* <header className="header">
                 <div className="header__main">

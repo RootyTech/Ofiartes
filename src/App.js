@@ -21,6 +21,7 @@ import { NotFound } from './pages/NotFound';
 
 import { Home } from './pages/Home';
 import { QuienesSomos } from './pages/QuienesSomos';
+import { PagTalleres } from './pages/Talleres';
 
 /** Estilos globales */
 import './global.sass';
@@ -65,6 +66,7 @@ export const App = () => {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/quienes-somos" component={QuienesSomos} />
+                    <Route exact path="/pag-talleres" component={PagTalleres} />
                     <Route exact path="/testimonios" component={Testimonios} />
                     <Route exact path="/equipo_trabajo" component={EquipoTrabajo} />
                     <Route exact path="/footer" component={Footer} />

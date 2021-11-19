@@ -1,10 +1,13 @@
 import React from 'react';
 import { Formulario } from '../components/Formulario';
 
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 export const Beneficiario = () => {
     return (
         <>
+            <Header />
             <Formulario currentForm="beneficiario">   
                 <label htmlFor="name">Nombre completo</label>
                 <input type="text" name="name" id="name" 
@@ -47,6 +50,7 @@ export const Beneficiario = () => {
                     </p>
                 </div>                       
             </Formulario>
+            <Footer />
         </>
         
     )

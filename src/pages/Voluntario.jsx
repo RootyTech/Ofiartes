@@ -1,9 +1,12 @@
 import React from 'react';
 import { Formulario } from '../components/Formulario';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 export const Voluntario = () => {
     return (
         <>
+            <Header />
             <Formulario currentForm="voluntario">   
                 <label htmlFor="name">Nombre completo</label>
                 <input type="text" name="name" id="name" 
@@ -32,6 +35,7 @@ export const Voluntario = () => {
                     </p>
                 </div>                       
             </Formulario>
+            <Footer />
         </>
     )
 }

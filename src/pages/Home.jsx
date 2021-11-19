@@ -15,13 +15,13 @@ export const Home = () => {
 
     return (
         <>
+            <Novedades />
             <Header />
             <QueComo />
             <Unirse />
             <TarjetaCursos />
             <Testimonios />
             <Footer />
-            <Novedades />
         </>
     )
 }
