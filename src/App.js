@@ -19,6 +19,9 @@ import { Voluntario } from './pages/Voluntario';
 import { Empresa } from './pages/Empresas';
 import { NotFound } from './pages/NotFound';
 
+import { Home } from './pages/Home';
+import { QuienesSomos } from './pages/QuienesSomos';
+
 /** Estilos globales */
 import './global.sass';
 
@@ -35,20 +38,23 @@ export const App = () => {
     useEffect(() => { 
         (async () => {
             const res = await client.getEntries();
-            const Talleres = res.items.filter((item) => item.sys.contentType.sys.id === "talleres" )
-            const Galeria = res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
-            const Novedades = res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
-            const Integrantes = res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
-            const Testimonios = res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
+            let Data = {
+                galeria: [],
+                news: [],
+                talleres: [],
+                members: [],
+                testimonios: [],
+            }
 
-            setContenido({
-                galeria: Galeria,
-                news: Novedades,
-                talleres: Talleres,
-                members: Integrantes,
-                testimonios: Testimonios
+            res.items.forEach((item) => {
+                if (item.sys.contentType.sys.id === "talleres") Data.talleres.push(item);
+                if (item.sys.contentType.sys.id === "galeria") Data.galeria.push(item);
+                if (item.sys.contentType.sys.id === "novedades") Data.news.push(item);
+                if (item.sys.contentType.sys.id === "integrantes") Data.members.push(item);
+                if (item.sys.contentType.sys.id === "testimonios") Data.testimonios.push(item);
             })
 
+            setContenido(Data)
         })();
     }, []);
 
@@ -57,6 +63,8 @@ export const App = () => {
             <HashRouter>
                 { /** Lo que cambiará */}
                 <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/quienes-somos" component={QuienesSomos} />
                     <Route exact path="/testimonios" component={Testimonios} />
                     <Route exact path="/equipo_trabajo" component={EquipoTrabajo} />
                     <Route exact path="/footer" component={Footer} />

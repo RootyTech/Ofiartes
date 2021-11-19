@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect} from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa';
 import { context } from '../../context';
@@ -13,6 +13,8 @@ import img_Etiqueta_Azul from '../../assets/Etiqueta_formación_azul.svg';
 
 export const Talleres = () => {
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
+    const [Talleres, setTalleres] = useState([]);
+
     let et = "";
     let puntero = 0;
     function colores(){
@@ -89,10 +91,19 @@ export const Talleres = () => {
             }
         }
     };
+
+    useEffect(() => { if (talleres) {setTalleres([...talleres])}}, [talleres])
+
+    const handlerChange = (event) => {
+        console.log(event.target.value);
+        let talleresMatch = talleres.filter((taller) => taller.fields.title.toLowerCase().includes(event.target.value.toLowerCase()))
+        setTalleres(talleresMatch)
+    }
+
     return (
         <>
         <div className="search">
-            <input type="text" className="search__input" placeholder="Buscar un curso" />
+            <input type="text" className="search__input" placeholder="Buscar un curso" onChange={(e) => handlerChange(e)} />
             <button><FaSearch/></button>
         </div>
         <div className="labels">
@@ -105,11 +116,10 @@ export const Talleres = () => {
                 <p>Talleres de Formación</p>
             </div>
         </div>
-        {console.log(talleres)}
         <section className="details__talleres">
             {
                 talleres ?
-                talleres.map((talleres,index) => (
+                Talleres.map((talleres,index) => (
                     <div className= {`cards__taller ${colores()}`}  key= {`taller-${index}`}>
                         <details className="card">
                             <summary>
