@@ -12,17 +12,13 @@ import { openModal } from '../Modal';
 
 export const InfoHeader = (props) => {
 
-    const menuHamburger = document.querySelector('.header__menu--hamburger');
     const barAnimate = document.querySelector('.bar');
 
     const animate = () => {
-        console.log("oli");
         if(barAnimate.classList.contains('bar--animate')){
             barAnimate.classList.remove('bar--animate')
-            menuHamburger.classList.remove('hamburger--animate')
         } else {
             barAnimate.classList.add('bar--animate')
-            menuHamburger.classList.add('hamburger--animate')
         }
     }
 
@@ -51,7 +47,7 @@ export const InfoHeader = (props) => {
                         </ul>
                     </nav>
                     :
-                    <div className="header__menu--hamburger" onClick= {()=> {/*openModal();*/ animate()}}>
+                    <div className="header__menu--hamburger" onClick= {()=> { openModal(); animate(); setTimeout(animate, 500) }}>
                         <div className="bar"></div>
                     </div>
                     }
