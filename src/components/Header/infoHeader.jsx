@@ -1,5 +1,6 @@
 /** LIBRERÍAS */
-import React from 'react';
+import React, {useContext} from 'react';
+import { context } from '../../context';
 import { Link } from 'react-router-dom';
 import { MediaQueryDesktop } from '../../lib/mediaQuery';
 
@@ -8,11 +9,12 @@ import Logotipo from '../../assets/LogotipoSVG.svg';
 
 /** COMPONENTES */
 import { ButtonFill } from '../commons/Buttons';
-import { openModal } from '../Modal';
+import { openModal, Modal } from '../Modal';
 
 export const InfoHeader = (props) => {
 
     const barAnimate = document.querySelector('.bar');
+    const { modal, setModal } = useContext(context);
 
     const animate = () => {
         if(barAnimate.classList.contains('bar--animate')){
@@ -47,7 +49,7 @@ export const InfoHeader = (props) => {
                         </ul>
                     </nav>
                     :
-                    <div className="header__menu--hamburger" onClick= {()=> { openModal(); animate(); setTimeout(animate, 500) }}>
+                    <div className="header__menu--hamburger" onClick= {()=> { setModal("header");  openModal(); animate(); setTimeout(animate, 500) }}>
                         <div className="bar"></div>
                     </div>
                     }

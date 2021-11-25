@@ -2,6 +2,7 @@ import React, { useContext, useLayoutEffect } from 'react';
 import { MediaQueryDesktop, MediaQueryTablet } from '../../lib/mediaQuery';
 import { context } from '../../context';
 import { LoaderGalery } from './Skeleton';
+import { openModal } from '../Modal';
 
 export const Galeria = () => {
     /************Imporación de estilos y media queries**************/
@@ -9,6 +10,7 @@ export const Galeria = () => {
     MediaQueryTablet() && import('./desktop.sass');
     /************Uso del context***********/
     const { galeria } = useContext(context);
+    const { modal, setModal } = useContext(context);
     //console.log(galeria);
     /**Estructura array galeria []
      * 0:
@@ -37,7 +39,7 @@ export const Galeria = () => {
                         galeria.map((galeria,i) => (
                             <div className="galery__pics--item" key={`image_${i}`}>
                                 <img src={galeria.fields.image.fields.file.url} alt={galeria.fields.image.fields.title} />
-                                <div>{galeria.fields.title}</div>
+                                <div onClick={() => {setModal(galeria.fields.image.fields.file.url); openModal();}}>{galeria.fields.title}</div>
                             </div>
                         ))
                     : MediaQueryDesktop() ?

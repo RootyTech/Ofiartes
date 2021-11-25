@@ -1,5 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
+import { context } from '../../context';
+import { Carousel } from '../Novedades/Carousel';
 import('./estilos.sass')
 
 export const openModal = () => {
@@ -9,7 +12,7 @@ export const openModal = () => {
 }
 
 export const Modal = ({children}) => {
-    
+    const { modal, setModal } = useContext(context);
     const closeModal = ()=>{
         document.getElementById('modal').classList.remove('modalShow');
         document.getElementById('modal').classList.add('modalHide');
@@ -20,7 +23,36 @@ export const Modal = ({children}) => {
     // El Modal retorna un portal que recibe el HTML a renderizar y dónde ( <div id="modal"></div> )
     return ReactDOM.createPortal( 
     <>
-        {children}
+        {
+            modal === "header" ? 
+            <section className="modal">
+                <div className="modal__container">
+                    <nav>
+                        <ul>
+                            <li>
+                                <div></div>
+                                <Link to="#">Inicio</Link>
+                            </li>
+                            <li>
+                                <div></div>
+                                <Link to="#">Talleres</Link>
+                            </li>
+                            <li>
+                                <div></div>
+                                <Link to="#">Quienes Somos</Link>
+                            </li>
+                            <li>
+                                <div></div>
+                                <Link to="#">Contacto</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+            : modal === "novedades" ?
+            <Carousel/>
+            : <img src={modal} alt="imagen :D" />
+        }
         <div className="modal--close" onClick= {()=> { closeModal(); }}>
             <div className="modal__bar"></div>
         </div>

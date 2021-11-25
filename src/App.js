@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route, useRouteMatch } from 'react-router-dom';
 
 /** Componentes */
 import { EquipoTrabajo } from './components/EquipoTrabajo';
@@ -35,6 +35,8 @@ import { context } from './context';
 export const App = () => {
 
     const [ contenido, setContenido ] = useState({});
+    const [ modal, setModal ] = useState("");      
+
 
     useEffect(() => { 
         (async () => {
@@ -60,7 +62,7 @@ export const App = () => {
     }, []);
 
     return (
-        <context.Provider value={contenido}>
+        <context.Provider value={{modal, setModal, ...contenido}}>
             <HashRouter>
                 { /** Lo que cambiará */}
                 <Switch>
