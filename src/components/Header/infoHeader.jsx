@@ -9,7 +9,7 @@ import Logotipo from '../../assets/LogotipoSVG.svg';
 
 /** COMPONENTES */
 import { ButtonFill } from '../commons/Buttons';
-import { openModal, Modal } from '../Modal';
+import { openModal } from '../Modal';
 
 export const InfoHeader = (props) => {
 
@@ -35,27 +35,27 @@ export const InfoHeader = (props) => {
                     <nav className="header__nav">
                         <ul>
                             <li>
-                                <Link to="/home">Inicio</Link>
+                                <Link to="/">Inicio</Link>
                             </li>
                             <li>
-                                <Link to="/talleres">Talleres</Link>
+                                <Link to="/pag-talleres">Talleres</Link>
                             </li>
                             <li>
-                                <Link to="/quienesSomos">Quienes Somos</Link>
+                                <Link to="/quienes-somos">Quienes Somos</Link>
                             </li>
                             <li>
-                                <Link to="/contacto">Contacto</Link>
+                                <Link to="#">Contacto</Link>
                             </li>
                         </ul>
                     </nav>
                     :
-                    <div className="header__menu--hamburger" onClick= {()=> { setModal("header");  openModal(); animate(); setTimeout(animate, 500) }}>
+                    <div className="header__menu--hamburger" onClick= {() => { setModal("header");  openModal(); animate(); setTimeout(animate, 500) }}>
                         <div className="bar"></div>
                     </div>
                     }
                 </div>
                 <div className="header__logo">
-                    <Link to="/home">
+                    <Link to="/">
                         <figure>
                             <img src={Logotipo} alt="Logo de la corporación Ofiartes" width="70" height="70"/>
                         </figure>
@@ -71,7 +71,7 @@ export const InfoHeader = (props) => {
                         <ButtonFill background="green" color="white" content="DONAR" />
                     </Link>
                     <br /><br />
-                    <Link to="/voluntarios">
+                    <Link to="voluntarios">
                         <ButtonFill background="blue" color="white" content="¿Quieres ser voluntario?" />
                     </Link>
                 </div>

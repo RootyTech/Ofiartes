@@ -4,7 +4,6 @@ import { MediaQueryTablet, MediaQueryDesktop, MediaQueryDesktopL } from '../../l
 
 /** COMPONENTES */
 import { InfoHeader } from './infoHeader';
-import { MenuModal } from './menuModal';
 
 export const Header = ({nombrePagina, titulo, contenido}) => {
 
@@ -56,8 +55,6 @@ export const Header = ({nombrePagina, titulo, contenido}) => {
                     <div className="header__template"></div>
                 </div>
             </header>
-
-            {/* {MediaQueryDesktop() ? <></> : <MenuModal/>} */}
 
             {/* <header className="header">
                 <div className="header__main">

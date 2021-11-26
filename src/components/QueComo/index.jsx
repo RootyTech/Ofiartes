@@ -112,7 +112,7 @@ export const QueComo = () => {
                     />
                 </div>
                 <div className="aboutUs__containerSecundary">
-                    <Link to="/quienes_somos">
+                    <Link to="/quienes-somos">
                         <ButtonBorder border="black" color="black" content="Conoce más" />
                     </Link>
                 </div>

@@ -9,7 +9,8 @@
     transition: opacity 1s
     animation-name: fadeIn
     animation-duration: 2s
-    .modal--close
+.modal
+    &--close
         z-index: 1
         position: absolute
         top: 0
@@ -17,40 +18,40 @@
         height: 40px
         margin: 1.75rem 0 0 1.75rem
         cursor: pointer
-        .modal__bar
-            position: relative
-            background: $blanco
-            transform: translateY(18px)
-            transition: all 0ms 300ms
-        .modal__bar, .modal__bar:after, .modal__bar:before
-            width: 40px
-            height: 4px
-        .modal__bar:before
-            position: absolute
-            bottom: 15px
-            left: 0
-            background: $blanco
-            content: ""
-            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
-        .modal__bar:after
-            position: absolute
-            top: 15px
-            left: 0
-            background: $blanco
-            content: ""
-            transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
-        .modal__bar--animate
-            background: rgba(255, 255, 255, 0)
-            box-shadow: 0 0 0 2em rgba(255, 255, 255, 0)
-            animation: pulse 1.5s
-        .modal__bar--animate:after
-            top: 0
-            transform: rotate(45deg)
-            transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
-        .modal__bar--animate:before
-            bottom: 0
-            transform: rotate(-45deg)
-            transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+    &__bar
+        position: relative
+        background: $blanco
+        transform: translateY(18px)
+        transition: all 0ms 300ms
+    &__bar, &__bar:after, &__bar:before
+        width: 40px
+        height: 4px
+    &__bar:before
+        position: absolute
+        bottom: 15px
+        left: 0
+        background: $blanco
+        content: ""
+        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+    &__bar:after
+        position: absolute
+        top: 15px
+        left: 0
+        background: $blanco
+        content: ""
+        transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+    &__bar--animate
+        background: rgba(255, 255, 255, 0)
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0)
+        animation: pulse 1.5s
+    &__bar--animate:after
+        top: 0
+        transform: rotate(45deg)
+        transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+    &__bar--animate:before
+        bottom: 0
+        transform: rotate(-45deg)
+        transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
 .modalHide
     visibility: hidden
     z-index: -1

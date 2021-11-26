@@ -78,14 +78,13 @@ export const App = () => {
                     <Route exact path="/mision_vision" component={MisionVision} />
                     <Route exact path="/novedades" component={Novedades} />
                     <Route exact path="/que_como" component={QueComo} />
-                    <Route exact path="/talleres" component={Talleres} />   
-                    <Route exact path="/tarjeta_cursos" component={ TarjetaCursos} />         
-                    <Route exact path="/unirse" component={Unirse} />                  
-                    <Route exact path="/beneficiarios" component={Beneficiario} />                  
-                    <Route exact path="/voluntarios" component={Voluntario} />                  
-                    <Route exact path="/empresas" component={Empresa} />                  
-                    <Route path="*" component={NotFound} />               
-
+                    <Route exact path="/talleres" component={Talleres} />
+                    <Route exact path="/tarjeta_cursos" component={ TarjetaCursos} />
+                    <Route exact path="/unirse" component={Unirse} />
+                    <Route exact path="/beneficiarios" component={Beneficiario} />
+                    <Route exact path="/voluntarios" component={Voluntario} />
+                    <Route exact path="/empresas" component={Empresa} />
+                    <Route path="*" component={NotFound} />
                 </Switch>
             </HashRouter>
         </context.Provider>
