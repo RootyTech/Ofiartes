@@ -3,11 +3,13 @@ import { Formulario } from '../components/Formulario';
 
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { Modal } from '../components/Modal';
 
 export const Beneficiario = () => {
     return (
         <>
-            <Header />
+            <Modal/>
+            <Header nombrePagina="beneficiario" titulo="Inscríbete con nosotros" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
             <Formulario currentForm="beneficiario">   
                 <label htmlFor="name">Nombre completo</label>
                 <input type="text" name="name" id="name" 

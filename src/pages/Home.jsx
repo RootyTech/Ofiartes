@@ -27,7 +27,7 @@ export const Home = () => {
         <>
             {/* <Novedades /> */}
             <Modal/>
-            <Header />
+            <Header nombrePagina="Home" titulo="Extendemos nuestras manos a quien más lo necesita" contenido=""/>
             <QueComo />
             <Unirse />
             <TarjetaCursos />
