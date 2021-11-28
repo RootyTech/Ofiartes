@@ -1,72 +1,73 @@
-h2
-    font-family: $principal
-    color: #000
-    letter-spacing: 1px
-    text-align: center
-    @extend %mobile_contenido_titulo_secciones
-    padding: 2rem 0
-.form
-    display: flex
-    flex-direction: column
-    font-family: $secundaria
-    width: 85%
-    max-width: 50rem
-    margin: auto
-    //padding: 0 2rem
-    label
-        @extend %mobile_contenido_titulo
-        margin:10px 0
-    input
-        border: none
-        padding: 0.5rem
-        box-sizing: border-box
-        margin-bottom: 1rem
-    input::placeholder
-        @extend  %mobile_contenido_light
-        color: $gris_oscuro
-    input[type="submit"]
-        width: 50%
-        margin: 1rem auto
-        cursor: pointer
-        background-color: $verde
-        color: $negro
-        border-radius: 10px
-        font-family: $secundaria
-        @extend %mobile_contenido_subtitulos
-    input[type="submit"]:hover
-        color: $verde
-        background-color: $negro
-    textarea 
-        resize: none
-    div 
-        padding-bottom: 1rem
-        input
-            margin-bottom: 0
-            margin-right: 0.5rem 
-            width:20px
-            height:20px  
-    .form-loader
-        margin: 0 auto
-    .form-response
+.form-wrapp
+    h2
+        font-family: $principal
+        color: #000
+        letter-spacing: 1px
         text-align: center
-.form [required]:valid 
-    border-bottom: thin solid $verde
+        @extend %mobile_contenido_titulo_secciones
+        padding: 2rem 0
+    .form
+        display: flex
+        flex-direction: column
+        font-family: $secundaria
+        width: 85%
+        max-width: 50rem
+        margin: auto
+        //padding: 0 2rem
+        label
+            @extend %mobile_contenido_titulo
+            margin:10px 0
+        input
+            border: none
+            padding: 0.5rem
+            box-sizing: border-box
+            margin-bottom: 1rem
+        input::placeholder
+            @extend  %mobile_contenido_light
+            color: $gris_oscuro
+        input[type="submit"]
+            width: 50%
+            margin: 1rem auto
+            cursor: pointer
+            background-color: $verde
+            color: $negro
+            border-radius: 10px
+            font-family: $secundaria
+            @extend %mobile_contenido_subtitulos
+        input[type="submit"]:hover
+            color: $verde
+            background-color: $negro
+        textarea 
+            resize: none
+        div 
+            padding-bottom: 1rem
+            input
+                margin-bottom: 0
+                margin-right: 0.5rem 
+                width:20px
+                height:20px  
+        .form-loader
+            margin: 0 auto
+        .form-response
+            text-align: center
+    .form [required]:valid 
+        border-bottom: thin solid $verde
 
-.form [required]:invalid 
-    border-bottom: thin solid $gris_oscuro
-.form-error 
-    margin-top: -0.938rem
-    background-color: $rojo
-    color: $blanco
-    font-family: $secundaria
-    @extend %mobile_contenido_light
-    transition: all 800ms ease
-.form-error.is-active 
-    text-align: center
-    display: block
-    animation: show-message 1s 1 normal 0s ease-in-out both
-.none
-    display: none
+    .form [required]:invalid 
+        border-bottom: thin solid $gris_oscuro
+    .form-error 
+        margin-top: -0.938rem
+        background-color: $rojo
+        color: $blanco
+        font-family: $secundaria
+        @extend %mobile_contenido_light
+        transition: all 800ms ease
+    .form-error.is-active 
+        text-align: center
+        display: block
+        animation: show-message 1s 1 normal 0s ease-in-out both
+    .none
+        display: none
 @keyframes show-message 
     0% 
         visibility: hidden

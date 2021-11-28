@@ -113,7 +113,7 @@ export const Formulario = (props) => {
     }
 
     return (
-        <>
+        <section className="form-wrapp">
             <h2>Envianos tus datos</h2>
             <form onSubmit={(e) => Submit(e)} className="form" ref={Form}>
                 {props.children}
@@ -125,6 +125,6 @@ export const Formulario = (props) => {
                     <p>Los datos han sido enviados</p>
                 </div>
             </form>
-        </>
+        </section>
     )
 }
