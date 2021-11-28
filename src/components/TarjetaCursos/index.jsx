@@ -1,7 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { MediaQueryTablet, MediaQueryDesktop} from '../../lib/mediaQuery';
+import { Link } from 'react-router-dom';
+
 import { context } from '../../context';
+
 import { FaRegClock } from 'react-icons/fa';
-import './estilos.sass';
 import {ButtonBorder} from '../commons/Buttons'
 
 //importación de imágenes
@@ -10,6 +13,11 @@ import img_EtiquetaFormación from '../../assets/EtiquetaFormación.svg';
 import { debug } from 'webpack';
 
 export const TarjetaCursos = () =>{
+    import ('./estilos.sass');
+
+    MediaQueryTablet() && import('./tablet.sass');
+    MediaQueryDesktop() && import('./desktop.sass');
+
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
 
     let puntero = 0;
@@ -62,36 +70,42 @@ export const TarjetaCursos = () =>{
         };   
     }
     return(
-        <section className="cards">
+        <section>
             <h2>Algunos cursos que dictamos</h2> 
-            {
-            talleres ?
-                talleres.slice(0,3).map((taller,index) => (
-                    <div className= {`cards_cursos`} key= {`taller-${index}`}>
-                        <div className="padre">
-                            <div className="card-top">
-                                <img src={`${taller.fields.image.fields.file.url}`} alt={`${taller.fields.image.fields.description}`} />
+            <section className="cards">
+                {
+                talleres ?
+                    talleres.slice(0,3).map((taller,index) => (
+                        <div className= {`cards_cursos`} key= {`taller-${index}`}>
+                            <div className="padre">
+                                <div className="card-top">
+                                    <img src={`${taller.fields.image.fields.file.url}`} alt={`${taller.fields.image.fields.description}`} />
+                                </div>
+                                <div className="card-bottom"></div>
                             </div>
-                            <div className="card-bottom"></div>
-                        </div>
-                        <div className={`card-content ${colores(index).clase}`}> 
-                            <h3>{taller.fields.title}</h3>
-                            <br />
-                            <p>{taller.fields.description.substring(0,50) + "..."}</p>
-                            <br />
-                            <div className="icon__clock">
-                                <i><FaRegClock/></i>
-                                <p>{taller.fields.duration}</p>
+                            <div className={`card-content ${colores(index).clase}`}> 
+                                <h3>{taller.fields.title}</h3>
+                                <br />
+                                <p>{taller.fields.description.substring(0,50) + "..."}</p>
+                                <br />
+                                <div className="icon__clock">
+                                    <i><FaRegClock/></i>
+                                    <p>{taller.fields.duration}</p>
+                                </div>
+                                <img src={`${imagen(`${taller.fields.type}`).etiqueta}`} alt= {`${imagen(`${taller.fields.type}`).alt}`} />
+                                <br />
+                                <ButtonBorder border= {`${colores(index).border}`} color= {`${colores(index).color}`} content="Saber más"/>
                             </div>
-                            <img src={`${imagen(`${taller.fields.type}`).etiqueta}`} alt= {`${imagen(`${taller.fields.type}`).alt}`} />
-                            <br />
-                            <ButtonBorder border= {`${colores(index).border}`} color= {`${colores(index).color}`} content="Saber más"/>
                         </div>
-                    </div>
-                ))
-            :<h2>Loading...</h2>
-            }
+                    ))
+                :<h2>Loading...</h2>
+                }
+            </section>
+            <div className="button_final">
+                <Link to="/talleres">
+                    <ButtonBorder border= "black" color= "black" content="Ver todos los talleres"/>
+                </Link>
+            </div>
         </section>
-        
     )
 }

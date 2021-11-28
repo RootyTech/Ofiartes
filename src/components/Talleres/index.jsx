@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import ContentLoader from "react-content-loader"
+import { MediaQueryTablet, MediaQueryDesktop} from '../../lib/mediaQuery';
+
 import { FaSearch } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa';
-import { context } from '../../context';
-import './estilos.sass';
+import { context } from '../../context'; 
 import {ButtonBorder} from '../commons/Buttons'
 
 //importación de imágenes
@@ -13,22 +13,18 @@ import img_Etiqueta_Roja from '../../assets/Etiqueta_empresarial_roja.svg';
 import img_Etiqueta_Azul from '../../assets/Etiqueta_formación_azul.svg';
 
 export const Talleres = () => {
+    
+    import ('./estilos.sass');
+
+    MediaQueryTablet() && import('./tablet.sass');
+    MediaQueryDesktop() && import('./desktop.sass');
+
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
+    const [Talleres,setTalleres] = useState([]); //contiene todos los datos de talleres
 
-    /*
-    function searchingTerm(term){
-        return function(x){
-            return x.fields.title
-        }
-    };*/
-    const [data,setData] = useState(); //data contiene todos los datos de talleres
-    const [term, setTerm] = useState("");
-    //const [loading,setloading] = useState(true);
+    useEffect(()=>{if(talleres) {setTalleres([...talleres])}
+    },[talleres])//pregunto si hay talleres y al estado le mando el vector de talleres que quiero que muestre
 
-    /*useEffect(()=>{
-        setData(talleres);
-    },[talleres]); //va a mirar talleres cuando haya un cambio que me actualice la tabla
-    */
     /*useEffect(()=>{
         setTimeout(()=>{
         },3000)
@@ -109,10 +105,7 @@ export const Talleres = () => {
                 $padre.classList.add($colorClase);
             }
     };
-
-    useEffect(() => { if (talleres) {setTalleres([...talleres])}}, [talleres])
-
-    const handlerChange = (event) => {
+    const handlerChange = (event) =>{
         console.log(event.target.value);
         let talleresMatch = talleres.filter((taller) => taller.fields.title.toLowerCase().includes(event.target.value.toLowerCase()))
         setTalleres(talleresMatch)
@@ -121,7 +114,7 @@ export const Talleres = () => {
     return (
         <>
         <div className="search">
-            <input type="text" className="search__input" placeholder="Buscar un curso"  onChange={(e)=>setTerm(e.target.value)}/>
+            <input type="text" className="search__input" placeholder="Buscar un curso" onChange={(e) => handlerChange(e)}/>
             <button><FaSearch/></button>
         </div>
         <div className="labels">
@@ -144,10 +137,10 @@ export const Talleres = () => {
                                 {talleres.fields.title}
                                 <img src={`${imagenDos(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagenDos(`${talleres.fields.type}`).alt}`} style={{display:"none"}}/>
                             </summary>
-                            <p>{talleres.fields.description}</p>
+                            <p className="description">{talleres.fields.description}</p>
                             <div className="icon__clock">
                                 <i><FaRegClock/></i>
-                                <p>{talleres.fields.duration}</p>
+                                <p className="duration">{talleres.fields.duration}</p>
                             </div>
                             <div className="content_button">
                                 <ButtonBorder border="black" color="black"content="Saber más"/>

@@ -1,11 +1,16 @@
-import React from 'react';
-import './estilos.sass';
+import React, { useContext, useEffect, useState } from 'react';
+import { MediaQueryTablet, MediaQueryDesktop} from '../../lib/mediaQuery';
 
 //importación de componentes
 import {SvgComponent} from './Puzzle';
 import { Content } from './Content';
 
 export const MisionVision = () => {
+    import ('./estilos.sass');
+    
+    MediaQueryTablet() && import('./tablet.sass');
+    MediaQueryDesktop() && import('./desktop.sass');
+    
     return (
         <>
         <div className="contenido__blanco history">
