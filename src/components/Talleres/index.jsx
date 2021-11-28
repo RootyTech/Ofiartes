@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import ContentLoader from "react-content-loader"
+import { MediaQueryTablet, MediaQueryDesktop, MediaQueryDesktopL } from '../../lib/mediaQuery';
+
 import { FaSearch } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa';
-import { context } from '../../context';
-import './estilos.sass';
+import { context } from '../../context'; 
 import {ButtonBorder} from '../commons/Buttons'
 
 //importación de imágenes
@@ -13,22 +13,48 @@ import img_Etiqueta_Roja from '../../assets/Etiqueta_empresarial_roja.svg';
 import img_Etiqueta_Azul from '../../assets/Etiqueta_formación_azul.svg';
 
 export const Talleres = () => {
-    const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
+    
+    import ('./estilos.sass');
 
-    /*
-    function searchingTerm(term){
-        return function(x){
-            return x.fields.title
+    const [widthSize, setWidthSize] = useState("Mobile"); // Estado que se actualiza cuando se cargue la página o cuando se redimensione esta
+
+    const ResizeHeader = () => { // Constante que guarda la función que valida con que media Query se está trabajando
+        // MediaQueryDesktopL() -> Verdadero si se pasa de 1600px
+        if(MediaQueryDesktopL()){
+            setWidthSize("Desktop L"); // Se cambia la variable, para volver a correr el código
+            //import('./desktop_L.sass'); // Se importan los estilos correspondientes a Desktop
+            //console.log("Estilos aplicados Desktop L");
+        // MediaQueryDesktop() -> Verdadero si se pasa de 1024px
+        }else if (MediaQueryDesktop()){
+            setWidthSize("Desktop"); // Se cambia la variable, para volver a correr el código
+            import('./desktop.sass'); // Se importan los estilos correspondientes a Desktop
+            console.log("Estilos aplicados Desktop");
+        // MediaQueryTablet() -> Verdadero si se pasa de 768px
+        } else if (MediaQueryTablet()) {
+            setWidthSize("Tablet"); // Se cambia la variable, para volver a correr el código
+            import('./tablet.sass'); // Se importan los estilos correspondientes a Tablet
+            console.log("Estilos aplicados Tablet");
+        } else {
+            setWidthSize("Mobile"); // Se cambia la variable, para volver a correr el código
+            console.log("Estilos aplicados Mobile");
         }
-    };*/
-    const [data,setData] = useState(); //data contiene todos los datos de talleres
-    const [term, setTerm] = useState("");
-    //const [loading,setloading] = useState(true);
+    };
 
-    /*useEffect(()=>{
-        setData(talleres);
-    },[talleres]); //va a mirar talleres cuando haya un cambio que me actualice la tabla
-    */
+    useEffect(() => {
+        window.addEventListener('resize', ResizeHeader); // REALIZAR LA FUNCIÓN CUANDO LA PÁGINA CAMBIA DE TAMAÑO (EN TIEMPO REAL)
+        window.addEventListener('load', ResizeHeader); // REALIZAR LA FUNCIÓN CUANDO LA PÁGINA CARGA POR PRIMERA VEZ
+        return () => {
+            window.removeEventListener('resize', ResizeHeader); // REMOVER EVENTLISTENER
+            window.removeEventListener('load', ResizeHeader); // REMOVER EVENTLISTENER
+        }
+    }, []);
+
+    const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
+    const [Talleres,setTalleres] = useState([]); //contiene todos los datos de talleres
+
+    useEffect(()=>{if(talleres) {setTalleres([...talleres])}
+    },[talleres])//pregunto si hay talleres y al estado le mando el vector de talleres que quiero que muestre
+
     /*useEffect(()=>{
         setTimeout(()=>{
         },3000)
@@ -109,10 +135,16 @@ export const Talleres = () => {
                 $padre.classList.add($colorClase);
             }
     };
+    const handlerChange = (event) =>{
+        console.log(event.target.value);
+        let talleresMatch = talleres.filter((taller) => taller.fields.title.toLowerCase().includes(event.target.value.toLowerCase()))
+        setTalleres(talleresMatch)
+    }
+
     return (
         <>
         <div className="search">
-            <input type="text" className="search__input" placeholder="Buscar un curso"  onChange={(e)=>setTerm(e.target.value)}/>
+            <input type="text" className="search__input" placeholder="Buscar un curso" onChange={(e) => handlerChange(e)}/>
             <button><FaSearch/></button>
         </div>
         <div className="labels">
@@ -129,17 +161,17 @@ export const Talleres = () => {
         <section className="details__talleres">
             { 
                 talleres ?
-                talleres.map((talleres,index) => (
+                Talleres.map((talleres,index) => (
                     <div className= {`cards__taller ${colores()}`}  key= {`taller-${index}`}>
                         <details className="card" onToggle={(evento)=> handlerClick(evento,talleres.fields.image.fields.file.url)}>
                             <summary>
                                 {talleres.fields.title}
                                 <img src={`${imagenDos(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagenDos(`${talleres.fields.type}`).alt}`} style={{display:"none"}}/>
                             </summary>
-                            <p>{talleres.fields.description}</p>
+                            <p className="description">{talleres.fields.description}</p>
                             <div className="icon__clock">
                                 <i><FaRegClock/></i>
-                                <p>{talleres.fields.duration}</p>
+                                <p className="duration">{talleres.fields.duration}</p>
                             </div>
                             <div className="content_button">
                                 <ButtonBorder border="black" color="black"content="Saber más"/>

@@ -3,14 +3,14 @@
     align-items: center
     justify-content: center
     width: 70%
-    height: 15px
+    height: 0.938rem
     background-color: transparent 
-    border-radius: 10px
-    padding: 10px
+    border-radius: 0.625rem
+    padding: 0.625rem
     margin-left: auto
     margin-right: auto
-    margin-bottom: 5px
-    margin-top: 20px
+    margin-bottom: 0.313rem
+    margin-top: 1.25rem
     border: 0.5px solid $gris_claro
 .search input
     width: 90%
@@ -19,14 +19,14 @@
     outline: none
     background-color: transparent
     font-family: $secundaria
-    padding: 3px 10px
+    padding: 0.188rem 0.625rem
 .search button
     outline: none
     border: none
     background-color: transparent
-    padding-bottom: 20px
-    padding-top: 20px
-    padding-right: 10px
+    padding-bottom: 1.25rem
+    padding-top: 1.25rem
+    padding-right: 0.625rem
     color: $gris_claro
 .search:hover
     color: $verde
@@ -38,52 +38,52 @@
         margin-left: auto
         margin-right: auto
         text-align: center
-        padding: 25px
+        padding: 1.563rem
         font-family: $secundaria
         @extend %mobile_contenido_light
 .cards__taller
     display: flex
     justify-content: space-between
     align-items: center
-    padding: 20px
-    margin: 10px 0px 10px
+    padding: 1.25rem
+    margin: 0rem 0rem 0.625rem 0rem
+    details
+        width: 100%
     .card summary
         list-style: none
         font-family: $secundaria
-        font-size: 16px
-        font-weight: 600
+        @extend %mobile_contenido_titulo
     .card summary img
-        margin-top: 20px
-    .card p
-        margin: 10px 
+        margin-top: 1.25rem
+    .card .description
+        margin: 0.75rem
         font-family: $secundaria
-        font-size: 16px
-        font-weight: normal
-    .icon__clock 
+        @extend %mobile_contenido_parrafo
+    .card .icon__clock 
         display: flex
         align-items: center
-    .icon__clock p
+        margin-left: 0.75rem
+    .card .icon__clock .duration
         font-family: $secundaria
-        font-size: 12px
-        font-weight: 300
-        margin: 5px
+        @extend %mobile_contenido_light
+        margin: 0.313rem
     .content_button
         display: flex
         justify-content: center
-        margin-top: 20px       
+        margin-top: 1rem       
 .verde
-    border-left: $verde solid 8px  
+    border-left: $verde solid 0.5rem  
 .azul
-    border-left: $azul solid 8px 
+    border-left: $azul solid 0.5rem 
 .rojo
-    border-left: $rojo solid 8px
+    border-left: $rojo solid 0.5rem
 .amarillo
-    border-left: $amarillo solid 8px
+    border-left: $amarillo solid 0.5rem
 
 .card[open] summary
-    padding:20px 10px
-    height: 75px
+    padding:1.25rem 0.625rem
+    height: 4.688rem
     background-position: center
     background-size: cover
     color: $blanco
-    backdrop-filter: blur(2px) 
+    backdrop-filter: blur(0.125rem) 
