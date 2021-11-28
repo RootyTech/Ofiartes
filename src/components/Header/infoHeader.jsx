@@ -1,5 +1,6 @@
 /** LIBRERÍAS */
-import React from 'react';
+import React, {useContext} from 'react';
+import { context } from '../../context';
 import { Link } from 'react-router-dom';
 import { MediaQueryDesktop } from '../../lib/mediaQuery';
 
@@ -12,17 +13,14 @@ import { openModal } from '../Modal';
 
 export const InfoHeader = (props) => {
 
-    const menuHamburger = document.querySelector('.header__menu--hamburger');
     const barAnimate = document.querySelector('.bar');
+    const { modal, setModal } = useContext(context);
 
     const animate = () => {
-        console.log("oli");
         if(barAnimate.classList.contains('bar--animate')){
             barAnimate.classList.remove('bar--animate')
-            menuHamburger.classList.remove('hamburger--animate')
         } else {
             barAnimate.classList.add('bar--animate')
-            menuHamburger.classList.add('hamburger--animate')
         }
     }
 
@@ -37,27 +35,27 @@ export const InfoHeader = (props) => {
                     <nav className="header__nav">
                         <ul>
                             <li>
-                                <Link to="/home">Inicio</Link>
+                                <Link to="/">Inicio</Link>
                             </li>
                             <li>
-                                <Link to="/talleres">Talleres</Link>
+                                <Link to="/pag-talleres">Talleres</Link>
                             </li>
                             <li>
-                                <Link to="/quienesSomos">Quienes Somos</Link>
+                                <Link to="/quienes-somos">Quienes Somos</Link>
                             </li>
                             <li>
-                                <Link to="/contacto">Contacto</Link>
+                                <Link to="#">Contacto</Link>
                             </li>
                         </ul>
                     </nav>
                     :
-                    <div className="header__menu--hamburger" onClick= {()=> {/*openModal();*/ animate()}}>
+                    <div className="header__menu--hamburger" onClick= {() => { setModal("header");  openModal(); animate(); setTimeout(animate, 500) }}>
                         <div className="bar"></div>
                     </div>
                     }
                 </div>
                 <div className="header__logo">
-                    <Link to="/home">
+                    <Link to="/">
                         <figure>
                             <img src={Logotipo} alt="Logo de la corporación Ofiartes" width="70" height="70"/>
                         </figure>
@@ -73,7 +71,7 @@ export const InfoHeader = (props) => {
                         <ButtonFill background="green" color="white" content="DONAR" />
                     </Link>
                     <br /><br />
-                    <Link to="/voluntarios">
+                    <Link to="voluntarios">
                         <ButtonFill background="blue" color="white" content="¿Quieres ser voluntario?" />
                     </Link>
                 </div>

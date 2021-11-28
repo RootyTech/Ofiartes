@@ -1,5 +1,5 @@
 .galery
-    margin: 2rem 0
+    margin-top: 2.5rem
     h1
         color: $gris_negro
         @extend %mobile_contenido_titulo_secciones
@@ -7,12 +7,12 @@
         text-align: center
     &__pics
         display: grid
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(2, 1fr)
         grid-auto-rows: 8rem
         gap: 5px
         width: 90%
         max-width: 75rem
-        margin: 2rem auto
+        margin: 2rem auto 0
         .galery__pics--item
             position: relative
             img
@@ -36,3 +36,5 @@
             div:hover
                 opacity: 1
                 cursor: pointer
+        .galery__pics--item:nth-child(5)
+            grid-column: 1 / 3

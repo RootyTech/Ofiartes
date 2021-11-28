@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route, useRouteMatch } from 'react-router-dom';
 
 /** Componentes */
 import { EquipoTrabajo } from './components/EquipoTrabajo';
@@ -19,6 +19,10 @@ import { Voluntario } from './pages/Voluntario';
 import { Empresa } from './pages/Empresas';
 import { NotFound } from './pages/NotFound';
 
+import { Home } from './pages/Home';
+import { QuienesSomos } from './pages/QuienesSomos';
+import { PagTalleres } from './pages/Talleres';
+
 /** Estilos globales */
 import './global.sass';
 
@@ -31,32 +35,40 @@ import { context } from './context';
 export const App = () => {
 
     const [ contenido, setContenido ] = useState({});
+    const [ modal, setModal ] = useState("");      
+
 
     useEffect(() => { 
         (async () => {
             const res = await client.getEntries();
-            const Talleres = res.items.filter((item) => item.sys.contentType.sys.id === "talleres" )
-            const Galeria = res.items.filter((item) => item.sys.contentType.sys.id === "galeria" )
-            const Novedades = res.items.filter((item) => item.sys.contentType.sys.id === "novedades" )
-            const Integrantes = res.items.filter((item) => item.sys.contentType.sys.id === "integrantes" )
-            const Testimonios = res.items.filter((item) => item.sys.contentType.sys.id === "testimonios" )
+            let Data = {
+                galeria: [],
+                news: [],
+                talleres: [],
+                members: [],
+                testimonios: [],
+            }
 
-            setContenido({
-                galeria: Galeria,
-                news: Novedades,
-                talleres: Talleres,
-                members: Integrantes,
-                testimonios: Testimonios
+            res.items.forEach((item) => {
+                if (item.sys.contentType.sys.id === "talleres") Data.talleres.push(item);
+                if (item.sys.contentType.sys.id === "galeria") Data.galeria.push(item);
+                if (item.sys.contentType.sys.id === "novedades") Data.news.push(item);
+                if (item.sys.contentType.sys.id === "integrantes") Data.members.push(item);
+                if (item.sys.contentType.sys.id === "testimonios") Data.testimonios.push(item);
             })
 
+            setContenido(Data)
         })();
     }, []);
 
     return (
-        <context.Provider value={contenido}>
+        <context.Provider value={{modal, setModal, ...contenido}}>
             <HashRouter>
                 { /** Lo que cambiará */}
                 <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/quienes-somos" component={QuienesSomos} />
+                    <Route exact path="/pag-talleres" component={PagTalleres} />
                     <Route exact path="/testimonios" component={Testimonios} />
                     <Route exact path="/equipo_trabajo" component={EquipoTrabajo} />
                     <Route exact path="/footer" component={Footer} />
@@ -66,14 +78,13 @@ export const App = () => {
                     <Route exact path="/mision_vision" component={MisionVision} />
                     <Route exact path="/novedades" component={Novedades} />
                     <Route exact path="/que_como" component={QueComo} />
-                    <Route exact path="/talleres" component={Talleres} />   
-                    <Route exact path="/tarjeta_cursos" component={ TarjetaCursos} />         
-                    <Route exact path="/unirse" component={Unirse} />                  
-                    <Route exact path="/beneficiarios" component={Beneficiario} />                  
-                    <Route exact path="/voluntarios" component={Voluntario} />                  
-                    <Route exact path="/empresas" component={Empresa} />                  
-                    <Route path="*" component={NotFound} />               
-
+                    <Route exact path="/talleres" component={Talleres} />
+                    <Route exact path="/tarjeta_cursos" component={ TarjetaCursos} />
+                    <Route exact path="/unirse" component={Unirse} />
+                    <Route exact path="/beneficiarios" component={Beneficiario} />
+                    <Route exact path="/voluntarios" component={Voluntario} />
+                    <Route exact path="/empresas" component={Empresa} />
+                    <Route path="*" component={NotFound} />
                 </Switch>
             </HashRouter>
         </context.Provider>

@@ -157,7 +157,6 @@ export const Talleres = () => {
                 <p>Talleres de Formación</p>
             </div>
         </div>
-        {console.log(talleres)}
         <section className="details__talleres">
             { 
                 talleres ?

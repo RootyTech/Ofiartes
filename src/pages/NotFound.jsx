@@ -5,7 +5,6 @@ import { Footer } from '../components/Footer';
 import Logotipo from '../assets/LogotipoSVG.svg';
 import { ButtonFill } from '../components/commons/Buttons';
 import { PuzzleSVG } from '../components/commons/Puzzle';
-
 export const NotFound = () => {
 
     import(/* webpackChunkName: 'NotFound-mobile' */'./NotFound.sass');

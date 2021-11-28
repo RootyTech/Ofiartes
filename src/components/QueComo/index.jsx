@@ -81,11 +81,6 @@ export const QueComo = () => {
 
     return (
         <>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius debitis velit ratione voluptate ipsum sit aspernatur, labore dolorum nobis inventore culpa nulla voluptates rerum dolore, corporis quasi sed saepe voluptatum!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius debitis velit ratione voluptate ipsum sit aspernatur, labore dolorum nobis inventore culpa nulla voluptates rerum dolore, corporis quasi sed saepe voluptatum!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius debitis velit ratione voluptate ipsum sit aspernatur, labore dolorum nobis inventore culpa nulla voluptates rerum dolore, corporis quasi sed saepe voluptatum!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius debitis velit ratione voluptate ipsum sit aspernatur, labore dolorum nobis inventore culpa nulla voluptates rerum dolore, corporis quasi sed saepe voluptatum!</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius debitis velit ratione voluptate ipsum sit aspernatur, labore dolorum nobis inventore culpa nulla voluptates rerum dolore, corporis quasi sed saepe voluptatum!</p>
             <section className="aboutUs">
                 <div className="aboutUs__cards">
                     <WhatHow 
@@ -117,16 +112,11 @@ export const QueComo = () => {
                     />
                 </div>
                 <div className="aboutUs__containerSecundary">
-                    <Link to="/quienes_somos">
+                    <Link to="/quienes-somos">
                         <ButtonBorder border="black" color="black" content="Conoce más" />
                     </Link>
                 </div>
             </section>
-            <br /><br />
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, quam inventore unde, cupiditate laudantium maiores fugiat voluptatem dolorum saepe tempora similique fugit ea itaque modi sit illo asperiores temporibus voluptatibus!</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, quam inventore unde, cupiditate laudantium maiores fugiat voluptatem dolorum saepe tempora similique fugit ea itaque modi sit illo asperiores temporibus voluptatibus!</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, quam inventore unde, cupiditate laudantium maiores fugiat voluptatem dolorum saepe tempora similique fugit ea itaque modi sit illo asperiores temporibus voluptatibus!</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, quam inventore unde, cupiditate laudantium maiores fugiat voluptatem dolorum saepe tempora similique fugit ea itaque modi sit illo asperiores temporibus voluptatibus!</p>
         </>
     )
 }

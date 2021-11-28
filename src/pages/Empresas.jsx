@@ -1,9 +1,15 @@
 import React from 'react';
 import { Formulario } from '../components/Formulario';
 
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+import { Modal } from '../components/Modal';
+
 export const Empresa = () => {
     return (
         <>
+            <Modal/>
+            <Header nombrePagina="empresas" titulo="Haz parte de nuestras empresas afiliadas" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
             <Formulario currentForm="empresas">   
                 <label htmlFor="name">Nombre completo</label>
                 <input type="text" name="name" id="name" 
@@ -32,6 +38,7 @@ export const Empresa = () => {
                     </p>
                 </div>                       
             </Formulario>
+            <Footer />
         </>
     )
 }

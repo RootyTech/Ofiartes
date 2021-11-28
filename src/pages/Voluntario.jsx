@@ -1,9 +1,14 @@
 import React from 'react';
 import { Formulario } from '../components/Formulario';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+import { Modal } from '../components/Modal';
 
 export const Voluntario = () => {
     return (
         <>
+            <Modal/>
+            <Header nombrePagina="voluntarios" titulo="Conviértete en un voluntario" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
             <Formulario currentForm="voluntario">   
                 <label htmlFor="name">Nombre completo</label>
                 <input type="text" name="name" id="name" 
@@ -32,6 +37,7 @@ export const Voluntario = () => {
                     </p>
                 </div>                       
             </Formulario>
+            <Footer />
         </>
     )
 }

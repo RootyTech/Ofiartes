@@ -1,18 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Carousel } from './Carousel';
-import {Modal, openModal} from '../Modal'
+import {openModal} from '../Modal'
 import('./estilos.sass');
+import { context } from '../../context';
+
 
 export const Novedades = () => {
-
+    const {setModal} = useContext(context);
     return (
         <div className="news">
-            <button onClick={()=>{openModal()}} type="button">Lo último en Ofiartes</button>
-            {/*Aquí es donde renderizaremos el modal como un componente general <Modal/> el cual contendrá el contenido que enviemos por parámetro*/}
-            <Modal>
-                <Carousel/>
-            </Modal>
-
+            <button onClick={()=>{setModal("novedades"); openModal()}} type="button">Lo último en Ofiartes</button>
         </div>
     )
 }

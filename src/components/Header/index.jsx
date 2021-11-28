@@ -4,7 +4,6 @@ import { MediaQueryTablet, MediaQueryDesktop, MediaQueryDesktopL } from '../../l
 
 /** COMPONENTES */
 import { InfoHeader } from './infoHeader';
-import { MenuModal } from './menuModal';
 
 export const Header = ({nombrePagina, titulo, contenido}) => {
 
@@ -47,33 +46,12 @@ export const Header = ({nombrePagina, titulo, contenido}) => {
     
     return (
         <>
-            {/* Así hay que hacerlo cuando las páginas esten listas, enviando el nombre de la pagina, el titulo y el contenido */}
-            {/* <InfoHeader pagina={nombrePagina} titulo={titulo} contenido={contenido}></InfoHeader> */}
-
             <header className="header">
                 <div className="header__main">
-                    <InfoHeader pagina="Home" titulo="¿Quieres ayudar y no sabes cómo?" contenido=""></InfoHeader>
+                    <InfoHeader pagina={nombrePagina} titulo={titulo} contenido={contenido}></InfoHeader>
                     <div className="header__template"></div>
                 </div>
             </header>
-
-            {/* {MediaQueryDesktop() ? <></> : <MenuModal/>} */}
-
-            {/* <header className="header">
-                <div className="header__main">
-                    <InfoHeader pagina="QuienesSomos" titulo="¿Quiénes somos?" contenido="Somos un grupo de profesionales de diferentes áreas 
-                        que disfrutamos el trabajo con comunidades con riesgo psicosocial; nos apoyamos en nuestros conocimientos profesionales para 
-                        fomentar en estas poblaciones el empleo."></InfoHeader>
-                    <div className="header__template"></div>
-                </div>
-            </header> */}
-            {/* <header className="header">
-                <div className="header__main">
-                    <InfoHeader pagina="Talleres" titulo="Nuestros talleres" contenido="En OFI ARTES te brindamos acompañamientos en: psicología, 
-                        formación en artes y oficios."></InfoHeader>
-                    <div className="header__template"></div>
-                </div>
-            </header> */}
         </>
     )
 }
