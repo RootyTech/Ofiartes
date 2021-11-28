@@ -8,6 +8,7 @@ import { Testimonios } from '../components/Testimonios';
 import { Footer } from '../components/Footer';
 import { Modal, openModal } from '../components/Modal';
 import { useRouteMatch } from 'react-router-dom';
+import { Novedades } from '../components/Novedades';
 
 export const Home = () => {
     
@@ -25,8 +26,8 @@ export const Home = () => {
 
     return (
         <>
-            {/* <Novedades /> */}
             <Modal/>
+            <Novedades/>
             <Header nombrePagina="Home" titulo="Extendemos nuestras manos a quien más lo necesita" contenido=""/>
             <QueComo />
             <Unirse />

@@ -1,9 +1,9 @@
 .news
     button
-        position: absolute
-        top: 1rem
+        position: fixed
+        bottom: 1rem
         right: 1rem
-        background-color: $gris-negro
+        background-color: $negro
         padding: .5rem 1rem
         border: transparent
         border-right: .5rem solid $verde
@@ -15,7 +15,7 @@
         transition-property: transform, background-color
         cursor: pointer
     button:hover
-        background-color: $negro
+        background-color: $gris-negro
         transform: scale(.95)
 
 #modal        
@@ -31,7 +31,6 @@
             display: flex
             justify-content: center
             align-items: center
-            height: 100%
             padding: 0 1rem
             img
                 width: 80%
@@ -63,7 +62,6 @@
             position: absolute
             bottom: 3rem
             margin: 0 auto
-            width: 100%
             display: flex
             justify-content: center
             

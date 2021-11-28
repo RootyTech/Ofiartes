@@ -6,14 +6,28 @@ import { Carousel } from '../Novedades/Carousel';
 import { MenuModal } from '../Header/menuModal';
 import('./estilos.sass')
 
+const closeByEscKey = (e)=>{
+    if(e.key=="Escape"){
+        closeModal();
+    }
+}
+const closeByClickOutside = (e)=>{
+    if (e.target === document.getElementById('modal') || e.target === document.querySelector('.carousel')) {
+        closeModal();
+    }
+}
+
 export const openModal = () => {
     document.getElementById('modal').classList.add('modalShow');
     document.getElementById('modal').classList.remove('modalHide');
     document.getElementById('modal').children[1].children[0].classList.toggle('modal__bar--animate')
     document.querySelector('html').style.overflow = "hidden";
+    document.addEventListener("keyup",closeByEscKey);
+    document.getElementById('modal').addEventListener("click",closeByClickOutside);
 }
 
 export const closeModal = ()=>{
+    document.removeEventListener("keyup", closeByEscKey);
     document.getElementById('modal').classList.remove('modalShow');
     document.getElementById('modal').classList.add('modalHide');
     document.getElementById('modal').children[1].children[0].classList.toggle('modal__bar--animate')
