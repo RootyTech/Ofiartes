@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter, Switch, Route, useRouteMatch } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 /** Componentes */
 import { EquipoTrabajo } from './components/EquipoTrabajo';
@@ -63,7 +63,7 @@ export const App = () => {
 
     return (
         <context.Provider value={{modal, setModal, ...contenido}}>
-            <HashRouter>
+            <BrowserRouter>
                 { /** Lo que cambiará */}
                 <Switch>
                     <Route exact path="/" component={Home} />
@@ -86,7 +86,7 @@ export const App = () => {
                     <Route exact path="/empresas" component={Empresa} />
                     <Route path="*" component={NotFound} />
                 </Switch>
-            </HashRouter>
+            </BrowserRouter>
         </context.Provider>
     )
 }
