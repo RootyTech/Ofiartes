@@ -10,7 +10,7 @@ export const MisionVision = () => {
     
     MediaQueryTablet() && import('./tablet.sass');
     MediaQueryDesktop() && import('./desktop.sass');
-    
+
     return (
         <>
         <div className="contenido__blanco history">

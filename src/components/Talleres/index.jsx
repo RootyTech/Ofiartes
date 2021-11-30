@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { MediaQueryTablet, MediaQueryDesktop} from '../../lib/mediaQuery';
+import { LoaderTalleres } from './skeleton';
 
 import { FaSearch } from 'react-icons/fa';
 import { FaRegClock } from 'react-icons/fa';
@@ -149,7 +150,39 @@ export const Talleres = () => {
                         <img src={`${imagen(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagen(`${talleres.fields.type}`).alt}`} />
                     </div>
                 )) 
-                : <h2>Loaging...</h2>                    
+                : MediaQueryDesktop() ?
+                    <LoaderTalleres {...{
+                        width: 1024,
+                        height: 600,
+                        values: {
+                            width:725,
+                            height:30,
+                            xposition:300,
+                            yposition: 20,
+                        },
+                    }} />
+                : MediaQueryTablet() ?
+                    <LoaderTalleres {...{
+                        width: 758,
+                        height: 600,
+                        values: {
+                            width:610,
+                            height:30,
+                            xposition:85,
+                            yposition: 20,
+                        },
+                    }} />
+                :
+                    <LoaderTalleres {...{
+                        width: 320,
+                        height: 600,
+                        values: {
+                            width:280,
+                            height:30,
+                            xposition: 20,
+                            yposition: 20,
+                        },
+                    }} />                   
             }
         </section>
         </>

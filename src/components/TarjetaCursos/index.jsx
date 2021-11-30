@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { MediaQueryTablet, MediaQueryDesktop} from '../../lib/mediaQuery';
 import { Link } from 'react-router-dom';
+import { LoaderTarjeta } from './skeletonMobile';
+import { MyLoader } from './skeletonTablet';
+import { Loader } from './skeletonDesktop';
 
 import { context } from '../../context';
 
@@ -74,7 +77,7 @@ export const TarjetaCursos = () =>{
             <h2>Algunos cursos que dictamos</h2> 
             <section className="cards">
                 {
-                talleres ?
+                talleres  ?
                     talleres.slice(0,3).map((taller,index) => (
                         <div className= {`cards_cursos`} key= {`taller-${index}`}>
                             <div className="padre">
@@ -98,7 +101,34 @@ export const TarjetaCursos = () =>{
                             </div>
                         </div>
                     ))
-                :<h2>Loading...</h2>
+                : MediaQueryDesktop() ?
+                    <Loader {...{
+                        width: 1024,
+                        height: 400,
+                        values: {
+                            width:230,
+                            height:350,
+                        },
+                    }} />
+                : MediaQueryTablet() ?
+                    <MyLoader {...{
+                        width: 758,
+                        height: 600,
+                        values: {
+                            width:200,
+                            height:300,
+                        },
+                    }} />
+                : <LoaderTarjeta {...{
+                        width: 320,
+                        height: 600,
+                        values: {
+                            width:220,
+                            height:280,
+                            xposition: 50,
+                            yposition: 10,
+                        },
+                    }} /> 
                 }
             </section>
             <div className="button_final">
