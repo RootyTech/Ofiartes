@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import img_beneficiario from '../../assets/img_beneficiario.png';
 import img_empresa from '../../assets/img_empresa.png';
 import img_voluntario from '../../assets/img_voluntario.png';
-
-//import { Formulario } from '../Formulario';
-
+//importación de media queries
+import { MediaQueryTablet } from '../../lib/mediaQuery';
+import { ButtonBorder } from '../commons/Buttons';
 
 export const Unirse = () => {
     import ('./estilos.sass');
+    MediaQueryTablet() && import('./tablet.sass');
+
     return (
         <>
             <section className="join">
@@ -23,9 +25,9 @@ export const Unirse = () => {
                             fomento al empleo y el emprendimiento esta es 
                             tu oportunidad. Déjanos tus datos.
                         </p>
-                        <button>
-                            <Link to="/beneficiarios">Quiero ser beneficiario</Link>
-                        </button>
+                        <Link to="/beneficiarios">
+                            <ButtonBorder border="black" color="black" content="Quiero ser beneficiario" />
+                        </Link>
                     </div>
                     <div className="join__wrap--item">
                         <img src={img_voluntario} alt="unete como empresa" />
@@ -37,9 +39,9 @@ export const Unirse = () => {
                             corporación te brindará la asesoría adecuada en 
                             cada uno de los procesos. Déjanos tus datos.
                         </p>
-                        <button>
-                            <Link to="/empresas">Quiero ser una empresa aliada</Link>
-                        </button>
+                        <Link to="/empresas">
+                            <ButtonBorder border="black" color="black" content="Quiero aliarme como empresa" />
+                        </Link>
                     </div>
                     <div className="join__wrap--item">
                         <img src={img_empresa} alt="unete como voluntario" />
@@ -48,9 +50,9 @@ export const Unirse = () => {
                             tu tiempo y talento a las personas que más 
                             lo necesitan. Déjanos tus datos.
                         </p>
-                        <button>
-                            <Link to="/voluntarios">Quiero ser voluntario</Link>
-                        </button>
+                        <Link to="/voluntarios">
+                            <ButtonBorder border="black" color="black" content="Quiero ser voluntario" />
+                        </Link>
                     </div>
                 </section>
             </section>

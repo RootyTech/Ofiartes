@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { context } from '../../context';
 import { Carousel } from '../Novedades/Carousel';
 import { MenuModal } from '../Header/menuModal';
+import { ImageGaleria } from '../Galeria/imageModal';
 import('./estilos.sass')
 
 const closeByEscKey = (e)=>{
@@ -45,7 +46,7 @@ export const Modal = () => {
             <MenuModal/>
             : modal === "novedades" ?
             <Carousel/>
-            : <img src={modal.imgurl} alt={modal.alt} />
+            : <ImageGaleria url={modal.imgurl} alt={modal.alt}/> 
         }
         <div className="modal--close" onClick= {()=> { closeModal(); }}>
             <div className="modal__bar"></div>
