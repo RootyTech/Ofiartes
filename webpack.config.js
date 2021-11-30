@@ -19,6 +19,9 @@ module.exports = {
         // Archivo compilado de de JS
         filename: 'bundle.js',
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     module: {
         rules: [
             {
