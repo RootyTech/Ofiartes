@@ -141,6 +141,255 @@
                     font-style: normal
                     line-height: 25px
                     text-decoration: none
+
+@media screen and ( min-width: 768px ) // MediaQuery para los dispositivos Tablet
+    .header
+        &__main
+            object-fit: cover
+            background-image: url('../../assets/Img_Header.jpg')
+            background-position: center
+        &__template
+            height: 94px
+            margin-top: 3.75rem
+            background-image: url('../../assets/Template.png')
+            background-repeat: repeat-x
+        &__logo
+            margin: 0.75rem 0.75rem 0 0
+            a
+                figure
+                    width: 5rem
+                    height: 5rem
+                    img
+                        width: 80px
+                        height: 80px
+                        &:hover
+                            border-radius: 15px
+                            box-shadow: 0 4px 16px $negro
+                            transition: all 0.2s ease
+        &__bottom
+            margin-top: 3.125rem
+            h1
+                margin: 0 20%
+                font-size: 40px
+                font-weight: 700
+                line-height: 50px
+            &--buttons
+                margin-top: 3.125rem
+                a
+                    button
+                        width: 350px
+                        font-size: 24px
+                        font-weight: 600
+                        line-height: 33px
+            &--paragraph
+                margin-top: 3.125rem
+                font-size: 24px
+                font-weight: 400
+                line-height: 33px
+
+@media screen and ( min-width: 1024px ) // MediaQuery para los dispositivos Desktop
+    .header
+        &__main
+            height: 570px
+            object-fit: cover
+            background-image: url('../../assets/Img_Header.jpg')
+            background-position: center
+            background-size: 100%
+        &__template
+            height: 100px
+            margin-top: 3.125rem
+            background-image: url('../../assets/Template.png')
+            background-repeat: repeat-x
+        &__top
+            display: block
+            height: 115px
+        &__menu
+            justify-content: center
+            margin: 0
+            padding: 0
+        &__logo
+            position: absolute
+            top: 0
+            right: 0
+            margin: 1.563rem 1.563rem 0 0
+            a
+                figure
+                    width: 5.625rem
+                    height: 5.625rem
+                    img
+                        width: 90px
+                        height: 90px
+                        &:hover
+                            border-radius: 15px
+                            box-shadow: 0 4px 16px $negro
+                            transition: all 0.2s ease
+        &__bottom
+            margin-top: 2.5rem
+            h1
+                margin: 0 25%
+                font-size: 42px
+                font-weight: 700
+                line-height: 50px
+            &--buttons
+                margin-top: 2.5rem
+                a
+                    button
+                        width: 350px
+                        font-size: 24px
+                        font-weight: 600
+                        line-height: 33px
+            &--paragraph
+                max-width: 850px
+                margin: 2.5rem auto 0 auto
+                font-size: 26px
+                font-weight: 400
+                line-height: 35px
+        &__nav
+            margin-top: 40px
+            li
+                display: inline-block
+                width: 150px
+                border-bottom-left-radius: 4px
+                border-bottom-right-radius: 4px
+                text-align: center
+                &:nth-child(1), &:nth-child(2), &:nth-child(3)
+                    margin-right: 30px
+                &:nth-child(1)
+                    border-bottom: 6px solid $verde
+                    &:hover
+                        background: rgba(92, 230, 168, 0.4)
+                        border-radius: 10px 10px 4px 4px
+                        transition: all 0.5s ease
+                &:nth-child(2)
+                    border-bottom: 6px solid $amarillo
+                    &:hover
+                        background: rgba(249, 226, 110, 0.4)
+                        border-radius: 10px 10px 4px 4px
+                        transition: all 0.5s ease
+                &:nth-child(3)
+                    border-bottom: 6px solid $azul
+                    &:hover
+                        background: rgba(55, 188, 255, 0.4)
+                        border-radius: 10px 10px 4px 4px
+                        transition: all 0.5s ease
+                &:nth-child(4)
+                    border-bottom: 6px solid $rojo
+                    &:hover
+                        background: rgba(255, 101, 101, 0.4)
+                        border-radius: 10px 10px 4px 4px
+                        transition: all 0.5s ease
+            a
+                display: block
+                padding: 5px 0px
+                color: $blanco
+                font-size: 18px
+                font-weight: 600
+                font-family: $secundaria
+                font-style: normal
+                line-height: 25px
+                text-decoration: none
+
+@media screen and ( min-width: 1419px )
+    .header
+        &__main
+            height: 696px
+            object-fit: cover
+            background-image: url('../../assets/Img_Header.jpg')
+            background-position: center
+            background-size: 100%
+        &__template
+            height: 101px
+            margin-top: 12.8rem
+            background-image: url('../../assets/Template.png')
+            background-repeat: repeat-x
+        &__top
+            display: block
+            height: 115px
+        &__menu
+            justify-content: center
+            margin: 0
+            padding: 0
+        &__logo
+            position: absolute
+            top: 0
+            right: 0
+            margin: 1.563rem 1.563rem 0 0
+            a
+                figure
+                    width: 5.625rem
+                    height: 5.625rem
+                    img
+                        width: 90px
+                        height: 90px
+                        &:hover
+                            border-radius: 15px
+                            box-shadow: 0 4px 16px $negro
+                            transition: all 0.2s ease
+        &__bottom
+            margin-top: 3.75rem
+            h1
+                font-size: 42px
+                font-weight: 700
+                line-height: 50px
+            &--buttons
+                margin-top: 3.75rem
+                a
+                    button
+                        width: 350px
+                        font-size: 24px
+                        font-weight: 600
+                        line-height: 33px
+            &--paragraph
+                max-width: 850px
+                margin: 3.75rem auto 0 auto
+                font-size: 26px
+                font-weight: 400
+                line-height: 35px
+        &__nav
+            margin-top: 40px
+            li
+                display: inline-block
+                width: 200px
+                border-bottom-left-radius: 4px
+                border-bottom-right-radius: 4px
+                text-align: center
+                &:nth-child(1), &:nth-child(2), &:nth-child(3)
+                    margin-right: 50px
+                &:nth-child(1)
+                    border-bottom: 6px solid $verde
+                    &:hover
+                        background: rgba(92, 230, 168, 0.4)
+                        border-radius: 10px 10px 4px 4px
+                        transition: all 0.5s ease
+                &:nth-child(2)
+                    border-bottom: 6px solid $amarillo
+                    &:hover
+                        background: rgba(249, 226, 110, 0.4)
+                        border-radius: 10px 10px 4px 4px
+                        transition: all 0.5s ease
+                &:nth-child(3)
+                    border-bottom: 6px solid $azul
+                    &:hover
+                        background: rgba(55, 188, 255, 0.4)
+                        border-radius: 10px 10px 4px 4px
+                        transition: all 0.5s ease
+                &:nth-child(4)
+                    border-bottom: 6px solid $rojo
+                    &:hover
+                        background: rgba(255, 101, 101, 0.4)
+                        border-radius: 10px 10px 4px 4px
+                        transition: all 0.5s ease
+            a
+                display: block
+                padding: 5px 0px
+                color: $blanco
+                font-size: 20px
+                font-weight: 600
+                font-family: $secundaria
+                font-style: normal
+                line-height: 30px
+                text-decoration: none
+
 @keyframes pulse
     0%
         box-shadow: 0 0 0 0 $blanco

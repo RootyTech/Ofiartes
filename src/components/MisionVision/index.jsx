@@ -20,11 +20,9 @@ export const MisionVision = () => {
         // MediaQueryDesktop() -> Verdadero si se pasa de 1024px
         if(MediaQueryDesktop()){
             setWidthSize("Desktop"); // Se cambia la variable, para volver a correr el código
-            import('../QueComo/desktop.sass');
         // MediaQueryTablet() -> Verdadero si se pasa de 768px
         } else if (MediaQueryTablet()) {
             setWidthSize("Tablet"); // Se cambia la variable, para volver a correr el código
-            import('../QueComo/tablet.sass');
         } else {
             setWidthSize("Mobile"); // Se cambia la variable, para volver a correr el código
         }
