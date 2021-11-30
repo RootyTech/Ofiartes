@@ -14,6 +14,7 @@ export const WhatHow = (props) => {
             <div className="aboutUs__text">
                 <h3>{props.subtitle}</h3>
                 <p>{props.text}</p>
+                {props.children}
             </div>
         </div>
     )

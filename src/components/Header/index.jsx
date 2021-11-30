@@ -18,20 +18,16 @@ export const Header = ({nombrePagina, titulo, contenido}) => {
         if(MediaQueryDesktopL()){
             setWidthSize("Desktop L"); // Se cambia la variable, para volver a correr el código
             import('./desktop_L.sass'); // Se importan los estilos correspondientes a Desktop
-            console.log("Estilos aplicados Desktop L");
         // MediaQueryDesktop() -> Verdadero si se pasa de 1024px
         }else if (MediaQueryDesktop()){
             setWidthSize("Desktop"); // Se cambia la variable, para volver a correr el código
             import('./desktop.sass'); // Se importan los estilos correspondientes a Desktop
-            console.log("Estilos aplicados Desktop");
         // MediaQueryTablet() -> Verdadero si se pasa de 768px
         } else if (MediaQueryTablet()) {
             setWidthSize("Tablet"); // Se cambia la variable, para volver a correr el código
             import('./tablet.sass'); // Se importan los estilos correspondientes a Tablet
-            console.log("Estilos aplicados Tablet");
         } else {
             setWidthSize("Mobile"); // Se cambia la variable, para volver a correr el código
-            console.log("Estilos aplicados Mobile");
         }
     }
 
