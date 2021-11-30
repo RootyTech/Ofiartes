@@ -3,6 +3,7 @@
         text-align: center
         font-family: $principal
         @extend %mobile_contenido_titulo_secciones
+        color: $gris_negro
     .join__wrap
         display: flex
         //background-color: antiquewhite
@@ -20,9 +21,18 @@
             p
                 text-align: justify
                 font-family: $secundaria
+                color: $gris_negro
                 padding: 25px 0
                 box-sizing: border-box
                 @extend %desktop_contenido_parrafo
                 a button
                     width: 95%
-            
+@media (min-width: $tablet) 
+    .join
+        h2
+            font-size: 32px
+            font-weight: 400
+        .join__wrap
+            .join__wrap--item
+                p
+                    font-size: 18px

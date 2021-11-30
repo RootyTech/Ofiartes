@@ -57,7 +57,6 @@ export const MisionVision = () => {
                     </p>
                 </div>
                 <br />
-                <hr />
             </div>
             <div className="aboutUs__cards">
                 <WhatHow

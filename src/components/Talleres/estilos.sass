@@ -5,7 +5,7 @@
     width: 70%
     max-width: 1100px
     height: 0.938rem
-    background-color: transparent 
+    background-color: $blanco
     border-radius: 0.625rem
     padding: 0.625rem
     margin-left: auto
@@ -18,7 +18,7 @@
     height: 90%
     border: none
     outline: none
-    background-color: transparent
+    background-color: $blanco
     font-family: $secundaria
     padding: 0.188rem 0.625rem
 .search button
@@ -91,3 +91,61 @@
     background-size: cover
     color: $blanco
     backdrop-filter: blur(0.125rem) 
+
+@media screen and ( min-width: 768px ) and ( max-width: 1023px ) // MediaQuery para los dispositivos Tablet
+    .search
+        width: 80%
+    .labels
+        .labels__etiquetas
+            padding: 0.625rem
+            margin: 1.5rem 
+            font-size: 14px
+            font-weight: 300
+    .cards__taller
+        padding: 1.25rem
+        margin: 0rem 4.5rem 0.625rem
+        .card summary
+            font-size: 18px
+            font-weight: 600
+        .card .description
+            font-size: 16px
+            font-weight: 400
+            padding-top: 15px
+        .card .icon__clock .duration
+            font-size: 14px
+            font-weight: 300 
+        .content_button
+            margin-top: 0.5rem 
+.card[open] summary
+    padding:1.25rem 0.625rem
+    height: 5.5rem
+
+@media screen and ( min-width: 1024px ) // MediaQuery para los dispositivos Desktop
+    .search
+        width: 80%
+    .search input
+        font-size: 16px
+        font-weight: 400
+    .labels
+        .labels__etiquetas
+            padding: 0.625rem
+            margin: 1.5rem 
+            font-size: 15px
+            font-weight: 300
+    .cards__taller
+        padding: 1.25rem
+        margin: 0rem 6.7rem 0.625rem
+        cursor: pointer 
+        .card summary
+            font-size: 18px
+            font-weight: 600
+        .card .description
+            font-size: 17px
+            font-weight: 400
+            padding-top: 15px
+        .card .icon__clock .duration
+            font-size: 15px
+            font-weight: 300
+.card[open] summary
+    padding: 1.25rem 2.625rem
+    height: 4.5rem

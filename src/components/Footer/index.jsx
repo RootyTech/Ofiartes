@@ -4,8 +4,7 @@ import { MediaQueryTablet } from '../../lib/mediaQuery';
 
 export const Footer = () => {
 
-    import(/* webpackChunkName: 'footer-mobile' */'./estilos.sass');
-    MediaQueryTablet() && import(/* webpackChunkName: 'footer-desktop' */'./desktop.sass');
+    import(/* webpackChunkName: 'footer' */'./estilos.sass');
     
     return (
         <footer className="footer">
@@ -18,9 +17,11 @@ export const Footer = () => {
                     <p><span>Teléfono</span> 3147477226</p>
                 </div>
                 <div className="footer__icons">
-                    <h2>Redes Sociales</h2>
+                    <h2>Síguenos</h2>
                     <div className="footer__icons--social">
-                        <FaFacebookF className="footer__icons--social--facebook"/>
+                        <a href="https://es-es.facebook.com/ofiartes.org?ref=py_c" target="_blank" rel="nofollow noopener noreferrer">
+                            <FaFacebookF className="footer__icons--social--facebook"/>
+                        </a>
                         <FaWhatsappSquare className="footer__icons--social--whatsapp"/>
                         <a href="https://www.instagram.com/ofiartes/?hl=es" target="_blank" rel="nofollow noopener noreferrer">
                             <FaInstagramSquare className="footer__icons--social--instagram"/>

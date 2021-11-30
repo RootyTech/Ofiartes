@@ -58,7 +58,8 @@ module.exports = {
             // plantilla del HTML
             template: './public/index.html',
             // Inserte el JS y CSS compilado en el HTML
-            inject: true
+            inject: true,
+            favicon: "./public/favicon.ico"
         }),
         new MiniCssExtractPlugin({
             // dist
