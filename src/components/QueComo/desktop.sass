@@ -6,7 +6,6 @@
     .aboutUs
         &__container
             width: 50%
-            max-width: 540px // Lo usamos para que los contenedores no sigan creciendo después de alcanzar 600px de ancho
             padding: 0 30px
             h3
                 font-size: 24px
@@ -20,6 +19,8 @@
         &__cards
             display: flex
             justify-content: center // Lo usamos para centrar los contenedores, luego de que dejan de crecer
+            max-width: 1300px
+            margin: 0 auto
         &__puzzle
             &--largerOne
                 background-color: transparent

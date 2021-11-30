@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { MediaQueryTablet, MediaQueryDesktop} from '../../lib/mediaQuery';
 import { Link } from 'react-router-dom';
+import { LoaderTarjeta } from './skeletonMobile';
+import { MyLoader } from './skeletonTablet';
+import { Loader } from './skeletonDesktop';
 
 import { context } from '../../context';
 
@@ -13,10 +16,33 @@ import img_EtiquetaFormación from '../../assets/EtiquetaFormación.svg';
 import { debug } from 'webpack';
 
 export const TarjetaCursos = () =>{
-    import ('./estilos.sass');
 
-    MediaQueryTablet() && import('./tablet.sass');
-    MediaQueryDesktop() && import('./desktop.sass');
+    import('./estilos.sass');
+
+    const [widthSize, setWidthSize] = useState("Mobile"); // Variable UseState que cambiará cuando se cargue la página o cuando se redimensione esta
+
+    const ResizeCursos = () => { // Constante que guarda la función que valida con que media Query se está trabajando
+        // MediaQueryDesktop() -> Verdadero si se pasa de 1024px
+        if(MediaQueryDesktop()){
+            setWidthSize("Desktop"); // Se cambia la variable, para volver a correr el código
+            import('./desktop.sass'); // Se importan los estilos correspondientes a Desktop
+        // MediaQueryTablet() -> Verdadero si se pasa de 768px
+        } else if (MediaQueryTablet()) {
+            setWidthSize("Tablet"); // Se cambia la variable, para volver a correr el código
+            import('./tablet.sass'); // Se importan los estilos correspondientes a Tablet
+        } else {
+            setWidthSize("Mobile"); // Se cambia la variable, para volver a correr el código
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', ResizeCursos); // REALIZAR LA FUNCIÓN CUANDO LA PÁGINA CAMBIA DE TAMAÑO (EN TIEMPO REAL)
+        window.addEventListener('load', ResizeCursos); // REALIZAR LA FUNCIÓN CUANDO LA PÁGINA CARGA POR PRIMERA VEZ
+        return () => {
+            window.removeEventListener('resize', ResizeCursos); // REMOVER EVENTLISTENER
+            window.removeEventListener('load', ResizeCursos); // REMOVER EVENTLISTENER
+        }
+    }, [])
 
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
 
@@ -74,7 +100,7 @@ export const TarjetaCursos = () =>{
             <h2>Algunos cursos que dictamos</h2> 
             <section className="cards">
                 {
-                talleres ?
+                talleres  ?
                     talleres.slice(0,3).map((taller,index) => (
                         <div className= {`cards_cursos`} key= {`taller-${index}`}>
                             <div className="padre">
@@ -98,7 +124,34 @@ export const TarjetaCursos = () =>{
                             </div>
                         </div>
                     ))
-                :<h2>Loading...</h2>
+                : MediaQueryDesktop() ?
+                    <Loader {...{
+                        width: 1024,
+                        height: 400,
+                        values: {
+                            width:230,
+                            height:350,
+                        },
+                    }} />
+                : MediaQueryTablet() ?
+                    <MyLoader {...{
+                        width: 758,
+                        height: 600,
+                        values: {
+                            width:200,
+                            height:300,
+                        },
+                    }} />
+                : <LoaderTarjeta {...{
+                        width: 320,
+                        height: 600,
+                        values: {
+                            width:220,
+                            height:280,
+                            xposition: 50,
+                            yposition: 10,
+                        },
+                    }} /> 
                 }
             </section>
             <div className="button_final">

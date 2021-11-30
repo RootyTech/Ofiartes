@@ -34,7 +34,7 @@ export const closeModal = ()=>{
     document.querySelector('html').style.overflow = "auto";
 }
 
-export const Modal = ({children}) => {
+export const Modal = () => {
     const { modal, setModal } = useContext(context);
     
     // El Modal retorna un portal que recibe el HTML a renderizar y dónde ( <div id="modal"></div> )
