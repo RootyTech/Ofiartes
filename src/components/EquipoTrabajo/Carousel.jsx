@@ -39,6 +39,7 @@ export const Carousel = () => {
             {/*Contenedor de que contiene los miembros. Aquí preguntamos si memberComponents ya tiene elementos, si es así entonces podremos renderizar los elementos dependiendo del tamaño de pantalla en el que nos encontremos*/}
 
             {
+                
                 memberComponents.length != 0 ?
                 <>
                     {/*Botón que dispara la función de goBack()*/}

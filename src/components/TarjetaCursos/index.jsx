@@ -95,7 +95,9 @@ export const TarjetaCursos = () =>{
                                 </div>
                                 <img src={`${imagen(`${taller.fields.type}`).etiqueta}`} alt= {`${imagen(`${taller.fields.type}`).alt}`} />
                                 <br />
-                                <ButtonBorder border= {`${colores(index).border}`} color= {`${colores(index).color}`} content="Saber más"/>
+                                <Link to="/talleres">
+                                    <ButtonBorder border= {`${colores(index).border}`} color= {`${colores(index).color}`} content="Saber más"/>
+                                </Link>
                             </div>
                         </div>
                     ))
