@@ -13,7 +13,7 @@ const closeByEscKey = (e)=>{
     }
 }
 const closeByClickOutside = (e)=>{
-    if (e.target === document.getElementById('modal') || e.target === document.querySelector('.carousel')) {
+    if (e.target === document.getElementById('modal') || e.target === document.querySelector('.carousel') || e.target === document.querySelector('.galery__img')) {
         closeModal();
     }
 }
