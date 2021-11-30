@@ -1,15 +1,15 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import spinning_circles from '../../assets/spinning_circles.svg';
-import { MediaQueryTablet } from '../../lib/mediaQuery';
+// import { MediaQueryTablet } from '../../lib/mediaQuery';
 
 export const Formulario = (props) => {
     import ('./estilos.sass');//importo estilos spinning_circles.svg
-    MediaQueryTablet() && import('./desktop.sass');
+    // MediaQueryTablet() && import('./desktop.sass');
 //////////variables que inican con '$' se refieren a elementos del dom/////////
-    console.log("desde formulario");
+    // console.log("desde formulario");
     
     useLayoutEffect(() => {
-        console.log("desde el use layout");
+        // console.log("desde el use layout");
         const d = document;
         const $form = d.querySelector('.form'),
         $inputs = d.querySelectorAll('.form [required]');//solo se traen los campos requeidos del form
@@ -102,7 +102,7 @@ export const Formulario = (props) => {
         })
 
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         Form_loader.current.classList.add("none");
         Button.current.classList.remove("none");
         Msj_confirm.current.classList.remove("none");            
