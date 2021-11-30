@@ -39,7 +39,7 @@ export const Unirse = () => {
                             corporación te brindará la asesoría adecuada en 
                             cada uno de los procesos. Déjanos tus datos.
                         </p>
-                        <Link to="/empresas">
+                        <Link to="/empresas" className="btn-height">
                             <ButtonBorder border="black" color="black" content="Quiero aliarme como empresa" />
                         </Link>
                     </div>
