@@ -19,31 +19,6 @@ export const TarjetaCursos = () =>{
 
     import('./estilos.sass');
 
-    const [widthSize, setWidthSize] = useState("Mobile"); // Variable UseState que cambiará cuando se cargue la página o cuando se redimensione esta
-
-    const ResizeCursos = () => { // Constante que guarda la función que valida con que media Query se está trabajando
-        // MediaQueryDesktop() -> Verdadero si se pasa de 1024px
-        if(MediaQueryDesktop()){
-            setWidthSize("Desktop"); // Se cambia la variable, para volver a correr el código
-            import('./desktop.sass'); // Se importan los estilos correspondientes a Desktop
-        // MediaQueryTablet() -> Verdadero si se pasa de 768px
-        } else if (MediaQueryTablet()) {
-            setWidthSize("Tablet"); // Se cambia la variable, para volver a correr el código
-            import('./tablet.sass'); // Se importan los estilos correspondientes a Tablet
-        } else {
-            setWidthSize("Mobile"); // Se cambia la variable, para volver a correr el código
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', ResizeCursos); // REALIZAR LA FUNCIÓN CUANDO LA PÁGINA CAMBIA DE TAMAÑO (EN TIEMPO REAL)
-        window.addEventListener('load', ResizeCursos); // REALIZAR LA FUNCIÓN CUANDO LA PÁGINA CARGA POR PRIMERA VEZ
-        return () => {
-            window.removeEventListener('resize', ResizeCursos); // REMOVER EVENTLISTENER
-            window.removeEventListener('load', ResizeCursos); // REMOVER EVENTLISTENER
-        }
-    }, [])
-
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
 
     let puntero = 0;
@@ -97,7 +72,7 @@ export const TarjetaCursos = () =>{
     }
     return(
         <section>
-            <h2>Algunos cursos que dictamos</h2> 
+            <h2 className="title">Algunos cursos que dictamos</h2> 
             <section className="cards">
                 {
                 talleres  ?

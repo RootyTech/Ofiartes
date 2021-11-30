@@ -5,13 +5,13 @@ import img_beneficiario from '../../assets/img_beneficiario.png';
 import img_empresa from '../../assets/img_empresa.png';
 import img_voluntario from '../../assets/img_voluntario.png';
 //importación de media queries
-import { MediaQueryTablet } from '../../lib/mediaQuery';
+// import { MediaQueryTablet } from '../../lib/mediaQuery';
 import { ButtonBorder } from '../commons/Buttons';
 
 export const Unirse = () => {
     import ('./estilos.sass');
-    MediaQueryTablet() && import('./tablet.sass');
-
+    // MediaQueryTablet() && import('./tablet.sass');
+    
     return (
         <>
             <section className="join">
