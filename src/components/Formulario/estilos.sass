@@ -1,7 +1,7 @@
 .form-wrapp
     h2
         font-family: $principal
-        color: #000
+        color: $gris_negro
         letter-spacing: 1px
         text-align: center
         @extend %mobile_contenido_titulo_secciones
@@ -17,6 +17,7 @@
         label
             @extend %mobile_contenido_titulo
             margin:10px 0
+                color: $gris_negro
         input
             border: none
             padding: 0.5rem
@@ -54,7 +55,7 @@
         border-bottom: thin solid $verde
 
     .form [required]:invalid 
-        border-bottom: thin solid $gris_oscuro
+        border-bottom: thin solid $gris_claro
     .form-error 
         margin-top: -0.938rem
         background-color: $rojo
@@ -76,3 +77,23 @@
     100% 
         visibility: visible
         opacity: 1
+@media (min-width: $tablet) 
+    .form-wrapp
+        h2
+            font-size: 32px
+            font-weight: 400
+        .form
+            label
+                font-size: 18px
+                font-weight: 600
+            input
+                font-size: 17px
+            input::placeholder
+                font-size: 17px
+                font-weight: 300
+            input[type="submit"]
+                font-size: 24px
+                font-weight: 600
+    .form-error 
+        font-size: 15px
+        font-weight: 300

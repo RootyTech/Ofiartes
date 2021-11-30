@@ -17,31 +17,6 @@ export const Talleres = () => {
 
     import('./estilos.sass');
 
-    const [widthSize, setWidthSize] = useState("Mobile"); // Variable UseState que cambiará cuando se cargue la página o cuando se redimensione esta
-
-    const ResizeTalleres = () => { // Constante que guarda la función que valida con que media Query se está trabajando
-        // MediaQueryDesktop() -> Verdadero si se pasa de 1024px
-        if(MediaQueryDesktop()){
-            setWidthSize("Desktop"); // Se cambia la variable, para volver a correr el código
-            import('./desktop.sass'); // Se importan los estilos correspondientes a Desktop
-        // MediaQueryTablet() -> Verdadero si se pasa de 768px
-        } else if (MediaQueryTablet()) {
-            setWidthSize("Tablet"); // Se cambia la variable, para volver a correr el código
-            import('./tablet.sass'); // Se importan los estilos correspondientes a Tablet
-        } else {
-            setWidthSize("Mobile"); // Se cambia la variable, para volver a correr el código
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', ResizeTalleres); // REALIZAR LA FUNCIÓN CUANDO LA PÁGINA CAMBIA DE TAMAÑO (EN TIEMPO REAL)
-        window.addEventListener('load', ResizeTalleres); // REALIZAR LA FUNCIÓN CUANDO LA PÁGINA CARGA POR PRIMERA VEZ
-        return () => {
-            window.removeEventListener('resize', ResizeTalleres); // REMOVER EVENTLISTENER
-            window.removeEventListener('load', ResizeTalleres); // REMOVER EVENTLISTENER
-        }
-    }, [])
-
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
     const [Talleres,setTalleres] = useState([]); //contiene todos los datos de talleres
 
@@ -129,7 +104,7 @@ export const Talleres = () => {
             }
     };
     const handlerChange = (event) =>{
-        console.log(event.target.value);
+        //console.log(event.target.value);
         let talleresMatch = talleres.filter((taller) => taller.fields.title.toLowerCase().includes(event.target.value.toLowerCase()))
         setTalleres(talleresMatch)
     }

@@ -7,7 +7,7 @@ import { openModal } from '../Modal';
 export const Galeria = () => {
     /************Imporación de estilos y media queries**************/
     import ('./estilos.sass');
-    MediaQueryTablet() && import('./desktop.sass');
+    // MediaQueryTablet() && import('./desktop.sass');
     /************Uso del context***********/
     const { galeria } = useContext(context);
     const { modal, setModal } = useContext(context);
