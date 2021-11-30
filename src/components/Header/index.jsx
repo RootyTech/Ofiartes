@@ -17,15 +17,12 @@ export const Header = ({nombrePagina, titulo, contenido}) => {
         // MediaQueryDesktopL() -> Verdadero si se pasa de 1600px
         if(MediaQueryDesktopL()){
             setWidthSize("Desktop L"); // Se cambia la variable, para volver a correr el código
-            import('./desktop_L.sass'); // Se importan los estilos correspondientes a Desktop
         // MediaQueryDesktop() -> Verdadero si se pasa de 1024px
         }else if (MediaQueryDesktop()){
             setWidthSize("Desktop"); // Se cambia la variable, para volver a correr el código
-            import('./desktop.sass'); // Se importan los estilos correspondientes a Desktop
         // MediaQueryTablet() -> Verdadero si se pasa de 768px
         } else if (MediaQueryTablet()) {
             setWidthSize("Tablet"); // Se cambia la variable, para volver a correr el código
-            import('./tablet.sass'); // Se importan los estilos correspondientes a Tablet
         } else {
             setWidthSize("Mobile"); // Se cambia la variable, para volver a correr el código
         }

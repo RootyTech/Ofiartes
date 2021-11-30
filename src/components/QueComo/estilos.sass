@@ -63,3 +63,55 @@
         justify-content: center
         align-items: center
         margin-top: 20px
+
+@media screen and ( min-width: 768px ) // MediaQuery para los dispositivos Tablet
+    .aboutUs
+        &__container
+            h3
+                font-size: 24px 
+                font-weight: 600
+                line-height: 33px
+            p
+                margin-top: 20px
+                font-size: 16px
+                font-weight: 300
+                line-height: 23px
+        &__figure
+            width: 2rem
+            height: 2rem
+        &__containerSecundary
+            margin-top: 30px
+
+@media screen and ( min-width: 1024px ) // MediaQuery para los dispositivos Desktop y superiores
+    .btn
+        height: 3rem
+        padding: 0 25px
+        font-size: 20px
+    .aboutUs
+        &__container
+            width: 50%
+            padding: 0 30px
+            h3
+                font-size: 24px
+                font-weight: 600
+                line-height: 33px
+            p
+                margin-top: 20px
+                font-size: 17px
+                font-weight: 400
+                line-height: 23px
+        &__cards
+            display: flex
+            justify-content: center // Lo usamos para centrar los contenedores, luego de que dejan de crecer
+            max-width: 1300px
+            margin: 0 auto
+        &__puzzle
+            &--largerOne
+                background-color: transparent
+            &--height
+                background-color: transparent
+        &__figure
+            width: 2rem
+            height: 2rem
+        &__containerSecundary
+            margin-top: 40px

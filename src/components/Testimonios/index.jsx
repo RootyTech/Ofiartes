@@ -38,9 +38,7 @@ const reducerCounter = ( state, action ) => {
 export const Testimonios = () => {
 
     /** Estilos importamos de manera dinamica */
-    import(/* webpackChunkName: 'testimonios-mobile' */'./estilos.sass');
-    MediaQueryDesktop() && import(/* webpackChunkName: 'testimonios-desktop' */'./desktop.sass');
-    
+    import(/* webpackChunkName: 'testimonios' */'./estilos.sass');    
     const { testimonios } = useContext(context);
     
     const [ counter, dispatch ] = useReducer(reducerCounter, {first: 0, second: 1});
@@ -50,7 +48,6 @@ export const Testimonios = () => {
 
     const ResizeTestimonios = () => {
        
-        // MediaQueryDesktop() -> True si se pasa de 1024
         if (MediaQueryDesktop()) {
             setWidthSize("Desktop");
         } else {
@@ -85,17 +82,8 @@ export const Testimonios = () => {
 
     }, [testimonios])
 
-    useEffect(() => {
-        console.log("useEffect");
-    }, [])
-
-    useLayoutEffect(() => {
-        console.log("useLayoutEffect");
-    }, [])
-
     return (
         <section className="testimonios">
-            { console.log("Render") }
             <h2>Testimonios</h2>
             {
                 Testimonios.length !== 0 ?

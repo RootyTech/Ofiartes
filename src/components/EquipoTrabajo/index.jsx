@@ -4,10 +4,6 @@ import { MediaQueryMobile365, MediaQueryTablet, MediaQueryDesktop } from '../../
 
 export const EquipoTrabajo = () => {
     import('./estilos.sass');
-    {/*Preguntamos si el tamaño supera los 400 px, si es así entonces importamos los estilos que contienen ese media Query*/}
-    MediaQueryMobile365() && import('./mobile365.sass');
-    MediaQueryTablet() && import('./tablet.sass');
-    MediaQueryDesktop() && import('./desktop.sass');
 
     {/*Usaremos el useState para que todo se vuelva a renderizar cuando la variable cambie de valor, en el momento en el que se renderize de nuevo se renderizará de acuerdo al tamaño que tenga*/}
     const [widthSize, setWidthSize] = useState("Mobile");

@@ -2,9 +2,10 @@
     font-family: $secundaria
     margin: 3rem 0
     &__title
-        @extend %mobile_contenido_subtitulos
+        @extend %mobile_contenido_titulo_secciones
         text-align: center
         color: $gris-negro
+        font-family: $principal
     .carousel
         margin: 1.5rem auto
         position: relative
@@ -28,14 +29,13 @@
                     height: 10rem
                     margin-bottom: 1rem
                 h4
-                    @extend %mobile_contenido_parrafo
+                    @extend %mobile_contenido_subtitulos
                     color: $gris-negro
                     margin-bottom: .5rem
                 h5
-                    @extend %mobile_contenido_light
+                    @extend %mobile_contenido_parrafo
                     margin-bottom: .5rem
                     color: $gris-oscuro
-
         &__button
             position: absolute
             top: 50%
@@ -73,6 +73,36 @@
             .active
                 background-color: $azul
                 transition: background-color .3s
+@media screen and ( min-width: 400px)
+    .workTeam
+        .carousel
+            &__container
+                justify-content: space-around
+@media screen and ( min-width: 768px)
+    .workTeam
+        &__title
+            font-size: 32px
+            font-weight: 400
+        .carousel
+            &__container
+                .member
+                    h4
+                        font-size: 24px
+                        font-weight: 500    
+                    h5
+                        font-size: 18px
+                        font-weight: 400
+            &__button
+                font-size: 2.5rem
+            .dots
+                .dot
+                    width: .9rem
+                    height: .9rem
+@media screen and ( min-width: 1024px)
+    .workTeam
+        &__title
+            margin-bottom: 3rem
+
 @keyframes scaleIn 
     from
         transform: scale(.8)
