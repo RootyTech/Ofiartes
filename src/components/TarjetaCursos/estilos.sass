@@ -55,7 +55,7 @@
 .negro
     background-color: $negro
     color: $blanco
-.title
+.title__cards
     font-family: $principal
     text-align: center 
     margin: 2.5rem 1.25rem 1.95rem 1.25rem
@@ -67,14 +67,17 @@
     align-items: center
     margin-top: 2.05rem
 
-@media screen and ( min-width: 768px ) and ( max-width: 1023px ) // MediaQuery para los dispositivos Tablet
+@media screen and ( min-width: 768px )// MediaQuery para los dispositivos Tablet
     .cards
         display: flex
         flex-wrap: wrap
+    .title__cards
+        font-size: 32px
+        font-weight: 400
 
 @media screen and ( min-width: 1024px ) // MediaQuery para los dispositivos Desktop
     .cards
         display: flex
         flex-wrap: wrap
-        max-width: 1200px
+        max-width: 75rem
         margin: 0 auto

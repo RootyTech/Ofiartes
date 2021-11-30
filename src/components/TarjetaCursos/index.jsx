@@ -71,8 +71,8 @@ export const TarjetaCursos = () =>{
         };   
     }
     return(
-        <section>
-            <h2 className="title">Algunos cursos que dictamos</h2> 
+        <section className="some_cards">
+            <h2 className="title__cards">Algunos cursos que dictamos</h2> 
             <section className="cards">
                 {
                 talleres  ?
