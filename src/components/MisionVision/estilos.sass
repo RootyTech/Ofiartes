@@ -1,15 +1,16 @@
 .history
     font-family: $secundaria
-    @extend %mobile_contenido_parrafo_light
+    @extend %mobile_contenido_parrafo
     text-align: center
     padding-left: 1.875rem
     padding-right: 1.875rem
     padding-top: 1.25rem 
-    padding-bottom: 4.375rem
+    padding-bottom: 1rem
     p
-        max-width: 700px
+        max-width: 900px
         margin: 0 auto
         padding-bottom: 15px
+        color: $gris_negro
     h4
         color: $gris_negro
         font-family: $principal
@@ -25,3 +26,22 @@
             line-height: 22px
             color: $gris_negro
             margin-left: 20px
+
+@media screen and ( min-width: 768px ) and ( max-width: 1023px ) // MediaQuery para los dispositivos Tablet
+    .history
+        p
+            font-size: 16px
+            font-weight: 400
+        h4
+            font-size: 32px
+            font-weight: 400
+
+@media screen and ( min-width: 1024px ) // MediaQuery para los dispositivos Desktop
+    .history
+        p
+            font-size: 17px
+            font-weight: 400
+        h4
+            font-size: 32px
+            font-weight: 400
+
