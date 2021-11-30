@@ -6,7 +6,6 @@ import { Read } from '../../lib/Read';
 export const Testimonio = ({contenido, nombre, cargo, foto}) => {
 
     import(/* webpackChunkName: 'testimonio-mobile' */'./testimonio.sass');
-    MediaQueryTablet() && import(/* webpackChunkName: 'testimonio-desktop' */'./desktop.sass');
 
     return (
         <div className="testimonio">

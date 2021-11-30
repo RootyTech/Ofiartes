@@ -14,6 +14,7 @@
         padding-bottom: 10px
 
     h2
+        font-family: $secundaria
         @extend %mobile_contenido_titulo
         text-align: center
         padding: 1rem 0rem
@@ -26,6 +27,11 @@
             @extend %mobile_contenido_light
             span
                 @extend %mobile_contenido_parrafo
+
+    &__icons
+        h2
+            padding: 0
+            margin: 1rem 0rem
 
     &__icons--social
         display: flex
@@ -54,3 +60,12 @@
             width: 2.25rem
             height: 2.25rem
             border-radius: 0.625rem
+
+@media screen and ( min-width: $tablet )
+    .footer__contenido
+        width: 70%
+        margin: 0 auto
+        display: flex
+
+        .footer__info, .footer__icons
+            width: 100%
