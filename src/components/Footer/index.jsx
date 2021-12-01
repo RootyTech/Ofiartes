@@ -17,12 +17,12 @@ export const Footer = () => {
                     <p><span>Teléfono</span> 3147477226</p>
                 </div>
                 <div className="footer__icons">
-                    <h2>Síguenos</h2>
+                    <h3>Síguenos</h3>
                     <div className="footer__icons--social">
                         <a href="https://es-es.facebook.com/ofiartes.org" target="_blank" rel="nofollow noopener noreferrer">
                             <FaFacebookF className="footer__icons--social--facebook"/>
                         </a>
-                        <a href="https://api.whatsapp.com/send?phone=573147477226" target="_blank">
+                        <a  href="https://api.whatsapp.com/send?phone=573147477226" target="_blank" rel="nofollow noopener noreferrer">
                             <FaWhatsappSquare className="footer__icons--social--whatsapp"/>
                         </a>
                         <a href="https://www.instagram.com/ofiartes" target="_blank" rel="nofollow noopener noreferrer">
