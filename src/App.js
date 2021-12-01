@@ -44,10 +44,7 @@ export const App = () => {
                 if (item.sys.contentType.sys.id === "testimonios") Data.testimonios.push(item);
             })
 
-            setTimeout(() => {
-                setContenido(Data)
-            }, 10000);
-
+            setContenido(Data)
         })();
     }, []);
 
