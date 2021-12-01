@@ -32,7 +32,7 @@ export const Home = () => {
     return (
         <>
             <Helmet>
-                <title>Corporación Ofiartes</title>
+                <title>Corporación Ofi Artes</title>
                 <meta name="description" content="En la corporación Ofi Artes fomentamos el empleo y el emprendimiento" />
             </Helmet>
             <Modal/>

@@ -31,7 +31,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <h4>© Corporación ofiartes 2021</h4>
+            <h4>© Corporación Ofi Artes 2021</h4>
         </footer>
     )
 }

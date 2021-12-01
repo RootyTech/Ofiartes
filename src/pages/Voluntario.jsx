@@ -10,7 +10,7 @@ export const Voluntario = () => {
     return (
         <>
             <Helmet>
-                <title>Voluntarios - Ofiartes</title>
+                <title>Voluntarios - Ofi Artes</title>
                 <meta name="description" content="Conviértete en un voluntario" />
             </Helmet>
             <Modal/>

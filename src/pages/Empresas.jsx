@@ -10,7 +10,7 @@ export const Empresa = () => {
     return (
         <>
             <Helmet>
-                <title>Empresas - Ofiartes</title>
+                <title>Empresas - Ofi Artes</title>
                 <meta name="description" content="Haz parte de nuestras empresas afiliadas" />
             </Helmet>
             <Modal/>
