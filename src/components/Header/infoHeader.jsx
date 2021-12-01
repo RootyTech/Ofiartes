@@ -38,7 +38,7 @@ export const InfoHeader = (props) => {
                                 <Link to="/">Inicio</Link>
                             </li>
                             <li>
-                                <Link to="/pag-talleres">Talleres</Link>
+                                <Link to="/talleres">Talleres</Link>
                             </li>
                             <li>
                                 <Link to="/quienes-somos">Quienes Somos</Link>

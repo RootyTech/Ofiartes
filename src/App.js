@@ -1,27 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-/** Componentes */
-import { EquipoTrabajo } from './components/EquipoTrabajo';
-import { Footer } from './components/Footer';
-import { Formulario } from './components/Formulario';
-import { Galeria } from './components/Galeria';
-import { Header } from './components/Header';
-import { MisionVision } from './components/MisionVision';
-import { Novedades } from './components/Novedades';
-import { QueComo } from './components/QueComo';
-import { Talleres } from './components/Talleres';
-import { Testimonios } from './components/Testimonios';
-import { TarjetaCursos } from './components/TarjetaCursos';
-import { Unirse } from './components/Unirse';
+/** Importación de las páginas */
+import { Home } from './pages/Home';
+import { PagTalleres } from './pages/Talleres';
+import { QuienesSomos } from './pages/QuienesSomos';
 import { Beneficiario } from './pages/Beneficiario';
 import { Voluntario } from './pages/Voluntario';
 import { Empresa } from './pages/Empresas';
 import { NotFound } from './pages/NotFound';
-
-import { Home } from './pages/Home';
-import { QuienesSomos } from './pages/QuienesSomos';
-import { PagTalleres } from './pages/Talleres';
 
 /** Estilos globales */
 import './global.sass';
@@ -57,7 +44,10 @@ export const App = () => {
                 if (item.sys.contentType.sys.id === "testimonios") Data.testimonios.push(item);
             })
 
-            setContenido(Data)
+            setTimeout(() => {
+                setContenido(Data)
+            }, 10000);
+
         })();
     }, []);
 
@@ -66,24 +56,28 @@ export const App = () => {
             <BrowserRouter>
                 { /** Lo que cambiará */}
                 <Switch>
+                    {/** PÁGINAS */}
                     <Route exact path="/" component={Home} />
                     <Route exact path="/quienes-somos" component={QuienesSomos} />
-                    <Route exact path="/pag-talleres" component={PagTalleres} />
-                    <Route exact path="/testimonios" component={Testimonios} />
-                    <Route exact path="/equipo_trabajo" component={EquipoTrabajo} />
-                    <Route exact path="/footer" component={Footer} />
-                    <Route exact path="/formulario" component={Formulario} />
-                    <Route exact path="/galeria" component={Galeria} />
-                    <Route exact path="/header" component={Header} />
-                    <Route exact path="/mision_vision" component={MisionVision} />
-                    <Route exact path="/novedades" component={Novedades} />
-                    <Route exact path="/que_como" component={QueComo} />
-                    <Route exact path="/talleres" component={Talleres} />
-                    <Route exact path="/tarjeta_cursos" component={ TarjetaCursos} />
-                    <Route exact path="/unirse" component={Unirse} />
+                    <Route exact path="/talleres" component={PagTalleres} />
                     <Route exact path="/beneficiarios" component={Beneficiario} />
                     <Route exact path="/voluntarios" component={Voluntario} />
                     <Route exact path="/empresas" component={Empresa} />
+                    {/* COMPONENTES
+                        <Route exact path="/comp-testimonios" component={Testimonios} />
+                        <Route exact path="/comp-equipo-trabajo" component={EquipoTrabajo} />
+                        <Route exact path="/comp-footer" component={Footer} />
+                        <Route exact path="/comp-formulario" component={Formulario} />
+                        <Route exact path="/comp-galeria" component={Galeria} />
+                        <Route exact path="/comp-header" component={Header} />
+                        <Route exact path="/comp-mision-vision" component={MisionVision} />
+                        <Route exact path="/comp-novedades" component={Novedades} />
+                        <Route exact path="/comp-que-como" component={QueComo} />
+                        <Route exact path="/comp-talleres" component={Talleres} />
+                        <Route exact path="/comp-tarjeta-cursos" component={ TarjetaCursos} />
+                        <Route exact path="/comp-unirse" component={Unirse} /> 
+                    */}
+                    {/** ERROR */}
                     <Route path="*" component={NotFound} />
                 </Switch>
             </BrowserRouter>

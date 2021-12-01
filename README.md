@@ -6,6 +6,7 @@
 
 ```
 | 📁public
+|- 🖼 favicon.ico
 |- 📙 index.html
 | 📁src
 |- 📁assets
@@ -22,12 +23,14 @@
 | 🟨 client.js
 | 🟪 global.sass
 | 🟨 index.js
+| 🟪 variables.sass
 | ⚙ .babelrc
 | ⚙ .env
 | ⚙ .gitignore
 | 📦 package-lock.json
 | 📦 package.json
 | 📄 README.md
+| 🚀 vercel.json
 | 📦 webpack.config.js
 ```
 
@@ -72,6 +75,9 @@ $secundaria: 'Open Sans', sans-serif
 ````env
 CONTENFUL_SPACE=
 CONTENFUL_TOKEN=
+
+EMAIL=
+PASSW=
 ````
 
 ## 👥 Colaboradores:

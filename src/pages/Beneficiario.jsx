@@ -1,6 +1,7 @@
 import React from 'react';
-import { Formulario } from '../components/Formulario';
+import { Helmet } from 'react-helmet';
 
+import { Formulario } from '../components/Formulario';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Modal } from '../components/Modal';
@@ -8,6 +9,10 @@ import { Modal } from '../components/Modal';
 export const Beneficiario = () => {
     return (
         <>
+            <Helmet>
+                <title>Beneficiarios - Ofiartes</title>
+                <meta name="description" content="Inscríbete con nosotros" />
+            </Helmet>
             <Modal/>
             <Header nombrePagina="beneficiario" titulo="Inscríbete con nosotros" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
             <Formulario currentForm="beneficiario">   

@@ -32,7 +32,7 @@ export const Galeria = () => {
      */
     return (
         <section className="galery">
-            <h1>Galería de evidencias</h1>
+            <h2>Galería de evidencias</h2>
             <section className="galery__pics">
                 {
                     galeria ?

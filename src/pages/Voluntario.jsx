@@ -1,4 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+
 import { Formulario } from '../components/Formulario';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
@@ -7,6 +9,10 @@ import { Modal } from '../components/Modal';
 export const Voluntario = () => {
     return (
         <>
+            <Helmet>
+                <title>Voluntarios - Ofiartes</title>
+                <meta name="description" content="Conviértete en un voluntario" />
+            </Helmet>
             <Modal/>
             <Header nombrePagina="voluntarios" titulo="Conviértete en un voluntario" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
             <Formulario currentForm="voluntario">   

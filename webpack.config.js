@@ -9,6 +9,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // Variables de entorno
 const Dotenv = require('dotenv-webpack');
 
+const RobotstxtPlugin = require("robotstxt-webpack-plugin");
+const SiteMap = require('sitemap-webpack-plugin').default;
 
 module.exports = {
     // Punto de entrada
@@ -70,6 +72,39 @@ module.exports = {
             path: './.env',
             // configuración
             systemvars: true
-        })        
+        }),
+        new RobotstxtPlugin(),
+        new SiteMap({
+            base: 'https://ofiartes.vercel.app',
+            paths: [
+                {
+                    path: '/',
+                    priority: 1,
+                },
+                {
+                    path: '/quienes-somos',
+                    priority: 0.8,
+                },
+                {
+                    path: '/talleres',
+                    priority: 0.8,
+                },
+                {
+                    path: '/beneficiarios',
+                    priority: 0.8,
+                },
+                {
+                    path: '/voluntarios',
+                    priority: 0.8,
+                },
+                {
+                    path: '/empresas',
+                    priority: 0.8,
+                },
+            ],
+            options: {
+                filename: 'sitemap.xml'
+            }
+        })    
     ]
 };

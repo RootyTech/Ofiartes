@@ -1,6 +1,7 @@
 import React from 'react';
-import { Formulario } from '../components/Formulario';
+import { Helmet } from 'react-helmet';
 
+import { Formulario } from '../components/Formulario';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Modal } from '../components/Modal';
@@ -8,6 +9,10 @@ import { Modal } from '../components/Modal';
 export const Empresa = () => {
     return (
         <>
+            <Helmet>
+                <title>Empresas - Ofiartes</title>
+                <meta name="description" content="Haz parte de nuestras empresas afiliadas" />
+            </Helmet>
             <Modal/>
             <Header nombrePagina="empresas" titulo="Haz parte de nuestras empresas afiliadas" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
             <Formulario currentForm="empresas">   

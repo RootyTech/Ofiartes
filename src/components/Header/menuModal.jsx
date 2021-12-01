@@ -17,7 +17,7 @@ export const MenuModal = (props) => {
                         </li>
                         <li>
                             <div></div>
-                            <Link to="/pag-talleres" onClick={() => { closeModal(); }}>Talleres</Link>
+                            <Link to="/talleres" onClick={() => { closeModal(); }}>Talleres</Link>
                         </li>
                         <li>
                             <div></div>

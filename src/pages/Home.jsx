@@ -1,14 +1,19 @@
-import React, { useEffect, useState, useContext, useLayoutEffect } from 'react';
+import React, { useEffect, useContext, useLayoutEffect } from 'react';
+import { Helmet } from 'react-helmet';
+/** CONTEXTO */
 import { context } from '../context';
+
+/** COMPONENTES */
 import { Header } from '../components/Header';
 import { QueComo } from '../components/QueComo';
 import { Unirse } from '../components/Unirse';
 import { TarjetaCursos } from '../components/TarjetaCursos';
 import { Testimonios } from '../components/Testimonios';
 import { Footer } from '../components/Footer';
-import { Modal, openModal } from '../components/Modal';
 import { useRouteMatch } from 'react-router-dom';
 import { Novedades } from '../components/Novedades';
+
+import { Modal, openModal } from '../components/Modal';
 
 export const Home = () => {
     
@@ -26,6 +31,10 @@ export const Home = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Corporación Ofiartes</title>
+                <meta name="description" content="En la corporación Ofi Artes fomentamos el empleo y el emprendimiento" />
+            </Helmet>
             <Modal/>
             <Novedades/>
             <Header nombrePagina="Home" titulo="Extendemos nuestras manos a quien más lo necesita" contenido=""/>

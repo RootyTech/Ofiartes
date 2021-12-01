@@ -19,13 +19,13 @@ export const Footer = () => {
                 <div className="footer__icons">
                     <h2>Síguenos</h2>
                     <div className="footer__icons--social">
-                        <a href="https://es-es.facebook.com/ofiartes.org?ref=py_c" target="_blank" rel="nofollow noopener noreferrer">
+                        <a href="https://es-es.facebook.com/ofiartes.org" target="_blank" rel="nofollow noopener noreferrer">
                             <FaFacebookF className="footer__icons--social--facebook"/>
                         </a>
                         <a href="https://api.whatsapp.com/send?phone=573147477226" target="_blank">
                             <FaWhatsappSquare className="footer__icons--social--whatsapp"/>
                         </a>
-                        <a href="https://www.instagram.com/ofiartes/?hl=es" target="_blank" rel="nofollow noopener noreferrer">
+                        <a href="https://www.instagram.com/ofiartes" target="_blank" rel="nofollow noopener noreferrer">
                             <FaInstagramSquare className="footer__icons--social--instagram"/>
                         </a>
                     </div>
