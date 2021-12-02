@@ -25,7 +25,7 @@ export const MenuModal = (props) => {
                         </li>
                         <li>
                             <div></div>
-                            <Link to="#" onClick={() => { closeModal(); }}>Contacto</Link>
+                            <a href="https://api.whatsapp.com/send?phone=573147477226" target="_blank" rel="nofollow noopener noreferrer" onClick={() => { closeModal(); }}>Contacto</a>
                         </li>
                     </ul>
                 </nav>
