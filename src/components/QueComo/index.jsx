@@ -102,8 +102,7 @@ export const QueComo = () => {
                         src={ MediaQueryDesktop() ? img_piece_medium_yellow : MediaQueryTablet() ? img_piece_medium_yellow : img_piece_yellow }
                         subtitle="¿Cómo lo hacemos?"
                         text="Con metodologías que se ajusten a las necesidades de nuestros beneficiarios, 
-                        formación a la medida del entorno empresarial y aliados estratégicos que facilitan el 
-                        cumplimiento de la Corporación."
+                        formación a la medida del entorno empresarial y aliados estratégicos que faciliten el cumplimiento de la misión de la corporación."
                     />
                 </div>
                 <div className="aboutUs__containerSecundary">

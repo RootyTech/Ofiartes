@@ -44,7 +44,7 @@ export const InfoHeader = (props) => {
                                 <Link to="/quienes-somos">Quienes Somos</Link>
                             </li>
                             <li>
-                                <Link to="#">Contacto</Link>
+                                <a href="https://api.whatsapp.com/send?phone=573147477226" target="_blank" rel="nofollow noopener noreferrer">Contacto</a>
                             </li>
                         </ul>
                     </nav>
@@ -71,8 +71,8 @@ export const InfoHeader = (props) => {
                         <ButtonFill background="green" color="white" content="DONAR" />
                     </Link>
                     <br /><br />
-                    <Link to="voluntarios">
-                        <ButtonFill background="blue" color="white" content="¿Quieres ser voluntario?" />
+                    <Link to="voluntarios" className="header__bottom--blue">
+                        <ButtonFill background="blue" color="white" content="Quiero ser parte de la corporación" />
                     </Link>
                 </div>
                 : <p className="header__bottom--paragraph">{props.contenido}</p>
