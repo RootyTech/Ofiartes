@@ -147,9 +147,9 @@ export const Testimonios = () => {
                 }
             </div>
             <div className="testimonios__button">
-            <Link to="/voluntarios">
-                <ButtonBorder border="black" color="black" content="¿Quieres ser voluntario?" />
-            </Link>
+            <a href="#join">
+                <ButtonBorder border="black" color="black" content="Haz parte de la corporación" />
+            </a>
             </div>
         </section>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
-import { MediaQueryTablet } from '../../lib/mediaQuery';
+import { FaYoutube } from 'react-icons/fa';
+
 import { FaBullhorn } from 'react-icons/fa';
 import { Read } from '../../lib/Read';
 
@@ -18,6 +19,10 @@ export const Testimonio = ({contenido, nombre, cargo, foto}) => {
                     <p>{cargo}</p>
                 </div>
             </div>
+            <p className="testimonio__youtube" > 
+                Testimonio completo 
+                <FaYoutube className="testimonio__youtube--icon" />
+            </p>
         </div>
     )
 }

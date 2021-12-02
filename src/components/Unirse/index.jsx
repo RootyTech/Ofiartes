@@ -14,7 +14,7 @@ export const Unirse = () => {
     
     return (
         <>
-            <section className="join">
+            <section className="join" id="join">
                 <h2>Haz parte de la corporación</h2>
                 <section className="join__wrap">
                     <div className="join__wrap--item">

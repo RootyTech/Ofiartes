@@ -8,6 +8,14 @@
     font-family: $secundaria
     position: relative
 
+    hr
+        width: 50%
+        padding: 1px 0
+        background: #f3f5f6
+        border-radius: 40%
+        border: 0
+        margin: 8px auto 0 auto
+
     .Horn
         position: absolute
         top: 5%
@@ -20,6 +28,19 @@
         text-align: center
         @extend %mobile_contenido_parrafo
         padding: 2.375rem 1.5rem 0rem 1.5rem
+
+    &__youtube
+        display: flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        @extend %mobile_contenido_parrafo
+        font-weight: 700
+        color: $rojo
+        padding-bottom: 1rem
+        &--icon
+            margin-left: 0.50rem
+            font-size: 1.8rem
 
     &__info
         width: 90%

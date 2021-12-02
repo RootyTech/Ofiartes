@@ -46,22 +46,27 @@
         &--facebook
             background-color: $azul 
             color: $gris_negro
-            width: 1.375rem
-            height: 1.375rem
+            width: 1.5rem
+            height: 1.5rem
             padding: 0.338rem
             border-radius: 0.438rem
         &--whatsapp
             color: $verde
-            width: 2.25rem
-            height: 2.25rem
+            width: 2.375rem
+            height: 2.375rem
             border-radius: 0.625rem
         &--instagram
             color: $amarillo
-            width: 2.25rem
-            height: 2.25rem
+            width: 2.375rem
+            height: 2.375rem
             border-radius: 0.625rem
 
 @media screen and ( min-width: $tablet )
+    .footer__icons
+            &--social
+                width: 25%
+
+@media screen and ( min-width: $desktop )
     .footer__contenido
         width: 70%
         margin: 0 auto
@@ -69,3 +74,18 @@
 
         .footer__info, .footer__icons
             width: 100%
+
+        .footer__icons
+            &--social
+                width: 30%
+
+                &--facebook
+                    width: 1.75rem
+                    height: 1.75rem
+                    padding: 0.338rem
+                &--whatsapp
+                    width: 2.625rem
+                    height: 2.625rem
+                &--instagram
+                    width: 2.625rem
+                    height: 2.625rem
