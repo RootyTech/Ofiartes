@@ -35,8 +35,9 @@ export const Unirse = () => {
                             Para las personas con discapacidad, desempeñar 
                             un trabajo es una forma de sentirse útil en la 
                             sociedad y un modo de realización personal, si 
-                            tu empresa desea ser incluyente laboralmente, la 
-                            corporación te brindará la asesoría adecuada en 
+                            tu empresa desea ser incluyente laboralmente o 
+                            realizar algun tipo de donación, la corporación
+                            te brindará la asesoría adecuada en 
                             cada uno de los procesos. Déjanos tus datos.
                         </p>
                         <Link to="/empresas" className="btn-height">
