@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect } from 'react';
+import React, { useContext} from 'react';
 import { MediaQueryDesktop, MediaQueryTablet } from '../../lib/mediaQuery';
 import { context } from '../../context';
 import { LoaderGalery, LoaderGaleryDesk } from './Skeleton';
@@ -33,9 +33,9 @@ export const Galeria = () => {
     return (
         <section className="galery">
             <h2>Galería de evidencias</h2>
-            <section className="galery__pics">
+            <section className= {galeria ? 'galery__pics':'galery__pics not_grid'}>
                 {
-                    galeria == 1?
+                    galeria ?
                         galeria.slice(0,9).map((galeria,i) => (
                             <div className="galery__pics--item" key={`image_${i}`}>
                                 <img src={galeria.fields.image.fields.file.url} alt={galeria.fields.image.fields.title} />
