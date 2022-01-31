@@ -67,8 +67,8 @@ export const InfoHeader = (props) => {
                 {props.pagina === 'Home'
                 ? 
                 <div className="header__bottom--buttons">
-                    <Link to="#" replace>
-                        <ButtonFill background="green" color="white" content="DONAR" />
+                    <Link to="#" replace> {/** FALTA COLOCAR EL ENLACE DE LAS DONACIONES (CORPORACIÓN FÉ) */}
+                        <ButtonFill background="green" color="white" content="Donar" />
                     </Link>
                     <br /><br />
                     <Link to="voluntarios" className="header__bottom--blue">
