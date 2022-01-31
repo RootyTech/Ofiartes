@@ -54,13 +54,13 @@ export const Talleres = () => {
     function imagen(tipo){
         let etiqueta = "";
         let alt = "";
-        if(tipo == 'Empresarial'){
+        if(tipo == 'empresarial'){
             etiqueta = img_Etiqueta_E
             alt = "taller empresarial"
         }
         else{
             etiqueta = img_Etiqueta_F
-            alt = "taller de formación"
+            alt = "taller de usuarios de la corporación"
         }
         return {
             etiqueta,
@@ -70,13 +70,13 @@ export const Talleres = () => {
     function imagenDos(tipo){
         let etiqueta = "";
         let alt = "";
-        if(tipo == 'Empresarial'){
+        if(tipo == 'empresarial'){
             etiqueta = img_Etiqueta_Roja
             alt = "taller empresarial"
         }
         else{
             etiqueta = img_Etiqueta_Azul
-            alt = "taller de formación"
+            alt = "taller de usuarios de la corporación"
         }
         return {
             etiqueta,
@@ -121,8 +121,8 @@ export const Talleres = () => {
                 <p>Talleres empresariales</p>
             </div>
             <div className="labels__etiquetas">
-                <img src= {img_Etiqueta_F} alt="etiqueta empresarial" />
-                <p>Talleres de Formación</p>
+                <img src= {img_Etiqueta_F} alt="etiqueta usuarios" />
+                <p>Talleres para Usuarios</p>
             </div>
         </div>
         <section className="details__talleres">
@@ -133,7 +133,7 @@ export const Talleres = () => {
                         <details className="card" onToggle={(evento)=> handlerClick(evento,talleres.fields.image.fields.file.url)}>
                             <summary>
                                 {talleres.fields.title}
-                                <img src={`${imagenDos(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagenDos(`${talleres.fields.type}`).alt}`} style={{display:"none"}}/>
+                                <img src={`${imagenDos(`${talleres.metadata.tags[0].sys.id}`).etiqueta}`} alt= {`${imagenDos(`${talleres.metadata.tags[0].sys.id}`).alt}`} style={{display:"none"}}/>
                             </summary>
                             <p className="description">{talleres.fields.description}</p>
                             <div className="icon__clock">
@@ -144,7 +144,7 @@ export const Talleres = () => {
                                 <ButtonBorder border="black" color="black"content="Saber más"/>
                             </div>
                         </details>
-                        <img src={`${imagen(`${talleres.fields.type}`).etiqueta}`} alt= {`${imagen(`${talleres.fields.type}`).alt}`} />
+                        <img src={`${imagen(`${talleres.metadata.tags[0].sys.id}`).etiqueta}`} alt= {`${imagen(`${talleres.metadata.tags[0].sys.id}`).alt}`} />
                     </div>
                 )) 
                 : MediaQueryDesktop() ?
