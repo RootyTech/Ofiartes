@@ -14,7 +14,7 @@ export const Empresa = () => {
                 <meta name="description" content="Haz parte de nuestras empresas afiliadas" />
             </Helmet>
             <Modal/>
-            <Header nombrePagina="empresas" titulo="Haz parte de nuestras empresas afiliadas" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
+            <Header nombrePagina="empresas" titulo="Haz parte de nuestras empresas afiliadas" contenido="Para las personas con discapacidad, desempeñar un trabajo es una forma de sentirse útil en la sociedad y un modo de realización personal, si tu empresa desea ser incluyente laboralmente o realizar algun tipo de donación, la corporación te brindará la asesoría adecuada en cada uno de los procesos."/>
             <Formulario currentForm="empresas">   
                 <label htmlFor="name">Nombre de la empresa</label>
                 <input type="text" name="name" id="name" 

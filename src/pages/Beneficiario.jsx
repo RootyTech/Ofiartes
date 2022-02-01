@@ -14,7 +14,7 @@ export const Beneficiario = () => {
                 <meta name="description" content="Inscríbete con nosotros" />
             </Helmet>
             <Modal/>
-            <Header nombrePagina="beneficiario" titulo="Inscríbete con nosotros" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
+            <Header nombrePagina="beneficiario" titulo="Inscríbete con nosotros" contenido="Si haces parte de la población discapacitada y deseas pertenecer a la corporación para el fomento al empleo y el emprendimiento esta es tu oportunidad."/>
             <Formulario currentForm="beneficiario">   
                 <label htmlFor="name">Nombre completo</label>
                 <input type="text" name="name" id="name" 

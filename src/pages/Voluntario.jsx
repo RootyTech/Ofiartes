@@ -14,7 +14,7 @@ export const Voluntario = () => {
                 <meta name="description" content="Conviértete en un voluntario" />
             </Helmet>
             <Modal/>
-            <Header nombrePagina="voluntarios" titulo="Conviértete en un voluntario" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
+            <Header nombrePagina="voluntarios" titulo="Conviértete en un voluntario" contenido="Esta es una gran oportunidad de trasmitir tu tiempo y talento a las personas que más lo necesitan."/>
             <Formulario currentForm="voluntario">   
                 <label htmlFor="name">Nombre completo</label>
                 <input type="text" name="name" id="name" 
