@@ -106,7 +106,7 @@ export const QueComo = () => {
                     />
                 </div>
                 <div className="aboutUs__containerSecundary">
-                    <Link to="/quienes-somos">
+                    <Link to="/quienes-somos" onClick={() => window.scrollTo(0, 0)}>
                         <ButtonBorder border="black" color="black" content="Conoce más" />
                     </Link>
                 </div>

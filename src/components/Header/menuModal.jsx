@@ -13,15 +13,15 @@ export const MenuModal = (props) => {
                     <ul>
                         <li>
                             <div></div>
-                            <Link to="/" onClick={() => { closeModal(); }}>Inicio</Link>
+                            <Link to="/" onClick={() => { window.scrollTo(0, 0); closeModal(); }}>Inicio</Link>
                         </li>
                         <li>
                             <div></div>
-                            <Link to="/talleres" onClick={() => { closeModal(); }}>Talleres</Link>
+                            <Link to="/talleres" onClick={() => { window.scrollTo(0, 0); closeModal(); }}>Talleres</Link>
                         </li>
                         <li>
                             <div></div>
-                            <Link to="/quienes-somos" onClick={() => { closeModal(); }}>Quienes Somos</Link>
+                            <Link to="/quienes-somos" onClick={() => { window.scrollTo(0, 0); closeModal(); }}>Quienes Somos</Link>
                         </li>
                         <li>
                             <div></div>

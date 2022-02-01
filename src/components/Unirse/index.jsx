@@ -25,7 +25,7 @@ export const Unirse = () => {
                             fomento al empleo y el emprendimiento esta es 
                             tu oportunidad. Déjanos tus datos.
                         </p>
-                        <Link to="/beneficiarios">
+                        <Link to="/beneficiarios" onClick={() => window.scrollTo(0, 0)}>
                             <ButtonBorder border="black" color="black" content="Quiero ser beneficiario" />
                         </Link>
                     </div>
@@ -39,7 +39,7 @@ export const Unirse = () => {
                             corporación te brindará la asesoría adecuada en 
                             cada uno de los procesos. Déjanos tus datos.
                         </p>
-                        <Link to="/empresas" className="btn-height">
+                        <Link to="/empresas" onClick={() => window.scrollTo(0, 0)} className="btn-height">
                             <ButtonBorder border="black" color="black" content="Quiero aliarme como empresa" />
                         </Link>
                     </div>
@@ -50,7 +50,7 @@ export const Unirse = () => {
                             tu tiempo y talento a las personas que más 
                             lo necesitan. Déjanos tus datos.
                         </p>
-                        <Link to="/voluntarios">
+                        <Link to="/voluntarios" onClick={() => window.scrollTo(0, 0)}>
                             <ButtonBorder border="black" color="black" content="Quiero ser voluntario" />
                         </Link>
                     </div>

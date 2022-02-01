@@ -25,10 +25,15 @@
         &--arrow
             cursor: pointer
 
-    &__button
+    &__button a
         display: flex
         justify-content: center
         align-items: center
+        text-decoration: none
+
+        button
+            height: 3.813rem
+            width: 15.625rem
 
 @media (min-width: 1024px)
     .testimonios
@@ -36,6 +41,9 @@
         h2
             font-size: 32px
             font-weight: 400
+
+        &__button a button
+            width: 21.875rem
 
         &__content
             display: grid

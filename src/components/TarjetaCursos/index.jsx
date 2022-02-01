@@ -95,7 +95,7 @@ export const TarjetaCursos = () =>{
                                 </div>
                                 <img src={`${imagen(`${taller.fields.type}`).etiqueta}`} alt= {`${imagen(`${taller.fields.type}`).alt}`} />
                                 <br />
-                                <Link to="/talleres">
+                                <Link to="/talleres" onClick={() => window.scrollTo(0, 0)}>
                                     <ButtonBorder border= {`${colores(index).border}`} color= {`${colores(index).color}`} content="Saber más"/>
                                 </Link>
                             </div>
@@ -132,7 +132,7 @@ export const TarjetaCursos = () =>{
                 }
             </section>
             <div className="button_final">
-                <Link to="/talleres">
+                <Link to="/talleres" onClick={() => window.scrollTo(0, 0)}>
                     <ButtonBorder border= "black" color= "black" content="Ver todos los talleres"/>
                 </Link>
             </div>

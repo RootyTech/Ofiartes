@@ -39,7 +39,7 @@ export const Header = ({nombrePagina, titulo, contenido}) => {
     
     return (
         <>
-            <header className="header">
+            <header className="header" id='header'>
                 <div className="header__main">
                     <InfoHeader pagina={nombrePagina} titulo={titulo} contenido={contenido}></InfoHeader>
                     <div className="header__template"></div>
