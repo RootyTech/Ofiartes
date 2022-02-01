@@ -42,8 +42,12 @@ export const Formulario = (props) => {
     },[])
 
     const Form = useRef(null), Form_loader = useRef(null),
-    Msj_confirm = useRef(null), Button = useRef(null);
-
+    Msj_confirm = useRef(null), Button = useRef(null), ButtonReset = useRef(null);
+    
+    const Reset = () => {
+        ButtonReset.current.classList.add("none");
+        Button.current.classList.remove("none");
+    }
     const Submit = async (event) => {
         event.preventDefault();
         //console.log(Form);
@@ -51,7 +55,6 @@ export const Formulario = (props) => {
         Button.current.classList.add("none");
         let content = {};
         let subject = '';
-        
         if ( props.currentForm === 'voluntario' ) {
             content = {
                 title: "NUEVO VOLUNTARIO",
@@ -59,6 +62,7 @@ export const Formulario = (props) => {
                 id: Form.current.children[4].value,
                 email_user: Form.current.children[7].value,
                 phone: Form.current.children[10].value,
+                coments: Form.current.children[13].value,
             };
             subject = "NUEVO VOLUNTARIO";
         } else if ( props.currentForm === 'empresas' ) {
@@ -67,7 +71,8 @@ export const Formulario = (props) => {
                 name: Form.current.children[1].value,
                 id: Form.current.children[4].value,
                 email_user: Form.current.children[7].value,
-                phone: Form.current.children[10].value,
+                nameContact: Form.current.children[10].value,
+                phone: Form.current.children[13].value,
             };
             subject = "NUEVA EMPRESA";
         } else if ( props.currentForm === 'beneficiario' ) {
@@ -104,25 +109,25 @@ export const Formulario = (props) => {
         const data = await response.json();
         // console.log(data);
         Form_loader.current.classList.add("none");
-        Button.current.classList.remove("none");
+        ButtonReset.current.classList.remove("none");
         Msj_confirm.current.classList.remove("none");            
         setTimeout(() => {
             Msj_confirm.current.classList.add("none");            
-        }, 3000);
-        
+        }, 4000);
     }
 
     return (
         <section className="form-wrapp">
             <h2>Envianos tus datos</h2>
-            <form onSubmit={(e) => Submit(e)} className="form" ref={Form}>
+            <form onReset={(e) => Reset(e)} onSubmit={(e) => Submit(e)} className="form" ref={Form}>
                 {props.children}
                 <input type="submit" value="Envíar" ref={Button} />
+                <input type="reset" value="Nuevo" className="none"  ref={ButtonReset} />
                 <div className="form-loader none" ref={Form_loader}>
                     <img src={spinning_circles} alt="loader"/>
                 </div>
                 <div className="form-response none" ref={Msj_confirm}>
-                    <p>Los datos han sido enviados</p>
+                    <p>DATOS ENVIADOS CORRECTAMENTE😉</p>
                 </div>
             </form>
         </section>

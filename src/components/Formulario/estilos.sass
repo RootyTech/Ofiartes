@@ -17,7 +17,7 @@
         label
             @extend %mobile_contenido_titulo
             margin:10px 0
-                color: $gris_negro
+            color: $negro
         input
             border: none
             padding: 0.5rem
@@ -26,7 +26,8 @@
         input::placeholder
             @extend  %mobile_contenido_light
             color: $gris_oscuro
-        input[type="submit"]
+        input[type="submit"],
+        input[type="reset"]
             width: 50%
             margin: 1rem auto
             cursor: pointer
@@ -40,6 +41,15 @@
             background-color: $negro
         textarea 
             resize: none
+            font-family: $secundaria
+            padding: 1rem
+            border-radius: 8px
+            font-size: 14px
+            color: $negro
+            margin-bottom: 1rem
+        textarea::placeholder
+            font-size: 14px
+            color: $gris_oscuro
         div 
             padding-bottom: 1rem
             input
@@ -51,6 +61,11 @@
             margin: 0 auto
         .form-response
             text-align: center
+            font-size: 20px
+            background-color: #ecf5eb
+            border-radius: 10px
+            padding-top: 1rem
+            box-shadow: 6px 5px 12px -8px #000000
     .form [required]:valid 
         border-bottom: thin solid $verde
 
@@ -94,6 +109,10 @@
             input[type="submit"]
                 font-size: 24px
                 font-weight: 600
+            textarea 
+                font-size: 16px
+            textarea::placeholder
+                font-size: 16px
     .form-error 
         font-size: 15px
         font-weight: 300

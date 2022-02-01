@@ -16,9 +16,9 @@ export const Empresa = () => {
             <Modal/>
             <Header nombrePagina="empresas" titulo="Haz parte de nuestras empresas afiliadas" contenido="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam non exercitationem natus repellendus aspernatur sed deleniti, facere velit cum similique!"/>
             <Formulario currentForm="empresas">   
-                <label htmlFor="name">Nombre completo</label>
+                <label htmlFor="name">Nombre de la empresa</label>
                 <input type="text" name="name" id="name" 
-                placeholder="Ingrese su nombre completo" title="El nombre solo acepta letras y espacio en blanco"
+                placeholder="Ingrese el nombre de la empresa u organización" title="El nombre solo acepta letras y espacio en blanco"
                 required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"/>     
 
                 <label htmlFor="num_id">NIT empresarial</label>
@@ -30,6 +30,11 @@ export const Empresa = () => {
                 placeholder="Ingrese su correo" title="El correo es incorrecto"
                 required pattern="^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"/>  
                     
+                <label htmlFor="nameContact">Nombre del contacto</label>
+                <input type="text" name="nameContact" id="nameContact" 
+                placeholder="Ingrese su nombre completo" title="El nombre solo acepta letras y espacio en blanco"
+                required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"/>
+
                 <label htmlFor="tel">Teléfono de contacto</label>
                 <input type="number" name="tel" id="tel" 
                 placeholder="Ingrese su télefono de contacto" title="El teléfono es requerido" required/>

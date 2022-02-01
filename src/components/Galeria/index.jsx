@@ -1,7 +1,7 @@
-import React, { useContext, useLayoutEffect } from 'react';
+import React, { useContext} from 'react';
 import { MediaQueryDesktop, MediaQueryTablet } from '../../lib/mediaQuery';
 import { context } from '../../context';
-import { LoaderGalery } from './Skeleton';
+import { LoaderGalery, LoaderGaleryDesk } from './Skeleton';
 import { openModal } from '../Modal';
 
 export const Galeria = () => {
@@ -33,23 +33,23 @@ export const Galeria = () => {
     return (
         <section className="galery">
             <h2>Galería de evidencias</h2>
-            <section className="galery__pics">
+            <section className= {galeria ? 'galery__pics':'galery__pics not_grid'}>
                 {
                     galeria ?
-                        galeria.map((galeria,i) => (
+                        galeria.slice(0,9).map((galeria,i) => (
                             <div className="galery__pics--item" key={`image_${i}`}>
                                 <img src={galeria.fields.image.fields.file.url} alt={galeria.fields.image.fields.title} />
                                 <div onClick={() => {setModal({ "imgurl":galeria.fields.image.fields.file.url, "alt":galeria.fields.image.fields.title }); openModal();}}>{galeria.fields.title}</div>
                             </div>
                         ))
                     : MediaQueryDesktop() ?
-                        <LoaderGalery {...{
-                            width: 1024,
-                            height: 600,
+                        <LoaderGaleryDesk {...{
+                            width: 1100,
+                            height: 850,
                             values: {
-                                width:250,
-                                height:192,
-                                xposition:250,
+                                width:360,
+                                height:272,
+                                xposition:0,
                             },
                         }} />
                     : MediaQueryTablet() ?
@@ -59,16 +59,16 @@ export const Galeria = () => {
                             values: {
                                 width:168,
                                 height:192,
-                                xposition:50,
+                                xposition:0,
                             },
                         }} />
                     :
                         <LoaderGalery {...{
-                            width: 320,
-                            height: 600,
+                            width: 285,
+                            height: 490,
                             values: {
-                                width:104,
-                                height:192,
+                                width:140,
+                                height:160,
                                 xposition:0,
                             },
                         }} />
