@@ -33,13 +33,14 @@ export const Carousel = () => {
             {/*Renderizado del contenedor de que contiene los miembros*/}
             {/*Contenedor de que contiene los miembros. Aquí preguntamos si memberComponents ya tiene elementos, si es así entonces podremos renderizar los elementos dependiendo del tamaño de pantalla en el que nos encontremos*/}
 
+            {console.log(news)}
             { 
-                news ?
+                news?.length ?
                 <>
                     {/*Botón que dispara la función de goBack()*/}
                     <button className="carousel__button" type="button" onClick={() => goBack()}> {"<"} </button>
                     <div className="carousel__container">
-                        <img src={news[counter].fields.image.fields.file.url} alt={`Imagen de la novedad${news[counter].fields.name}`} />
+                        {/* <img src={news[counter].fields.image.fields.file.url} alt={`Imagen de la novedad${news[counter].fields.name}`} /> */}
                     </div>
                     {/*Botón que dispara la función de goNext()*/}
                     <button className="carousel__button" type="button" onClick={() => goNext()}> {">"} </button>
