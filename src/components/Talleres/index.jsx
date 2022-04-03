@@ -130,7 +130,7 @@ export const Talleres = () => {
                 talleres ?
                 Talleres.map((talleres,index) => (
                     <div className= {`cards__taller ${colores()}`}  key= {`taller-${index}`}>
-                        <details className="card" onToggle={(evento)=> handlerClick(evento,talleres.fields.image.fields.file.url)}>
+                        <details className="card" onToggle={(evento)=> handlerClick(evento,talleres.fields.image.fields?.file.url)}>
                             <summary>
                                 {talleres.fields.title}
                                 <img src={`${imagenDos(`${talleres.metadata.tags[0].sys.id}`).etiqueta}`} alt= {`${imagenDos(`${talleres.metadata.tags[0].sys.id}`).alt}`} style={{display:"none"}}/>

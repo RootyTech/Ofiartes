@@ -80,7 +80,7 @@ export const TarjetaCursos = () =>{
                         <div className= {`cards_cursos`} key= {`taller-${index}`}>
                             <div className="padre">
                                 <div className="card-top">
-                                    <img src={`${taller.fields.image.fields.file.url}`} alt={`${taller.fields.image.fields.description}`} />
+                                    <img src={`${taller.fields.image.fields?.file.url}`} alt={`${taller.fields.image.fields?.description}`} />
                                 </div>
                                 <div className="card-bottom"></div>
                             </div>

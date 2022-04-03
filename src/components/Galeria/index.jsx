@@ -38,8 +38,8 @@ export const Galeria = () => {
                     galeria ?
                         galeria.slice(0,9).map((galeria,i) => (
                             <div className="galery__pics--item" key={`image_${i}`}>
-                                <img src={galeria.fields.image.fields.file.url} alt={galeria.fields.image.fields.title} />
-                                <div onClick={() => {setModal({ "imgurl":galeria.fields.image.fields.file.url, "alt":galeria.fields.image.fields.title }); openModal();}}>{galeria.fields.title}</div>
+                                <img src={galeria.fields.image.fields?.file.url} alt={galeria.fields.image.fields?.title} />
+                                <div onClick={() => {setModal({ "imgurl":galeria.fields.image.fields?.file.url, "alt":galeria.fields.image.fields?.title }); openModal();}}>{galeria.fields.title}</div>
                             </div>
                         ))
                     : MediaQueryDesktop() ?

@@ -11,7 +11,8 @@ export const Carousel = () => {
     const [counter, setCounter] = useState(0);
     let memberComponents = [];
     {/*Recorremos a través de un .map() el array members el cual traemos del contexto y con los datos de cada miembro/item creamos un componente Member que será enviado al array de componentes memberComponents*/}
-    members ? memberComponents = members.map((member, index) => <Member key={index} photoUrl={member.fields.image.fields.file.url} name={member.fields.name} role={member.fields.role} />): memberComponents=[];
+    members ? memberComponents = members.map((member, index) => <Member key={index} photoUrl={member.fields.image.fields?.file.url} name={member.fields.name} role={member.fields.role} />): memberComponents=[];
+    debugger
     {/*Función encargada de ir hacia adelante y de darle un nuevo valor al contador, si llega a la última posición reinicia el contador en 0*/}
     function goNext() {
         if (counter + 1  === members.length) {

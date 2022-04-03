@@ -71,7 +71,7 @@ export const Testimonios = () => {
                 contenido={testimonio.fields.description}
                 nombre={testimonio.fields.name}
                 cargo={testimonio.fields.role}
-                foto={`https:${testimonio.fields.image.fields.file.url}`}
+                foto={`https:${testimonio.fields.image.fields?.file.url}`}
                 key={`testimonio-${index}`}
                 />
                 ))
