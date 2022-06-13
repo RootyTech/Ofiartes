@@ -44,7 +44,7 @@ export const Empresa = () => {
                     <p>
                         <br />
                         <input type="checkbox" name="handling_info" id="handling_info" required title="Debe aceptarla :D" value="Acepto"/>
-                        Acepto que la Corporación Ofi Artes haga un buen uso de mi información.
+                        Acepto que la Corporación Ofiartes haga un buen uso de mi información.
                     </p>
                 </div>                       
             </Formulario>
