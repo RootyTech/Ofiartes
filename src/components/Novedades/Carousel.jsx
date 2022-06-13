@@ -32,8 +32,6 @@ export const Carousel = () => {
             {/*Renderizado del componente en el índice que se encuentre el contador*/}
             {/*Renderizado del contenedor de que contiene los miembros*/}
             {/*Contenedor de que contiene los miembros. Aquí preguntamos si memberComponents ya tiene elementos, si es así entonces podremos renderizar los elementos dependiendo del tamaño de pantalla en el que nos encontremos*/}
-
-            {console.log(news)}
             { 
                 news?.length ?
                 <>

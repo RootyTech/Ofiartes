@@ -43,7 +43,7 @@ export const App = () => {
                 if (item.sys.contentType.sys.id === "integrantes") Data.members.push(item);
                 if (item.sys.contentType.sys.id === "testimonios") Data.testimonios.push(item);
             })
-
+            console.log(res.items);
             setContenido(Data)
         })();
     }, []);
