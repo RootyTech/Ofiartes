@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaInstagramSquare, FaWhatsappSquare } from 'react-icons/fa';
+import { FaFacebookF, FaInstagramSquare, FaWhatsappSquare, FaYoutube } from 'react-icons/fa';
 import { MediaQueryTablet } from '../../lib/mediaQuery';
 
 export const Footer = () => {
@@ -25,13 +25,16 @@ export const Footer = () => {
                         <a  href="https://api.whatsapp.com/send?phone=573147477226" target="_blank" rel="nofollow noopener noreferrer">
                             <FaWhatsappSquare className="footer__icons--social--whatsapp"/>
                         </a>
-                        <a href="https://www.instagram.com/ofiartes" target="_blank" rel="nofollow noopener noreferrer">
+                        <a href="https://www.instagram.com/corporacionofiartes/" target="_blank" rel="nofollow noopener noreferrer">
                             <FaInstagramSquare className="footer__icons--social--instagram"/>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UC8SaurQUuf-FWJgjOYKGhkQ" target="_blank" rel="nofollow noopener noreferrer">
+                            <FaYoutube className="footer__icons--social--youtube"/>
                         </a>
                     </div>
                 </div>
             </div>
-            <h4>© Corporación Ofi Artes 2021</h4>
+            <h4>© Corporación Ofiartes 2021</h4>
         </footer>
     )
 }
