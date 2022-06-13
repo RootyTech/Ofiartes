@@ -34,7 +34,7 @@ export const Voluntario = () => {
                 <input type="number" name="tel" id="tel" 
                 placeholder="Ingrese su télefono de contacto" title="El teléfono es requerido" required/>
 
-                <label htmlFor="tel">Cuentanos que voluntarido quieres realizar</label>
+                <label htmlFor="tel">Cuentanos que voluntariado quieres realizar</label>
                 <textarea name="coments" id="coments" cols="50" rows="3" placeholder="Quiero ayudar con..." data-pattern="^.{1,255}$" title="Tu comentario no debe exceder los 255 caracteres" required></textarea>
 
                 <div>
