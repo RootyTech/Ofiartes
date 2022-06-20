@@ -10,8 +10,10 @@ import {ButtonBorder} from '../commons/Buttons'
 //importación de imágenes
 import img_Etiqueta_E from '../../assets/Etiqueta_E.svg';
 import img_Etiqueta_F from '../../assets/Etiqueta_F.svg';
+import img_Etiqueta_Sin from '../../assets/Etiqueta_sin.svg';
 import img_Etiqueta_Roja from '../../assets/Etiqueta_empresarial_roja.svg';
 import img_Etiqueta_Azul from '../../assets/Etiqueta_formación_azul.svg';
+import img_Etiqueta_Negra from '../../assets/Etiqueta_sin_clasificar.svg';
 
 export const Talleres = () => {
 
@@ -54,13 +56,17 @@ export const Talleres = () => {
     function imagen(tipo){
         let etiqueta = "";
         let alt = "";
+        console.log(tipo)
         if(tipo == 'empresarial'){
             etiqueta = img_Etiqueta_E
             alt = "taller empresarial"
         }
-        else{
+        else if(tipo == 'usuarios'){
             etiqueta = img_Etiqueta_F
             alt = "taller de usuarios de la corporación"
+        }else{
+            etiqueta = img_Etiqueta_Sin
+            alt = "taller sin clasificar"
         }
         return {
             etiqueta,
@@ -70,13 +76,17 @@ export const Talleres = () => {
     function imagenDos(tipo){
         let etiqueta = "";
         let alt = "";
+        console.log(tipo)
         if(tipo == 'empresarial'){
             etiqueta = img_Etiqueta_Roja
             alt = "taller empresarial"
         }
-        else{
+        else if(tipo == 'usuarios'){
             etiqueta = img_Etiqueta_Azul
             alt = "taller de usuarios de la corporación"
+        }else{
+            etiqueta = img_Etiqueta_Negra
+            alt = "taller sin clasificar"
         }
         return {
             etiqueta,
@@ -133,7 +143,8 @@ export const Talleres = () => {
                         <details className="card" onToggle={(evento)=> handlerClick(evento,talleres.fields.image.fields?.file.url)}>
                             <summary>
                                 {talleres.fields.title}
-                                <img src={`${imagenDos(`${talleres.metadata.tags[0].sys.id}`).etiqueta}`} alt= {`${imagenDos(`${talleres.metadata.tags[0].sys.id}`).alt}`} style={{display:"none"}}/>
+                                {console.log(talleres.metadata)}
+                                <img src={`${imagenDos(`${talleres.metadata.tags[0]?.sys.id}`).etiqueta}`} alt= {`${imagenDos(`${talleres.metadata.tags[0]?.sys.id}`).alt}`} style={{display:"none"}}/>
                             </summary>
                             <p className="description">{talleres.fields.description}</p>
                             <div className="icon__clock">
@@ -144,7 +155,7 @@ export const Talleres = () => {
                                 <ButtonBorder border="black" color="black"content="Saber más"/>
                             </div>
                         </details>
-                        <img src={`${imagen(`${talleres.metadata.tags[0].sys.id}`).etiqueta}`} alt= {`${imagen(`${talleres.metadata.tags[0].sys.id}`).alt}`} />
+                        <img src={`${imagen(`${talleres.metadata.tags[0]?.sys.id}`).etiqueta}`} alt= {`${imagen(`${talleres.metadata.tags[0]?.sys.id}`).alt}`} />
                     </div>
                 )) 
                 : MediaQueryDesktop() ?
