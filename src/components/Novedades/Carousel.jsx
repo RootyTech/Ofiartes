@@ -33,24 +33,28 @@ export const Carousel = () => {
             {/*Renderizado del contenedor de que contiene los miembros*/}
             {/*Contenedor de que contiene los miembros. Aquí preguntamos si memberComponents ya tiene elementos, si es así entonces podremos renderizar los elementos dependiendo del tamaño de pantalla en el que nos encontremos*/}
             { 
-                news?.length ?
-                <>
-                    {/*Botón que dispara la función de goBack()*/}
-                    <button className="carousel__button" type="button" onClick={() => goBack()}> {"<"} </button>
-                    <div className="carousel__container">
-                        {/* <img src={news[counter].fields.image.fields.file.url} alt={`Imagen de la novedad${news[counter].fields.name}`} /> */}
-                    </div>
-                    {/*Botón que dispara la función de goNext()*/}
-                    <button className="carousel__button" type="button" onClick={() => goNext()}> {">"} </button>
+                news ?
+                    news.length ? 
+                    <>
+                        {/*Botón que dispara la función de goBack()*/}
+                        <button className="carousel__button" type="button" onClick={() => goBack()}> {"<"} </button>
+                        <div className="carousel__container">
+                            <img src={news[counter].fields.image.fields.file.url} alt={`Imagen de la novedad${news[counter].fields.name}`} />
+                        </div>
+                        {/*Botón que dispara la función de goNext()*/}
+                        <button className="carousel__button" type="button" onClick={() => goNext()}> {">"} </button>
 
-                </>            
-                : 
-                <NewsLoader {...{
-                    widthviewbox: 200,
-                    heightviewbox: 200,
-                    contentwidth: 360,
-                    xpositions: ["25%"],
-                }} />
+                    </>            
+                    : 
+                    <p className='carousel__message'>En este momento no tenemos novedades, pero vuelve pronto para enterarte de todo lo que suceda</p>
+                    
+                    :
+                    <NewsLoader {...{
+                        widthviewbox: 200,
+                        heightviewbox: 200,
+                        contentwidth: 360,
+                        xpositions: ["25%"],
+                    }} />
             }
             {/*En este punto recorremos de nuevo el array que viene del contexto para poner exactamente esa cantidad de componentes Dots, estos componentes reciben el parámatro active en el cual si coincide el index con el valor del contador actual entonces enviaremos el string "Active" o true*/}
             <div className="dots">
