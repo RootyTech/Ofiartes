@@ -118,7 +118,7 @@ export const Formulario = (props) => {
 
     return (
         <section className="form-wrapp">
-            <h2>Envianos tus datos</h2>
+            <h2>Envíanos tus datos</h2>
             <form onReset={(e) => Reset(e)} onSubmit={(e) => Submit(e)} className="form" ref={Form}>
                 {props.children}
                 <input type="submit" value="Envíar" ref={Button} />
