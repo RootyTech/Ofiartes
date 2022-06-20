@@ -25,7 +25,7 @@ export const Voluntario = () => {
                 <input type="number" name="num_id" id="num_id" 
                 placeholder="Ingrese su identificación" title="El número de identificación debe ser valido" required/>  
 
-                <label htmlFor="email">Correo electronico</label>
+                <label htmlFor="email">Correo electrónico</label>
                 <input type="email" name="email" id="email" 
                 placeholder="Ingrese su correo" title="El correo es incorrecto"
                 required pattern="^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"/>  
@@ -34,7 +34,7 @@ export const Voluntario = () => {
                 <input type="number" name="tel" id="tel" 
                 placeholder="Ingrese su télefono de contacto" title="El teléfono es requerido" required/>
 
-                <label htmlFor="tel">Cuentanos que voluntariado quieres realizar</label>
+                <label htmlFor="tel">Cuéntanos qué voluntariado quieres realizar</label>
                 <textarea name="coments" id="coments" cols="50" rows="3" placeholder="Quiero ayudar con..." data-pattern="^.{1,255}$" title="Tu comentario no debe exceder los 255 caracteres" required></textarea>
 
                 <div>
