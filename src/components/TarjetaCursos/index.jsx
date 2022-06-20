@@ -13,7 +13,7 @@ import {ButtonBorder} from '../commons/Buttons'
 //importación de imágenes
 import img_EtiquetaEmpresarial from '../../assets/EtiquetaEmpresarial.svg';
 import img_EtiquetaFormación from '../../assets/EtiquetaFormación.svg';
-import { debug } from 'webpack';
+import img_Etiqueta_Negra from '../../assets/Etiqueta_sin_clasificar.svg';
 
 export const TarjetaCursos = () =>{
 
@@ -53,17 +53,20 @@ export const TarjetaCursos = () =>{
             color
         };
     };
-    
     function imagen(tipo){
         let etiqueta = "";
         let alt = "";
-        if(tipo == 'Empresarial'){
+        if(tipo == 'empresarial'){
             etiqueta = img_EtiquetaEmpresarial
             alt = "taller empresarial"
         }
-        else{
+        else if(tipo == 'usuarios'){
             etiqueta = img_EtiquetaFormación
             alt = "taller de formación"
+            console.log(tipo)
+        }else{
+            etiqueta = img_Etiqueta_Negra
+            alt = "taller sin clasificar"
         }
         return {
             etiqueta,
@@ -93,7 +96,8 @@ export const TarjetaCursos = () =>{
                                     <i><FaRegClock/></i>
                                     <p>{taller.fields.duration}</p>
                                 </div>
-                                <img src={`${imagen(`${taller.fields.type}`).etiqueta}`} alt= {`${imagen(`${taller.fields.type}`).alt}`} />
+                                {console.log()}
+                                <img src={`${imagen(`${taller.metadata.tags[0]?.sys.id}`).etiqueta}`} alt= {`${imagen(`${taller.metadata.tags[0]?.sys.id}`).alt}`} />
                                 <br />
                                 <Link to="/talleres" onClick={() => window.scrollTo(0, 0)}>
                                     <ButtonBorder border= {`${colores(index).border}`} color= {`${colores(index).color}`} content="Saber más"/>

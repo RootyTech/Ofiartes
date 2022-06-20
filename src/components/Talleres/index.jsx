@@ -143,7 +143,6 @@ export const Talleres = () => {
                         <details className="card" onToggle={(evento)=> handlerClick(evento,talleres.fields.image.fields?.file.url)}>
                             <summary>
                                 {talleres.fields.title}
-                                {console.log(talleres.metadata)}
                                 <img src={`${imagenDos(`${talleres.metadata.tags[0]?.sys.id}`).etiqueta}`} alt= {`${imagenDos(`${talleres.metadata.tags[0]?.sys.id}`).alt}`} style={{display:"none"}}/>
                             </summary>
                             <p className="description">{talleres.fields.description}</p>
