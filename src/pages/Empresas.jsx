@@ -25,7 +25,7 @@ export const Empresa = () => {
                 <input type="number" name="num_id" id="num_id" 
                 placeholder="Ingrese su identificación" title="El número de identificación debe ser valido" required/>  
 
-                <label htmlFor="email">Correo electronico</label>
+                <label htmlFor="email">Correo electrónico</label>
                 <input type="email" name="email" id="email" 
                 placeholder="Ingrese su correo" title="El correo es incorrecto"
                 required pattern="^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"/>  
