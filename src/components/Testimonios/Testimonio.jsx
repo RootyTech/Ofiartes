@@ -4,7 +4,7 @@ import { FaYoutube } from 'react-icons/fa';
 import { FaBullhorn } from 'react-icons/fa';
 import { Read } from '../../lib/Read';
 
-export const Testimonio = ({contenido, nombre, cargo, foto}) => {
+export const Testimonio = ({contenido, nombre, cargo, foto, video}) => {
 
     import(/* webpackChunkName: 'testimonio-mobile' */'./testimonio.sass');
 
@@ -21,7 +21,9 @@ export const Testimonio = ({contenido, nombre, cargo, foto}) => {
             </div>
             <p className="testimonio__youtube" > 
                 Testimonio completo 
-                <FaYoutube className="testimonio__youtube--icon" />
+                <a href={video} target="_blank" rel="nofollow noopener noreferrer">
+                    <FaYoutube className="testimonio__youtube--icon" />
+                </a>
             </p>
         </div>
     )
