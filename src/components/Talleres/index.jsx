@@ -56,7 +56,6 @@ export const Talleres = () => {
     function imagen(tipo){
         let etiqueta = "";
         let alt = "";
-        console.log(tipo)
         if(tipo == 'empresarial'){
             etiqueta = img_Etiqueta_E
             alt = "taller empresarial"
@@ -76,7 +75,6 @@ export const Talleres = () => {
     function imagenDos(tipo){
         let etiqueta = "";
         let alt = "";
-        console.log(tipo)
         if(tipo == 'empresarial'){
             etiqueta = img_Etiqueta_Roja
             alt = "taller empresarial"

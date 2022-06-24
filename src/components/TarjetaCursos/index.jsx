@@ -96,7 +96,6 @@ export const TarjetaCursos = () =>{
                                     <i><FaRegClock/></i>
                                     <p>{taller.fields.duration}</p>
                                 </div>
-                                {console.log()}
                                 <img src={`${imagen(`${taller.metadata.tags[0]?.sys.id}`).etiqueta}`} alt= {`${imagen(`${taller.metadata.tags[0]?.sys.id}`).alt}`} />
                                 <br />
                                 <Link to="/talleres" onClick={() => window.scrollTo(0, 0)}>

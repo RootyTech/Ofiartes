@@ -39,7 +39,6 @@ export const Testimonios = () => {
     /** Estilos importamos de manera dinamica */
     import(/* webpackChunkName: 'testimonios' */'./estilos.sass');    
     const { testimonios } = useContext(context);
-    
     const [ counter, dispatch ] = useReducer(reducerCounter, {first: 0, second: 1});
     
     const [ Testimonios, setTestimonios ] = useState([]);
@@ -72,6 +71,7 @@ export const Testimonios = () => {
                 nombre={testimonio.fields.name}
                 cargo={testimonio.fields.role}
                 foto={`https:${testimonio.fields.image.fields?.file.url}`}
+                video={testimonio.fields.videoUrl}
                 key={`testimonio-${index}`}
                 />
                 ))
