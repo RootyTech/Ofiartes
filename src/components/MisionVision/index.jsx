@@ -44,7 +44,7 @@ export const MisionVision = () => {
                     <h4>Nuestra historia</h4>
                     <br />
                     <p>
-                    La corporación OFI ARTES nace en el 2019 inspirado por vivencias personales de sus fundadores. El objetivo es dignificar a las poblaciones vulnerables, en especial personas con discapacidad y mujeres en riesgo psicosocial por medio de la formación en artes y oficios para que estas personas puedan ser incluidas en entornos laborales, sociales y económicos. Apoyados de componentes psicológicos, salud, educación y emprendimiento.
+                    La corporación Ofiartes nace en el 2019 inspirado por vivencias personales de sus fundadores. El objetivo es dignificar a las poblaciones vulnerables, en especial personas con discapacidad y mujeres en riesgo psicosocial por medio de la formación en artes y oficios para que estas personas puedan ser incluidas en entornos laborales, sociales y económicos. Apoyados de componentes psicológicos, salud, educación y emprendimiento.
                     </p>
                 </div>
                 <br />
