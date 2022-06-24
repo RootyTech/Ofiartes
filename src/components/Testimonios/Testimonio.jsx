@@ -19,12 +19,12 @@ export const Testimonio = ({contenido, nombre, cargo, foto, video}) => {
                     <p>{cargo}</p>
                 </div>
             </div>
-            <p className="testimonio__youtube" > 
-                Testimonio completo 
-                <a href={video} target="_blank" rel="nofollow noopener noreferrer">
+            <a href={video} target="_blank" rel="nofollow noopener noreferrer">
+                <p className="testimonio__youtube" > 
+                    Testimonio completo
                     <FaYoutube className="testimonio__youtube--icon" />
-                </a>
-            </p>
+                </p>
+            </a>
         </div>
     )
 }
