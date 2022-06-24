@@ -20,6 +20,7 @@ export const Talleres = () => {
     import('./estilos.sass');
 
     const {talleres} = useContext(context); /*asi traigo el objeto contexto*/
+    console.log(talleres);
     const [Talleres,setTalleres] = useState([]); //contiene todos los datos de talleres
 
     useEffect(()=>{if(talleres) {setTalleres([...talleres])}
@@ -60,13 +61,11 @@ export const Talleres = () => {
             etiqueta = img_Etiqueta_E
             alt = "taller empresarial"
         }
-        else if(tipo == 'usuarios'){
+        else {
             etiqueta = img_Etiqueta_F
             alt = "taller de usuarios de la corporación"
-        }else{
-            etiqueta = img_Etiqueta_Sin
-            alt = "taller sin clasificar"
         }
+        
         return {
             etiqueta,
             alt
@@ -136,7 +135,11 @@ export const Talleres = () => {
         <section className="details__talleres">
             { 
                 talleres ?
-                Talleres.map((talleres,index) => (
+                Talleres.map((talleres,index) => {
+                    
+                    console.log(talleres.metadata);
+
+                    return (
                     <div className= {`cards__taller ${colores()}`}  key= {`taller-${index}`}>
                         <details className="card" onToggle={(evento)=> handlerClick(evento,talleres.fields.image.fields?.file.url)}>
                             <summary>
@@ -154,7 +157,7 @@ export const Talleres = () => {
                         </details>
                         <img src={`${imagen(`${talleres.metadata.tags[0]?.sys.id}`).etiqueta}`} alt= {`${imagen(`${talleres.metadata.tags[0]?.sys.id}`).alt}`} />
                     </div>
-                )) 
+                )}) 
                 : MediaQueryDesktop() ?
                     <LoaderTalleres {...{
                         width: 1024,
