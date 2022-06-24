@@ -32,8 +32,8 @@ export const Home = () => {
     return (
         <>
             <Helmet>
-                <title>Corporación Ofi Artes</title>
-                <meta name="description" content="En la corporación Ofi Artes fomentamos el empleo y el emprendimiento" />
+                <title>Corporación Ofiartes</title>
+                <meta name="description" content="En la corporación Ofiartes fomentamos el empleo y el emprendimiento" />
             </Helmet>
             <Modal/>
             <Novedades/>

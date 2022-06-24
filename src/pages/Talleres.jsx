@@ -10,11 +10,11 @@ export const PagTalleres = () => {
     return (
         <>
             <Helmet>
-                <title>Talleres - Ofi Artes</title>
+                <title>Talleres - Ofiartes</title>
                 <meta name="description" content="Nuestros talleres" />
             </Helmet>
             <Modal/>
-            <Header nombrePagina="talleres" titulo="Nuestros talleres" contenido="En Ofi Artes te brindamos acompañamientos en: psicología, formación en artes y oficios, bancarización, salud, acceso al empleo, emprendimiento y mucho más"/>
+            <Header nombrePagina="talleres" titulo="Nuestros talleres" contenido="En Ofiartes te brindamos acompañamientos en: psicología, formación en artes y oficios, bancarización, salud, acceso al empleo, emprendimiento y mucho más"/>
             <Talleres />
             <Footer />
         </>

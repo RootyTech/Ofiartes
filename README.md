@@ -1,4 +1,4 @@
-# Ofi Artes
+# Ofiartes
 
 ## Documentación 📚
 

@@ -44,7 +44,7 @@ export const MisionVision = () => {
                     <h4>Nuestra historia</h4>
                     <br />
                     <p>
-                    La corporación OFI ARTES nace en el 2019 inspirado por vivencias personales de sus fundadores. El objetivo es dignificar a las poblaciones vulnerables, en especial personas con discapacidad y mujeres en riesgo psicosocial por medio de la formación en artes y oficios para que estas personas puedan ser incluidas en entornos laborales, sociales y económicos. Apoyados de componentes psicológicos, salud, educación y emprendimiento.
+                    La corporación Ofiartes nace en el 2019 inspirado por vivencias personales de sus fundadores. El objetivo es dignificar a las poblaciones vulnerables, en especial personas con discapacidad y mujeres en riesgo psicosocial por medio de la formación en artes y oficios para que estas personas puedan ser incluidas en entornos laborales, sociales y económicos. Apoyados de componentes psicológicos, salud, educación y emprendimiento.
                     </p>
                 </div>
                 <br />
@@ -62,7 +62,8 @@ export const MisionVision = () => {
                     subtitle="Misión"
                     text=""
                 >
-                    <p>Dignificar a las <span>personas discapacitadas y mujeres en riesgo psicosocial</span>, para que superen la pobreza, por medio de la creación y puesta en marcha de estrategias de formación en artes y oficios que les permitirá la autosuficiencia económica y social, incluyendo componentes <span>psicológicos, salud, educación y emprendimiento</span>; con el apoyo del sector público y privado.
+                    <p>
+                    Promover el derecho a la igualdad de oportunidades, en especial las personas con discapacidad y mujeres en riesgo psicosocial, partiendo desde el desarrollo de habilidades individuales y colectivas.
                     </p>
                 </WhatHow>
                 <WhatHow
@@ -75,7 +76,7 @@ export const MisionVision = () => {
                     // Condicional para enviar la importación de una imagen u otra, dependiendo del tamaño de la pantalla dado por los MediaQuery
                     src={ MediaQueryDesktop() ? img_piece_medium_green : MediaQueryTablet() ? img_piece_medium_green : img_piece_green }
                     subtitle="Visión"
-                    text="En el 2025 la corporación aumentará el numero de beneficiarios en los diferentes programas de inclusión social, y generará nuevas alianzas estratégicas con el sector publico y privado para continuar generando oportunidades de empleo y emprendimiento a las personas con discapacidad y mujeres en riesgo psicosocial."
+                    text="Queremos ser reconocidos como una organización responsable comprometida y justa, por mejorar la calidad de vida de nuestros usuarios."
                 >
                 </WhatHow>
                 <WhatHow

@@ -57,7 +57,7 @@ export const InfoHeader = (props) => {
                 <div className="header__logo">
                     <Link to="/">
                         <figure>
-                            <img src={Logotipo} alt="Logo de la corporación Ofi Artes" width="70" height="70"/>
+                            <img src={Logotipo} alt="Logo de la corporación Ofiartes" width="70" height="70"/>
                         </figure>
                     </Link>
                 </div>

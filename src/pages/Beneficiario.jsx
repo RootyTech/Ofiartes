@@ -10,7 +10,7 @@ export const Beneficiario = () => {
     return (
         <>
             <Helmet>
-                <title>Beneficiarios - Ofi Artes</title>
+                <title>Beneficiarios - Ofiartes</title>
                 <meta name="description" content="Inscríbete con nosotros" />
             </Helmet>
             <Modal/>
