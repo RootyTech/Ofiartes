@@ -16,7 +16,7 @@ export const QuienesSomos = () => {
                 <meta name="description" content="Misión, visión y definición de la corporación Ofi Artes" />
             </Helmet>
             <Modal/>
-            <Header nombrePagina="quienes-somos" titulo="¿Quiénes somos?" contenido="Trabajamos para fomentar el empleo y emprendimiento en poblaciones vulnerables, con el fin de dignificar la vida de personas con discapacidad y mujeres en riesgo psicosocial. "/>
+            <Header nombrePagina="quienes-somos" titulo="¿Quiénes somos?" contenido="Somos una corporación sin ánimo de lucro, trabajamos para dignificar la vida de personas con discapacidad y mujeres en riesgo psicosocial, buscamos que esta población sea incluida en ámbitos laborales, económicos y sociales."/>
             <MisionVision />
             <EquipoTrabajo />
             <Galeria />
